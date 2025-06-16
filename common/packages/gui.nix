@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   packages = with pkgs; [
     # gui
     nautilus
@@ -10,4 +10,3 @@
 
   ];
 }
-

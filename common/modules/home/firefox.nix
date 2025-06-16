@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   enable = true;
-  languagePacks = ["fr" "en-US"];
+  languagePacks = [ "fr" "en-US" ];
   policies = {
     DisableTelemetry = true;
     DisableFirefoxStudies = true;
