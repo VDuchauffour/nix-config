@@ -46,6 +46,8 @@ with pkgs; [
   cargo
   poetry
   uv
+  lua-language-server
+  stylua
   shellcheck
   shfmt
   terraform

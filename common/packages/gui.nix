@@ -3,12 +3,13 @@ with pkgs; [
   # apps
   nautilus
   nautilus-open-any-terminal
+  code-nautilus
   alacritty
   neovide
   galculator
   visual-studio-code
-  audacious-gtk3
-  audacious-plugins-gtk3
+  audacious
+  audacious-plugins
   mpv
 
   # tools
