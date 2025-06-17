@@ -18,14 +18,10 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      common = import ../common/packages;
+      packages = import ../common/packages { inherit pkgs; };
     in
     {
-      environment.systemPackages = with pkgs; [
-        common.packages.cli
-        common.packages.gui
-
-        # system
+      environment.systemPackages = packages.cli ++ packages.gui ++ [
         brightnessctl
         pavucontrol
       ];
