@@ -22,6 +22,7 @@
     in
     {
       environment.systemPackages = packages.cli ++ packages.gui ++ [
+        playerctl
         brightnessctl
         pavucontrol
       ];
@@ -32,5 +33,8 @@
       #     modules = [./home.nix];
       #   };
       # };
+
+
+      # dans user ajouté docker comme groupe
     };
 }

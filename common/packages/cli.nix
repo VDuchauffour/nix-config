@@ -44,5 +44,18 @@ with pkgs; [
   gcc
   rustup
   cargo
+  poetry
   uv
+  shellcheck
+  shfmt
+  terraform
+  kubectl
+  kubectx
+  kubens
+  k9s
+  kubectl-aliases
+  eksctl
+  helm
+  kubeseal
+  awscli2
 ]
