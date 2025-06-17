@@ -2,7 +2,7 @@
   enable = true;
   languagePacks = [ "fr" "en-US" ];
   policies = {
-    ExtensionSettings = import ../common/gecko-addons.nix;
+    ExtensionSettings = import ../gecko-addons.nix;
   };
   settings = {
     "webgl.disabled" = false;

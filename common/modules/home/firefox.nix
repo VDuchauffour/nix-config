@@ -21,7 +21,7 @@
     DisplayMenuBar = "default-off";
     SearchBar = "unified";
 
-    ExtensionSettings = import ../common/gecko-addons.nix;
+    ExtensionSettings = import ../gecko-addons.nix;
 
     Preferences = {
       "browser.contentblocking.category" = {
