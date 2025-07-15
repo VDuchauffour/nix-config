@@ -35,6 +35,7 @@
         system.configurationRevision = self.rev or self.dirtyRev or null;
         system.stateVersion = 4;
         system.defaults = (import ./system.nix { inherit vars; }).defaults;
+        system.primaryUser = vars.user;
 
         nixpkgs.hostPlatform = "aarch64-darwin";
 
