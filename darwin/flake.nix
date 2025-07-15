@@ -21,8 +21,6 @@
     let
       homebrewPackages = import ./homebrew.nix;
       system = import ./system.nix;
-      gecko = import ../modules/gecko.nix;
-      shell = import ../modules/shell.nix;
       vars = {
         user = "k";
         computerName = "k-MacBook-Pro";
@@ -67,8 +65,8 @@
         };
 
         programs = {
-          zsh = shell.zsh;
-          direnv = shell.direnv;
+          zsh = import ../common/home/zsh.nix;
+          direnv = import ../common/home/direnv.nix;
         };
       };
     in
