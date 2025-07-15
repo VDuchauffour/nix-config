@@ -1,6 +1,5 @@
-{ config
-, vars
-, gecko
+{ vars
+  # , gecko
 , ...
 }: {
   home.username = "${vars.user}";
@@ -19,9 +18,9 @@
   system.defaults = (import ./system.nix { inherit vars; }).defaults;
   programs.home-manager.enable = true;
 
-  programs.librewolf = {
-    enable = true;
-    settings = gecko.librewolf.settings;
-    extensions = gecko.extensions;
-  };
+  # programs.librewolf = {
+  #   enable = true;
+  #   settings = gecko.librewolf.settings;
+  #   extensions = gecko.extensions;
+  # };
 }

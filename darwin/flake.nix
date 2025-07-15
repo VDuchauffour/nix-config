@@ -20,7 +20,6 @@
     }:
     let
       homebrewPackages = import ./homebrew.nix;
-      system = import ./system.nix;
       vars = {
         user = "k";
         computerName = "k-MacBook-Pro";
@@ -35,7 +34,7 @@
         nix.settings.experimental-features = [ "nix-command" "flakes" ];
         system.configurationRevision = self.rev or self.dirtyRev or null;
         system.stateVersion = 4;
-        system.defaults = system.defaults;
+        system.defaults = (import ./system.nix { inherit vars; }).defaults;
 
         nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -65,8 +64,8 @@
         };
 
         programs = {
-          zsh = import ../common/home/zsh.nix;
-          direnv = import ../common/home/direnv.nix;
+          # zsh = import ../common/home/zsh.nix;
+          # direnv = import ../common/home/direnv.nix;
         };
       };
     in
@@ -79,7 +78,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.k = import ./home.nix;
+            home-manager.users.k = import ./home.nix { inherit vars; };
           }
         ];
       };
