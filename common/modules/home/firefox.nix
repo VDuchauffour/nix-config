@@ -47,6 +47,7 @@
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
       "browser.tabs.closeWindowWithLastTab" = lock-false;
       "sidebar.verticalTabs" = lock-true;
-    };
-  };
-}
+      "identity.fxaccounts.enabled" lock-false;
+      };
+      };
+      }
