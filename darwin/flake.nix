@@ -33,6 +33,7 @@
         system.primaryUser = vars.user;
 
         system.defaults = (import ./system.nix { inherit vars; }).defaults;
+        security.pam.services.sudo_local.touchIdAuth = true;
 
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
@@ -76,5 +77,7 @@
           }
         ];
       };
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations.${vars.computerName}.pkgs;
     };
 }
