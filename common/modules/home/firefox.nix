@@ -1,4 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  lock-false = {
+    Value = false;
+    Status = "locked";
+  };
+  lock-true = {
+    Value = true;
+    Status = "locked";
+  };
+in
+{
   enable = true;
   languagePacks = [ "fr" "en-US" ];
   policies = {
@@ -47,7 +58,7 @@
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
       "browser.tabs.closeWindowWithLastTab" = lock-false;
       "sidebar.verticalTabs" = lock-true;
-      "identity.fxaccounts.enabled" lock-false;
-      };
-      };
-      }
+      "identity.fxaccounts.enabled" = lock-false;
+    };
+  };
+}
