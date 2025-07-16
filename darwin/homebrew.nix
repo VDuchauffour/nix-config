@@ -25,5 +25,5 @@
     "mactop"
   ];
   taps = [ ];
-  masApps = [ ];
+  masApps = {};
 }
