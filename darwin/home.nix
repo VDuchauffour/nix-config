@@ -1,10 +1,9 @@
 { vars
-  # , gecko
 , ...
 }: {
   home.username = "${vars.user}";
   home.homeDirectory = "/Users/${vars.user}";
-  home.stateVersion = "23.11";
+  home.stateVersion = "25.05";
 
   # User specific applications
   home.packages = [ ];
@@ -15,12 +14,13 @@
     # ".zshrc".source = ~/dotfiles/zshrc/.zshrc;
   };
 
-  # system.defaults = (import ./system.nix { inherit vars; }).defaults;
   programs.home-manager.enable = true;
 
-  # programs.librewolf = {
-  #   enable = true;
-  #   settings = gecko.librewolf.settings;
-  #   extensions = gecko.extensions;
-  # };
-}
+  programs = {
+    zsh = {
+      initExtra = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      ''
+        }
+        };
+    }
