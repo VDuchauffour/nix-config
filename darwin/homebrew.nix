@@ -12,11 +12,11 @@
     "visual-studio-code"
     "cursor"
     "neovide"
-    "logitech-g-hub"
+    # "logitech-g-hub"
     "logi-options-plus"
     "stats"
     "MonitorControl"
-    "wireshark"
+    # "wireshark"
     "wireguard"
     "docker"
     "font-hack-nerd-font"
@@ -25,5 +25,5 @@
     "mactop"
   ];
   taps = [ ];
-  masApps = {};
+  masApps = { };
 }
