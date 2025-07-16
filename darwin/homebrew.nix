@@ -9,14 +9,14 @@
     "scroll-reverser"
     "visual-studio-code"
     "cursor"
-    "neovide"
     "logi-options+"
     "stats"
     "MonitorControl"
-    "docker"
   ];
   brews = [
     "mactop"
+    "docker"
+    "docker-compose"
   ];
   taps = [ ];
   masApps = { };
