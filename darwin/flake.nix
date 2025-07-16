@@ -14,7 +14,6 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
     let
       homebrewPackages = import ./homebrew.nix;
-      packages = import ../common/packages { inherit pkgs; };
       vars = {
         user = "k";
         computerName = "k-MacBook-Pro";
@@ -26,6 +25,7 @@
         system.configurationRevision = self.rev or self.dirtyRev or null;
         system.stateVersion = 6;
         nixpkgs.hostPlatform = "aarch64-darwin";
+        nixpkgs.config.allowUnfree = true;
 
         users.users.k = {
           home = "/Users/${vars.user}";
@@ -38,7 +38,7 @@
 
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
-        environment.systemPackages = packages.cli;
+        environment.systemPackages = (import ../common/packages { inherit pkgs; }).cli;
 
         homebrew = {
           enable = true;

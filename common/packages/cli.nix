@@ -5,13 +5,13 @@ with pkgs; [
   zsh-autosuggestions
   direnv
   stow
-  make
+  gnumake
   coreutils
   openssl
   wget
   aria2
   git
-  git-delta
+  delta
   bat
   dust
   duf
@@ -54,11 +54,10 @@ with pkgs; [
   terraform
   kubectl
   kubectx
-  kubens
   k9s
-  kubectl-aliases
+  # kubectl-aliases
   eksctl
-  helm
+  kubernetes-helm
   kubeseal
   awscli2
 ]
