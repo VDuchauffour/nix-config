@@ -15,7 +15,7 @@
     # ".zshrc".source = ~/dotfiles/zshrc/.zshrc;
   };
 
-  system.defaults = (import ./system.nix { inherit vars; }).defaults;
+  # system.defaults = (import ./system.nix { inherit vars; }).defaults;
   programs.home-manager.enable = true;
 
   # programs.librewolf = {
