@@ -40,25 +40,27 @@
         # $ nix-env -qaP | grep wget
         environment.systemPackages = (import ../common/packages { inherit pkgs; }).cli;
 
-        homebrew = {
-          enable = true;
-          onActivation = {
-            autoUpdate = true;
-            upgrade = false;
-            cleanup = "uninstall";
-          };
-          brewPrefix = "/opt/homebrew/bin";
-          caskArgs = {
-            no_quarantine = true;
-          };
-          casks = homebrewPackages.casks;
-          brews = homebrewPackages.brews;
-          taps = homebrewPackages.taps;
-          masApps = homebrewPackages.masApps;
+        fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)
+
+          homebrew = {
+        enable = true;
+        onActivation = {
+          autoUpdate = true;
+          upgrade = false;
+          cleanup = "uninstall";
         };
+        brewPrefix = "/opt/homebrew/bin";
+        caskArgs = {
+          no_quarantine = true;
+        };
+        casks = homebrewPackages.casks;
+        brews = homebrewPackages.brews;
+        taps = homebrewPackages.taps;
+        masApps = homebrewPackages.masApps;
       };
-    in
-    {
+      };
+      in
+      {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#simple
       darwinConfigurations.${vars.computerName} = nix-darwin.lib.darwinSystem {
@@ -75,5 +77,5 @@
       };
       # Expose the package set, including overlays, for convenience.
       darwinPackages = self.darwinConfigurations.${vars.computerName}.pkgs;
-    };
-}
+      };
+      }
