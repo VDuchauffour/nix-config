@@ -40,6 +40,13 @@
         # $ nix-env -qaP | grep wget
         environment.systemPackages = (import ../common/packages { inherit pkgs; }).cli;
 
+        fonts = {
+          enableFontDir = true;
+          fonts = [
+            (pkgs.nerdfonts.override { fonts = [ "all" ]; })
+          ];
+        };
+
         homebrew = {
           enable = true;
           onActivation = {
