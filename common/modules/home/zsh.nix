@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   enable = true;
   history.size = 10000;
   # voir pour zinit

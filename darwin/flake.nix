@@ -71,7 +71,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.k = import ./home.nix { inherit vars; };
+            home-manager.users.k = import ./home.nix { inherit vars pkgs; };
           }
         ];
       };

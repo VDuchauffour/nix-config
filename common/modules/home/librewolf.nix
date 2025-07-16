@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   enable = true;
   languagePacks = [ "fr" "en-US" ];
   policies = {

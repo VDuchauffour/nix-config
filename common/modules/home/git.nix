@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   enable = true;
   userName = "Vincent Duchauffour";
   userEmail = "vincent.duchauffour@proton.me";

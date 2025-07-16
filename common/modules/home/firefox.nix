@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 let
   lock-false = {
     Value = false;
