@@ -12,10 +12,9 @@
     "visual-studio-code"
     "cursor"
     "neovide"
-    # "logi-options-plus"
+    "logi-options+"
     "stats"
     "MonitorControl"
-    # "wireguard"
     "docker"
     "font-hack-nerd-font"
   ];
