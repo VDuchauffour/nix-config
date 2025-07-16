@@ -32,12 +32,12 @@
         environment.systemPackages =
           [
             pkgs.neovim
-		pkgs.pre-commit
+            pkgs.pre-commit
           ];
 
 
         homebrew = {
-          enable = true;
+          enable = enable;
           onActivation = {
             autoUpdate = true;
             upgrade = false;
