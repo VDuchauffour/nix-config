@@ -9,7 +9,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
     let
-      # homebrewPackages = import ./homebrew.nix;
+      homebrewPackages = import ./homebrew.nix;
       vars = {
         user = "k";
         computerName = "k-MacBook-Pro";
@@ -33,6 +33,24 @@
           [
             pkgs.vim
           ];
+
+
+        homebrew = {
+          enable = true;
+          onActivation = {
+            autoUpdate = true;
+            upgrade = false;
+            cleanup = "uninstall";
+          };
+          brewPrefix = "/opt/homebrew/bin";
+          caskArgs = {
+            no_quarantine = true;
+          };
+          casks = homebrewPackages.casks;
+          brews = homebrewPackages.brews;
+          taps = homebrewPackages.taps;
+          masApps = homebrewPackages.masApps;
+        };
 
 
 
