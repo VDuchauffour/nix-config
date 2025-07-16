@@ -14,6 +14,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
     let
       homebrewPackages = import ./homebrew.nix;
+      packages = import ../common/packages { inherit pkgs; };
       vars = {
         user = "k";
         computerName = "k-MacBook-Pro";
@@ -37,12 +38,7 @@
 
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
-        environment.systemPackages =
-          [
-            pkgs.neovim
-            pkgs.pre-commit
-          ];
-
+        environment.systemPackages = packages.cli;
 
         homebrew = {
           enable = true;
