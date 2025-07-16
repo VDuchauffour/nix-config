@@ -37,7 +37,7 @@
 
 
         homebrew = {
-          enable = enable;
+          enable = true;
           onActivation = {
             autoUpdate = true;
             upgrade = false;
