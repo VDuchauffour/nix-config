@@ -44,6 +44,7 @@ with pkgs; [
   gcc
   rustup
   cargo
+  pre-commit
   poetry
   uv
   lua-language-server
