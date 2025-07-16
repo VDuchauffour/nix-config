@@ -43,7 +43,7 @@
       FXPreferredViewStyle = "clmv";
       ShowPathbar = true;
       ShowStatusBar = true;
-      NewWindowTargetPath = "file:///Users/${vars.user}/"; # Set home directory as startup window
+      # NewWindowTargetPath = "file:///Users/${vars.user}/"; # Set home directory as startup window
       NewWindowTarget = "Home";
       FXDefaultSearchScope = "SCcf"; # Set search scope to directory
     };
