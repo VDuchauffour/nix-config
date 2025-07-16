@@ -6,6 +6,11 @@
       InitialKeyRepeat = 12;
       KeyRepeat = 3;
     };
+    trackpad = {
+      Clicking = true;
+      ActuationStrength = 0;
+      TrackpadThreeFingerDrag = true;
+    };
     CustomUserPreferences = {
       "com.microsoft.VSCode" = {
         "ApplePressAndHoldEnabled" = true;
