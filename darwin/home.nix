@@ -1,5 +1,4 @@
 { vars
-, pkgs
 , ...
 }: {
   home.username = "${vars.user}";

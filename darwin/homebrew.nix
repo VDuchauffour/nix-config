@@ -1,8 +1,6 @@
 {
   casks = [
     "iina"
-    "firefox"
-    "librewolf"
     "chromium"
     "the-unarchiver"
     "openmtp"

@@ -1,5 +1,5 @@
 {
   enable = true;
-  loadInNixShell = true;
+  # loadInNixShell = true;
   nix-direnv.enable = true;
 }
