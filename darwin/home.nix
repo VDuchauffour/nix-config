@@ -4,7 +4,7 @@
 }: {
   home.username = "${vars.user}";
   home.homeDirectory = "/Users/${vars.user}";
-  home.stateVersion = "25.11";
+  home.stateVersion = "23.11";
 
   # User specific applications
   home.packages = [ ];
