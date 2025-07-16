@@ -16,7 +16,7 @@
         "DSDontWriteUSBStores" = true;
       };
       # Show battery percentage
-      # "/Users/${vars.user}/Library/Preferences/ByHost/com.apple.controlcenter.BatteryShowPercentage" = true;
+      controlcenter.BatteryShowPercentage = true;
       # Privacy
       com.apple.AdLib.allowApplePersonalizedAdvertising = false;
     };
