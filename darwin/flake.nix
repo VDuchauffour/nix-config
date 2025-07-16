@@ -35,6 +35,13 @@
         system.configurationRevision = self.rev or self.dirtyRev or null;
         system.stateVersion = 4;
         system.defaults = (import ./system.nix { inherit vars; }).defaults;
+        system.activationScripts.postUserActivation.text = ''
+          # Following line should allow us to avoid a logout/login cycle
+          /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+          launchctl stop com.apple.Dock.agent
+          launchctl start com.apple.Dock.agent
+        '';
+
         system.primaryUser = vars.user;
 
         nixpkgs.hostPlatform = "aarch64-darwin";
