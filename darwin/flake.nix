@@ -20,7 +20,7 @@
         terminal = "alacritty";
         editor = "nvim";
       };
-      configuration = { pkgs, ... }: {
+      configuration = { lib, pkgs, ... }: {
         nix.settings.experimental-features = "nix-command flakes";
         system.configurationRevision = self.rev or self.dirtyRev or null;
         system.stateVersion = 6;
@@ -41,10 +41,7 @@
         environment.systemPackages = (import ../common/packages { inherit pkgs; }).cli;
 
         fonts = {
-          enableFontDir = true;
-          fonts = [
-            (pkgs.nerdfonts.override { fonts = [ "all" ]; })
-          ];
+          packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
         };
 
         homebrew = {
@@ -66,8 +63,6 @@
       };
     in
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#simple
       darwinConfigurations.${vars.computerName} = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [

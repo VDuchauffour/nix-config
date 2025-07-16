@@ -16,7 +16,6 @@
     "stats"
     "MonitorControl"
     "docker"
-    "font-hack-nerd-font"
   ];
   brews = [
     "mactop"
