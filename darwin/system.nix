@@ -1,6 +1,7 @@
 {vars}: {
   defaults = {
     NSGlobalDomain = {
+      AppleInterfaceStyle = "Dark";
       AppleICUForce24HourTime = true;
       AppleShowAllExtensions = true;
       InitialKeyRepeat = 12;
