@@ -1,6 +1,7 @@
 {pkgs, ...}:
 with pkgs; [
   # cli tools
+  nerd-fonts.symbols-only
   zsh-syntax-highlighting
   zsh-autosuggestions
   direnv
