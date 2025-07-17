@@ -19,7 +19,7 @@ exec $SHELL
 
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
 cd ~/.nix-config/darwin
-sudo nix run nix-darwin -- switch --flake flake.nix
+sudo nix run nix-darwin -- switch --flake darwin/#k-MacBook-Pro
 
 exec $SHELL
 ```
