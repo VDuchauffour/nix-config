@@ -11,78 +11,69 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
-    let
-      homebrewPackages = import ./homebrew.nix;
-      vars = {
-        user = "k";
-        computerName = "k-MacBook-Pro";
-        terminal = "alacritty";
-        editor = "nvim";
-      };
-      configuration = { lib, pkgs, ... }: {
-        nix.settings.experimental-features = "nix-command flakes";
-        system.configurationRevision = self.rev or self.dirtyRev or null;
-        system.stateVersion = 6;
-        nixpkgs.hostPlatform = "aarch64-darwin";
-        nixpkgs.config.allowUnfree = true;
-
-        users.users.k = {
-          home = "/Users/${vars.user}";
-          name = "${vars.user}";
-        };
-        system.primaryUser = vars.user;
-
-        system.defaults = (import ./system.nix { inherit vars; }).defaults;
-        security.pam.services.sudo_local.touchIdAuth = true;
-
-        # system.activationScripts.postUserActivation.text = ''
-        #   # Following line should allow us to avoid a logout/login cycle
-        #   /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-        #   launchctl stop com.apple.Dock.agent
-        #   launchctl start com.apple.Dock.agent
-        # '';
-
-        # List packages installed in system profile. To search by name, run:
-        # $ nix-env -qaP | grep wget
-        environment.systemPackages = (import ../common/packages { inherit pkgs; }).cli;
-
-        fonts = {
-          packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-        };
-
-        homebrew = {
-          enable = true;
-          onActivation = {
-            autoUpdate = true;
-            upgrade = false;
-            cleanup = "uninstall";
-          };
-          brewPrefix = "/opt/homebrew/bin";
-          caskArgs = {
-            no_quarantine = true;
-          };
-          casks = homebrewPackages.casks;
-          brews = homebrewPackages.brews;
-          taps = homebrewPackages.taps;
-          masApps = homebrewPackages.masApps;
-        };
-      };
-    in
-    {
-      darwinConfigurations.${vars.computerName} = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          configuration
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.k = import ./home.nix { inherit vars; };
-          }
-        ];
-      };
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations.${vars.computerName}.pkgs;
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixpkgs,
+    home-manager,
+  }: let
+    vars = {
+      user = "k";
+      computerName = "k-MacBook-Pro";
+      terminal = "alacritty";
+      editor = "nvim";
     };
+    configuration = {
+      lib,
+      pkgs,
+      ...
+    }: {
+      nix.settings.experimental-features = "nix-command flakes";
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+      system.stateVersion = 6;
+      nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.config.allowUnfree = true;
+
+      users.users.k = {
+        home = "/Users/${vars.user}";
+        name = "${vars.user}";
+      };
+      system.primaryUser = vars.user;
+
+      system.defaults = (import ./system.nix {inherit vars;}).defaults;
+      security.pam.services.sudo_local.touchIdAuth = true;
+
+      # system.activationScripts.postUserActivation.text = ''
+      #   # Following line should allow us to avoid a logout/login cycle
+      #   /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      #   launchctl stop com.apple.Dock.agent
+      #   launchctl start com.apple.Dock.agent
+      # '';
+
+      # List packages installed in system profile. To search by name, run:
+      # $ nix-env -qaP | grep wget
+      environment.systemPackages = (import ../common/packages {inherit pkgs;}).cli;
+
+      fonts = {
+        packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+      };
+
+      homebrew = import ./homebrew.nix;
+    };
+  in {
+    darwinConfigurations.${vars.computerName} = nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        configuration
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.k = import ./home.nix {inherit vars;};
+        }
+      ];
+    };
+    # Expose the package set, including overlays, for convenience.
+    darwinPackages = self.darwinConfigurations.${vars.computerName}.pkgs;
+  };
 }

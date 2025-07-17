@@ -1,4 +1,14 @@
 {
+  enable = true;
+  onActivation = {
+    autoUpdate = true;
+    upgrade = false;
+    cleanup = "uninstall";
+  };
+  brewPrefix = "/opt/homebrew/bin";
+  caskArgs = {
+    no_quarantine = true;
+  };
   casks = [
     "iina"
     "chromium"
@@ -18,7 +28,8 @@
     "colima"
     "docker"
     "docker-compose"
+    "alejandra"
   ];
-  taps = [ ];
-  masApps = { };
+  taps = [];
+  masApps = {};
 }
