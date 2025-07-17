@@ -1,18 +1,37 @@
-{vars, ...}: {
+{
+  config,
+  lib,
+  vars,
+  ...
+}: {
+  programs.home-manager.enable = true;
+
   home.username = "${vars.user}";
   home.homeDirectory = "/Users/${vars.user}";
   home.stateVersion = "25.05";
 
-  # User specific applications
   home.packages = [];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
-    # ".zshrc".source = ~/dotfiles/zshrc/.zshrc;
+    ".config/nvim" = {
+      source = ../dots/astronvim;
+      recursive = true;
+    };
+    ".config/lazygit" = {
+      source = ../dots/lazygit;
+    };
+    ".config/k9s" = {
+      source = ../dots/k9s;
+      recursive = true;
+    };
+    ".config/ranger" = {
+      source = ../dots/ranger;
+      recursive = true;
+    };
+    ".tmux.conf" = {
+      source = ../dots/tmux/.tmux.conf;
+    };
   };
-
-  programs.home-manager.enable = true;
 
   programs = {
     zsh =
