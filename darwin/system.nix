@@ -1,4 +1,4 @@
-{ vars }: {
+{vars}: {
   defaults = {
     NSGlobalDomain = {
       AppleICUForce24HourTime = true;

@@ -1,6 +1,6 @@
 {
   enable = true;
-  languagePacks = [ "fr" "en-US" ];
+  languagePacks = ["fr" "en-US"];
   policies = {
     ExtensionSettings = import ../gecko-addons.nix;
   };

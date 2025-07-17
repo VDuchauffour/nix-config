@@ -7,10 +7,9 @@ let
     Value = true;
     Status = "locked";
   };
-in
-{
+in {
   enable = true;
-  languagePacks = [ "fr" "en-US" ];
+  languagePacks = ["fr" "en-US"];
   policies = {
     DisableTelemetry = true;
     DisableFirefoxStudies = true;

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 with pkgs; [
   # cli tools
   zsh-syntax-highlighting
