@@ -4,6 +4,7 @@ with pkgs; [
   nerd-fonts.symbols-only
   zsh-syntax-highlighting
   zsh-autosuggestions
+  xdg-utils
   direnv
   stow
   gnumake

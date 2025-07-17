@@ -31,4 +31,8 @@
     btop = import ../common/modules/home/btop.nix;
     librewolf = import ../common/modules/home/librewolf.nix;
   };
+
+  xdg = {
+    enable = true;
+  };
 }
