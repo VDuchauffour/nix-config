@@ -52,7 +52,6 @@
 
     cursor = {
       style = "Block";
-      blinking = "Always";
     };
 
     env = {
