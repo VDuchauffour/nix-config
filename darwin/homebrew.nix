@@ -15,6 +15,7 @@
   ];
   brews = [
     "mactop"
+    "colima"
     "docker"
     "docker-compose"
   ];
