@@ -1,15 +1,34 @@
 let
-  lock-false = {
-    Value = false;
-    Status = "locked";
-  };
-  lock-true = {
-    Value = true;
-    Status = "locked";
+  preferences = {
+    "browser.contentblocking.category" = "strict";
+    "extensions.pocket.enabled" = false;
+    "privacy.resistFingerprinting" = true;
+    "extensions.screenshots.disabled" = false;
+    "browser.topsites.contile.enabled" = false;
+    "browser.formfill.enable" = false;
+    "browser.search.suggest.enabled" = false;
+    "browser.search.suggest.enabled.private" = false;
+    "browser.urlbar.suggest.searches" = false;
+    "browser.urlbar.showSearchSuggestionsFirst" = false;
+    "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+    "browser.newtabpage.activity-stream.feeds.snippets" = false;
+    "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+    "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+    "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
+    "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
+    "browser.newtabpage.activity-stream.showSponsored" = false;
+    "browser.newtabpage.activity-stream.system.showSponsored" = false;
+    "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+    "browser.tabs.closeWindowWithLastTab" = false;
+    "identity.fxaccounts.enabled" = false;
+    "sidebar.verticalTabs" = true;
+    "sidebar.main.tools" = "";
+    "sidebar.visibility" = "always-show";
   };
 in {
   enable = true;
   languagePacks = ["fr" "en-US"];
+
   policies = {
     DisableTelemetry = true;
     DisableFirefoxStudies = true;
@@ -30,33 +49,32 @@ in {
     DisplayMenuBar = "default-off";
     SearchBar = "unified";
 
+    SearchEngines = {
+      Default = "DuckDuckGo";
+      SearchSuggestEnabled = false;
+      Remove = ["Google" "Bing" "Amazon.com" "eBay" "Wikipedia"];
+      PreventInstalls = false;
+      Add = [
+        {
+          Name = "DuckDuckGo";
+          URLTemplate = "https://duckduckgo.com/?q={searchTerms}";
+          Alias = "ddgr";
+        }
+        {
+          Name = "Google";
+          URLTemplate = "https://google.com/?q={searchTerms}";
+          Alias = "google";
+        }
+      ];
+    };
+
     ExtensionSettings = import ../gecko-addons.nix;
 
-    Preferences = {
-      "browser.contentblocking.category" = {
-        Value = "strict";
+    Preferences =
+      builtins.mapAttrs (_key: val: {
         Status = "locked";
-      };
-      "extensions.pocket.enabled" = lock-false;
-      "extensions.screenshots.disabled" = lock-false;
-      "browser.topsites.contile.enabled" = lock-false;
-      "browser.formfill.enable" = lock-false;
-      "browser.search.suggest.enabled" = lock-false;
-      "browser.search.suggest.enabled.private" = lock-false;
-      "browser.urlbar.suggest.searches" = lock-false;
-      "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-      "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
-      "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-      "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-      "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
-      "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
-      "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
-      "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-      "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-      "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-      "browser.tabs.closeWindowWithLastTab" = lock-false;
-      "sidebar.verticalTabs" = lock-true;
-      "identity.fxaccounts.enabled" = lock-false;
-    };
+        Value = val;
+      })
+      preferences;
   };
 }
