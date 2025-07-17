@@ -13,8 +13,12 @@
       TrackpadThreeFingerDrag = true;
     };
     CustomUserPreferences = {
+      # Cursor
+      "com.todesktop.230313mzl4w4u92" = {
+        "ApplePressAndHoldEnabled" = false;
+      };
       "com.microsoft.VSCode" = {
-        "ApplePressAndHoldEnabled" = true;
+        "ApplePressAndHoldEnabled" = false;
       };
       # Disable creating .DS_Store files in network an USB volumes
       "com.apple.desktopservices" = {
