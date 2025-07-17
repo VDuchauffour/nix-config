@@ -20,8 +20,6 @@
       // {
         initContent = ''
           eval "$(/opt/homebrew/bin/brew shellenv)"
-          eval "$(direnv hook zsh)"
-          eval "$(starship init zsh)"
         '';
       };
     starship = import ../common/modules/home/starship.nix;
