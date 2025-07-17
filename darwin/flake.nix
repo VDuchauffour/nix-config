@@ -9,6 +9,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   outputs = inputs @ {
@@ -16,6 +17,7 @@
     nix-darwin,
     nixpkgs,
     home-manager,
+    mac-app-util,
   }: let
     vars = {
       user = "k";
@@ -50,25 +52,6 @@
         launchctl stop com.apple.Dock.agent
         launchctl start com.apple.Dock.agent
       '';
-      system.activationScripts.applications.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
-        };
-      in
-        pkgs.lib.mkForce ''
-          # Set up applications.
-          echo "setting up /Applications..." >&2
-          rm -rf /Applications/Nix\ Apps
-          mkdir -p /Applications/Nix\ Apps
-          find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-          while read -r src; do
-            app_name=$(basename "$src")
-            echo "copying $src" >&2
-            ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-          done
-        '';
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
@@ -85,12 +68,23 @@
       system = "aarch64-darwin";
       modules = [
         configuration
+        mac-app-util.darwinModules.default
         home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.k = import ./home.nix {inherit vars;};
-        }
+        (
+          {
+            pkgs,
+            config,
+            inputs,
+            ...
+          }: {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.k = import ./home.nix {inherit vars;};
+            home-manager.sharedModules = [
+              mac-app-util.homeManagerModules.default
+            ];
+          }
+        )
       ];
     };
     # Expose the package set, including overlays, for convenience.
