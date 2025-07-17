@@ -43,12 +43,12 @@
       system.defaults = (import ./system.nix {inherit vars;}).defaults;
       security.pam.services.sudo_local.touchIdAuth = true;
 
-      # system.activationScripts.postUserActivation.text = ''
-      #   # Following line should allow us to avoid a logout/login cycle
-      #   /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-      #   launchctl stop com.apple.Dock.agent
-      #   launchctl start com.apple.Dock.agent
-      # '';
+      system.activationScripts.activateSettings.text = ''
+        # Following line should allow us to avoid a logout/login cycle
+        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+        launchctl stop com.apple.Dock.agent
+        launchctl start com.apple.Dock.agent
+      '';
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
