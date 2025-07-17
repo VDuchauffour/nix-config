@@ -10,7 +10,7 @@
     trackpad = {
       Clicking = true;
       ActuationStrength = 0;
-      TrackpadThreeFingerDrag = true;
+      TrackpadThreeFingerDrag = false;
     };
     CustomUserPreferences = {
       # Cursor
@@ -36,12 +36,21 @@
       autohide-time-modifier = 0.1;
       magnification = true;
       mineffect = "scale";
+      largesize = 64;
       minimize-to-application = true;
       orientation = "bottom";
       showhidden = false;
       show-recents = false;
       tilesize = 20;
       mru-spaces = false; # avoid automatically rearrange Spaces based on most recent use
+      persistent-apps = [
+        {
+          app = "/Applications/Alacritty.app";
+        }
+        {
+          app = "/Users/k/Applications/Home Manager Trampolines/LibreWolf.app";
+        }
+      ];
     };
     finder = {
       FXPreferredViewStyle = "clmv";
