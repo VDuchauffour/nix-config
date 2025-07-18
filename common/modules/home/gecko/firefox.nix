@@ -29,6 +29,12 @@
     SearchBar = "unified";
     ShowHomeButton = true;
 
+    profiles.default.search = {
+      force = true;
+      default = "DuckDuckGo";
+      privateDefault = "DuckDuckGo";
+    };
+
     SearchEngines = import ./search-engines.nix;
     ExtensionSettings = import ./addons.nix;
 
