@@ -56,12 +56,16 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = (import ../common/packages {inherit pkgs;}).cli;
+      homebrew = import ./homebrew.nix;
 
       fonts = {
         packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
       };
 
-      homebrew = import ./homebrew.nix;
+      environment.variables = rec {
+        EDITOR = "${vars.editor}";
+        VISUAL = "${vars.editor}";
+      };
     };
   in {
     darwinConfigurations.${vars.computerName} = nix-darwin.lib.darwinSystem {
