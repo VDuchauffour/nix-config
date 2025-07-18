@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   vars,
   ...
 }: {
@@ -45,10 +46,10 @@
     git = import ../common/modules/home/git.nix;
     direnv = import ../common/modules/home/direnv.nix;
     alacritty = import ../common/modules/home/alacritty.nix;
-    firefox = import ../common/modules/home/firefox.nix;
     bottom = import ../common/modules/home/bottom.nix;
     btop = import ../common/modules/home/btop.nix;
-    librewolf = import ../common/modules/home/librewolf.nix;
+    firefox = import ../common/modules/home/gecko/firefox.nix;
+    librewolf = import ../common/modules/home/gecko/librewolf.nix {pkgs = pkgs;};
   };
 
   xdg = {

@@ -80,7 +80,7 @@
           }: {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.k = import ./home.nix {inherit config lib vars;};
+            home-manager.users.k = import ./home.nix {inherit config lib vars pkgs;};
             home-manager.backupFileExtension = "backup";
             home-manager.sharedModules = [
               mac-app-util.homeManagerModules.default
