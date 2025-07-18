@@ -14,6 +14,9 @@
     nixpkgs,
     home-manager,
   }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    packages = import ../common/packages {inherit pkgs;};
     vars = {
       user = "k";
       computerName = "nixos";
@@ -37,10 +40,9 @@
         name = "${vars.user}";
       };
 
-      _packages = import ../common/packages {inherit pkgs;};
       environment.systemPackages =
-        _packages.cli
-        ++ _packages.gui
+        packages.cli
+        ++ packages.gui
         ++ [
           pkgs.playerctl
           pkgs.brightnessctl
@@ -59,6 +61,7 @@
   in {
       homeConfigurations.${vars.computerName} = home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           configuration
           home-manager.nixosModules.home-manager
