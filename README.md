@@ -18,7 +18,7 @@ curl -fsSL https://install.determinate.systems/nix | sh -s -- install
 exec $SHELL
 
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
-cd ~/.nix-config/darwin
+cd ~/.nix-config
 sudo nix run nix-darwin -- switch --flake darwin/#k-MacBook-Pro
 
 exec $SHELL
