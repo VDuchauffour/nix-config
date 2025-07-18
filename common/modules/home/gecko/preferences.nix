@@ -30,7 +30,7 @@
   "browser.tabs.closeWindowWithLastTab" = false;
 
   "browser.contentblocking.category" = "strict";
-  "privacy.resistFingerprinting" = true;
+  "privacy.resistFingerprinting" = false;
   "privacy.clearOnShutdown.cache" = false;
   "privacy.clearOnShutdown.formdata" = false;
   "privacy.clearOnShutdown.downloads" = false;
