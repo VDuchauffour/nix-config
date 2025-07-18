@@ -77,7 +77,7 @@
     firefox = import ../common/modules/home/gecko/firefox.nix;
     librewolf = import ../common/modules/home/gecko/librewolf.nix {pkgs = pkgs;};
 
-    nautilus = import ../common/modules/home/nautilus.nix;
+    # nautilus = import ../common/modules/home/nautilus.nix;
   };
 
   xdg = {
