@@ -16,6 +16,7 @@
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    packages = import ../common/packages {inherit pkgs;};
     vars = {
       user = "k";
       computerName = "nixos";
@@ -31,7 +32,7 @@
       nix.settings.experimental-features = "nix-command flakes";
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 6;
-      nixpkgs.hostPlatform = ${system};
+      nixpkgs.hostPlatform =  "x86_64-linux";
       nixpkgs.config.allowUnfree = true;
 
       users.users.k = {
@@ -39,14 +40,13 @@
         name = "${vars.user}";
       };
 
-      packages = import ../common/packages {inherit pkgs;};
       environment.systemPackages =
         packages.cli
         ++ packages.gui
         ++ [
-          playerctl
-          brightnessctl
-          pavucontrol
+          pkgs.playerctl
+          pkgs.brightnessctl
+          pkgs.pavucontrol
         ];
 
       fonts = {
@@ -60,8 +60,8 @@
     };
   in {
       homeConfigurations.${vars.computerName} = home-manager.lib.homeManagerConfiguration {
-        system = ${system};
-        pkgs = nixpkgs.legacyPackages.${system};
+        system = "x86_64-linux";
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           configuration
           home-manager.nixosModules.home-manager
