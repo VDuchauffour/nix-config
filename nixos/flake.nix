@@ -64,21 +64,21 @@
         # pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           configuration
-          home-manager.nixosModules.home-manager
-          (
-            {
-              lib,
-              pkgs,
-              config,
-              inputs,
-              ...
-            }: {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.k = import ./home.nix {inherit config lib vars pkgs;};
-              home-manager.backupFileExtension = "backup";
-            }
-          )
+          # home-manager.nixosModules.home-manager
+          # (
+          #   {
+          #     lib,
+          #     pkgs,
+          #     config,
+          #     inputs,
+          #     ...
+          #   }: {
+          #     home-manager.useGlobalPkgs = true;
+          #     home-manager.useUserPackages = true;
+          #     home-manager.users.k = import ./home.nix {inherit config lib vars pkgs;};
+          #     home-manager.backupFileExtension = "backup";
+          #   }
+          # )
         ];
       };
 
