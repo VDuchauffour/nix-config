@@ -1,8 +1,16 @@
 {
+  enable = true;
+  onActivation = {
+    autoUpdate = true;
+    upgrade = false;
+    cleanup = "uninstall";
+  };
+  brewPrefix = "/opt/homebrew/bin";
+  caskArgs = {
+    no_quarantine = true;
+  };
   casks = [
     "iina"
-    "firefox"
-    "librewolf"
     "chromium"
     "the-unarchiver"
     "openmtp"
@@ -11,19 +19,17 @@
     "scroll-reverser"
     "visual-studio-code"
     "cursor"
-    "neovide"
-    "logitech-g-hub"
-    "logi-options-plus"
+    "logi-options+"
     "stats"
     "MonitorControl"
-    "wireshark"
-    "wireguard"
-    "docker"
-    "font-hack-nerd-font"
   ];
   brews = [
     "mactop"
+    "colima"
+    "docker"
+    "docker-compose"
+    "alejandra"
   ];
-  taps = [ ];
-  masApps = [ ];
+  taps = [];
+  masApps = {};
 }

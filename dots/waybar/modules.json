@@ -1,0 +1,118 @@
+{
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/window": {
+    "separate-outputs": true
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "network#speed": {
+    "format": "NET {bandwidthDownBits} ",
+    "interval": 5,
+    "tooltip-format": "{ipaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-disconnected": "Not Connected to any type of Network",
+    "tooltip": true,
+    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu"
+  },
+  "cpu": {
+    "on-click": "btop -p 2",
+    "tooltip": false,
+    "format": "CPU {1:}%"
+  },
+  "memory": {
+    "format": "MEM {:2}%"
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "󰖁 {icon} {format_source}",
+    "format-muted": "󰖁 {volume}%",
+    "format-source": "{volume}%",
+    "format-source-muted": " ",
+    "format-icons": {
+      "headphone": "",
+      "phone": "",
+      "car": "",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "killall pavucontrol"
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}% 🗲",
+    "tooltip-format": "{timeTo} | {power}w",
+    "format-icons": [
+      "󰂃",
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "states": {
+      "critical": 10,
+      "warning": 25,
+      "low": 50,
+      "full": 100
+    }
+  },
+  "clock": {
+    "on-click": "",
+    "rotate": 0,
+    "timezone": "Europe/Paris",
+    "format": "{:%a %d %b %H:%M}",
+    "format-alt": "{  %d·%m·%y}",
+    "tooltip": true,
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#ff6699'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+        "today": "<span color='#ffcc66'><b>{}</b></span>"
+      }
+    }
+  },
+  "custom/notif": {
+    "format": "    ",
+    "on-click": "dunstctl history-pop",
+    "on-click-right": "dunstctl close-all",
+    "tooltip": false
+  },
+  "custom/exit": {
+    "format": "⏻",
+    "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh",
+    "tooltip": false
+  }
+}

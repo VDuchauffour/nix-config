@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   system.gc = {
     automatic = true;
     date = "daily";

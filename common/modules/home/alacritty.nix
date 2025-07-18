@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   enable = true;
   settings = {
     general = {
@@ -33,26 +33,25 @@
         y = 0;
       };
       normal = {
-        family = "MesloLGS NF";
+        family = "MesloLGS Nerd Font";
         style = "Regular";
       };
       bold = {
-        family = "MesloLGS NF";
+        family = "MesloLGS Nerd Font";
         style = "Bold";
       };
       italic = {
-        family = "MesloLGS NF";
+        family = "MesloLGS Nerd Font";
         style = "Italic";
       };
       bold_italic = {
-        family = "MesloLGS NF";
+        family = "MesloLGS Nerd Font";
         style = "Bold Italic";
       };
     };
 
     cursor = {
       style = "Block";
-      blinking = "Always";
     };
 
     env = {
