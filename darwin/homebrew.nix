@@ -24,6 +24,7 @@
     "MonitorControl"
     "protonvpn"
     "qbittorrent"
+    "utm"
   ];
   brews = [
     "mactop"
