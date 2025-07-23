@@ -51,6 +51,7 @@
         #   app = "/Users/k/Applications/Home Manager Trampolines/LibreWolf.app";
         # }
       ];
+      persistent-others = [];
     };
     finder = {
       FXPreferredViewStyle = "clmv";
