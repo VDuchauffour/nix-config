@@ -22,6 +22,8 @@
     "logi-options+"
     "stats"
     "MonitorControl"
+    "protonvpn"
+    "qbittorrent"
   ];
   brews = [
     "mactop"
