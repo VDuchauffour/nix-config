@@ -7,12 +7,11 @@
 
   oh-my-zsh = {
     enable = true;
-    plugins = ["git" "docker"];
+    plugins = ["git" "docker" "direnv" "uv" "poetry"];
     theme = "robbyrussell";
   };
 
   initContent = ''
-    eval "$(direnv hook zsh)"
     eval "$(starship init zsh)"
 
     ksh() { kubectl exec --stdin --tty "$1" -- /bin/bash; }
