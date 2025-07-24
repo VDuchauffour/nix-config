@@ -31,6 +31,7 @@
     "colima"
     "docker"
     "docker-compose"
+    "docker-buildx"
     "alejandra"
   ];
   taps = [];
