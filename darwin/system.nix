@@ -6,6 +6,7 @@
       AppleShowAllExtensions = true;
       InitialKeyRepeat = 12;
       KeyRepeat = 3;
+      "com.apple.trackpad.scaling" = 2.0;
     };
     trackpad = {
       Clicking = true;
