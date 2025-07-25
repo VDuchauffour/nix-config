@@ -32,6 +32,8 @@
     "docker"
     "docker-compose"
     "docker-buildx"
+    "docker-completion"
+    "docker-clean"
     "alejandra"
   ];
   taps = [];
