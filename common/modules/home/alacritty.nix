@@ -57,5 +57,20 @@
     env = {
       TERM = "alacritty";
     };
+
+    keyboard.bindings = [
+      {
+        key = "Left";
+        mods = "Alt";
+        mode = "AppCursor";
+        chars = "\\u001BB";
+      }
+      {
+        key = "Right";
+        mods = "Alt";
+        mode = "AppCursor";
+        chars = "\\u001BF";
+      }
+    ];
   };
 }

@@ -4,7 +4,9 @@
   pkgs,
   vars,
   ...
-}: {
+}: let
+  zsh_config = import ../common/modules/home/zsh.nix;
+in {
   programs.home-manager.enable = true;
 
   home.username = "${vars.user}";
@@ -36,11 +38,14 @@
 
   programs = {
     zsh =
-      import ../common/modules/home/zsh.nix
+      zsh_config
       // {
-        initContent = ''
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        '';
+        initContent = lib.concatLines [
+          zsh_config.initContent
+          ''
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+          ''
+        ];
       };
     starship = import ../common/modules/home/starship.nix;
     git = import ../common/modules/home/git.nix;
