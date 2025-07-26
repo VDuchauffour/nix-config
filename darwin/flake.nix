@@ -24,6 +24,7 @@
       computerName = "k-MacBook-Pro";
       terminal = "alacritty";
       editor = "nvim";
+      defaultBrowser = "librewolf";
     };
     configuration = {
       lib,
@@ -53,9 +54,13 @@
         launchctl start com.apple.Dock.agent
       '';
 
+      system.activationScripts.defaultBrowser.text = ''
+        defaultbrowser "${vars.defaultBrowser}"
+      '';
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = (import ../common/packages {inherit pkgs;}).cli;
+      environment.systemPackages = (import ../common/packages {inherit pkgs;}).cli ++ [pkgs.defaultbrowser];
       homebrew = import ./homebrew.nix;
 
       fonts = {
