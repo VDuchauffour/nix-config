@@ -14,6 +14,14 @@
       TrackpadThreeFingerDrag = false;
     };
     CustomUserPreferences = {
+      "com.apple.finder" = {
+        ShowExternalHardDrivesOnDesktop = true;
+        ShowHardDrivesOnDesktop = true;
+        ShowMountedServersOnDesktop = true;
+        ShowRemovableMediaOnDesktop = true;
+        _FXSortFoldersFirst = true;
+        FXDefaultSearchScope = "SCcf"; # When performing a search, search the current folder by default
+      };
       # Cursor
       "com.todesktop.230313mzl4w4u92" = {
         "ApplePressAndHoldEnabled" = false;
