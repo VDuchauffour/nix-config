@@ -1,5 +1,10 @@
 {
   enable = true;
+  global = {
+    autoUpdate = true;
+    brewfile = false;
+    lockfiles = false;
+  };
   onActivation = {
     autoUpdate = true;
     upgrade = false;
