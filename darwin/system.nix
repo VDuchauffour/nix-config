@@ -15,10 +15,10 @@
     };
     CustomUserPreferences = {
       "com.apple.finder" = {
-        ShowExternalHardDrivesOnDesktop = true;
-        ShowHardDrivesOnDesktop = true;
-        ShowMountedServersOnDesktop = true;
-        ShowRemovableMediaOnDesktop = true;
+        ShowExternalHardDrivesOnDesktop = false;
+        ShowHardDrivesOnDesktop = false;
+        ShowMountedServersOnDesktop = false;
+        ShowRemovableMediaOnDesktop = false;
         _FXSortFoldersFirst = true;
         FXDefaultSearchScope = "SCcf"; # When performing a search, search the current folder by default
       };
