@@ -12,7 +12,6 @@
   casks = [
     "iina"
     "chromium"
-    "the-unarchiver"
     "openmtp"
     "alacritty"
     "bitwarden"
@@ -25,6 +24,9 @@
     "protonvpn"
     "qbittorrent"
     "utm"
+    "macfuse"
+    "fuse-t"
+    "libreoffice"
   ];
   brews = [
     "mactop"
@@ -35,6 +37,9 @@
     "docker-completion"
     "docker-clean"
     "alejandra"
+    "pkgconf"
+    # "ext4fuse"
+    # "libfuse"
   ];
   taps = [];
   masApps = {};
