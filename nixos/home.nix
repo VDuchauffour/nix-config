@@ -17,6 +17,7 @@
   programs.firefox = import ../modules/home/firefox.nix {inherit pkgs;};
   programs.librewolf = import ../modules/home/librewolf.nix {inherit pkgs;};
   programs.nautilus-open-any-terminal = import ../modules/home/nautilus.nix {inherit pkgs;};
+  programs.k9s = import ../modules/home/k9s.nix;
 
   home.sessionVariables = {
     EDITOR = "nvim";
