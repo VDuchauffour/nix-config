@@ -22,7 +22,7 @@ exec $SHELL
 
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
 cd ~/.nix-config
-sudo nix run nix-darwin -- switch --flake darwin/#k-MacBook-Pro
+sudo nix run nix-darwin -- switch --flake ./machines/darwin/tyrell/#k-MacBook-Pro
 
 exec $SHELL
 ```

@@ -16,7 +16,7 @@
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    packages = import ../common/packages {inherit pkgs;};
+    packages = import ../../../common/packages {inherit pkgs;};
     vars = {
       user = "k";
       computerName = "nixos";
@@ -63,7 +63,13 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.k = {config, lib, pkgs, ...}: import ./home.nix {inherit config lib pkgs vars;};
+          home-manager.users.k = {
+            config,
+            lib,
+            pkgs,
+            ...
+          }:
+            import ./home.nix {inherit config lib pkgs vars;};
           home-manager.backupFileExtension = "backup";
         }
       ];

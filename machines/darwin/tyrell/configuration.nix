@@ -43,7 +43,7 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = (import ../common/packages {inherit pkgs;}).cli ++ [pkgs.defaultbrowser];
+  environment.systemPackages = (import ../../../common/packages {inherit pkgs;}).cli ++ [pkgs.defaultbrowser];
   homebrew = import ./homebrew.nix;
 
   fonts = {
