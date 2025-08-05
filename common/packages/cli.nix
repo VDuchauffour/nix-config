@@ -14,6 +14,7 @@ with pkgs; [
   aria2
   git
   delta
+  gh
   bat
   dust
   duf
