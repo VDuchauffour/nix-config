@@ -1,4 +1,4 @@
-{
+{vars, ...}: {
   enable = true;
   history.size = 10000;
   enableCompletion = true;
@@ -42,5 +42,15 @@
     getmod = "stat --format '%a'";
 
     matrix = "cmatrix -b -u 4 -a";
+  };
+
+  sessionVariables = let
+    XDG_BIN_HOME = "$HOME/.local/bin";
+  in {
+    EDITOR = "${vars.editor}";
+    VISUAL = "${vars.editor}";
+
+    XDG_BIN_HOME = XDG_BIN_HOME;
+    PATH = "${XDG_BIN_HOME}:$PATH";
   };
 }

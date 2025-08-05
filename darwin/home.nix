@@ -5,7 +5,7 @@
   vars,
   ...
 }: let
-  zsh_config = import ../common/modules/home/zsh.nix;
+  zsh_config = import ../common/modules/home/zsh.nix {inherit vars;};
 in {
   programs.home-manager.enable = true;
 
@@ -22,10 +22,6 @@ in {
     };
     ".config/lazygit" = {
       source = ../dots/lazygit;
-    };
-    ".config/k9s" = {
-      source = ../dots/k9s;
-      recursive = true;
     };
     ".config/ranger" = {
       source = ../dots/ranger;
@@ -53,6 +49,7 @@ in {
     alacritty = import ../common/modules/home/alacritty.nix;
     bottom = import ../common/modules/home/bottom.nix;
     btop = import ../common/modules/home/btop.nix;
+    k9s = import ../common/modules/home/k9s.nix;
     firefox = import ../common/modules/home/gecko/firefox.nix;
     librewolf = import ../common/modules/home/gecko/librewolf.nix {pkgs = pkgs;};
   };
