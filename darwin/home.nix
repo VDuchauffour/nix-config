@@ -5,7 +5,7 @@
   vars,
   ...
 }: let
-  zsh_config = import ../common/modules/home/zsh.nix;
+  zsh_config = import ../common/modules/home/zsh.nix {inherit vars;};
 in {
   programs.home-manager.enable = true;
 

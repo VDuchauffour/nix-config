@@ -1,5 +1,10 @@
 {
   enable = true;
+  global = {
+    autoUpdate = true;
+    brewfile = false;
+    lockfiles = false;
+  };
   onActivation = {
     autoUpdate = true;
     upgrade = false;
@@ -12,7 +17,6 @@
   casks = [
     "iina"
     "chromium"
-    "the-unarchiver"
     "openmtp"
     "alacritty"
     "bitwarden"
@@ -25,6 +29,9 @@
     "protonvpn"
     "qbittorrent"
     "utm"
+    "macfuse"
+    "fuse-t"
+    "libreoffice"
   ];
   brews = [
     "mactop"
@@ -35,6 +42,7 @@
     "docker-completion"
     "docker-clean"
     "alejandra"
+    "pkgconf"
   ];
   taps = [];
   masApps = {};
