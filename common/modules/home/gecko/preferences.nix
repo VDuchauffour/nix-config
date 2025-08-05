@@ -13,7 +13,7 @@
   "signon.rememberSignons" = false;
 
   "browser.topsites.contile.enabled" = false;
-  "browser.formfill.enable" = false;
+  "browser.formfill.enable" = true;
   "browser.search.suggest.enabled" = false;
   "browser.search.suggest.enabled.private" = false;
   "browser.urlbar.suggest.searches" = false;
