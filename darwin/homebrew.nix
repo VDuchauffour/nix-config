@@ -43,8 +43,6 @@
     "docker-clean"
     "alejandra"
     "pkgconf"
-    # "ext4fuse"
-    # "libfuse"
   ];
   taps = [];
   masApps = {};

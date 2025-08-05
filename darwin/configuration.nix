@@ -27,8 +27,18 @@
     launchctl start com.apple.Dock.agent
   '';
 
+  # TODO fix this
   system.activationScripts.defaultBrowser.text = ''
     defaultbrowser "${vars.defaultBrowser}"
+  '';
+
+  # TODO doesnt works either
+  system.activationScripts.setExt4Fuse.text = ''
+    echo "Setting up ext4fuse"
+    if [ ! -f ~/.local/bin/ext4fuse ]; then
+      git clone https://github.com/gerard/ext4fuse.git && cd "$(basename "$_" .git)"
+      make
+    fi
   '';
 
   # List packages installed in system profile. To search by name, run:
