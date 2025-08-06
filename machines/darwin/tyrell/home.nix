@@ -10,7 +10,10 @@ in {
   programs.home-manager.enable = true;
 
   home.username = "${vars.user}";
-  home.homeDirectory = "/Users/${vars.user}";
+  home.homeDirectory =
+    if pkgs.stdenv.isDarwin
+    then "/Users/${vars.user}"
+    else "/home/${vars.user}";
   home.stateVersion = "25.05";
 
   home.packages = [];
