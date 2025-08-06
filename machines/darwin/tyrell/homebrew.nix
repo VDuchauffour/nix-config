@@ -7,8 +7,8 @@
   };
   onActivation = {
     autoUpdate = true;
-    upgrade = false;
-    cleanup = "uninstall";
+    upgrade = true;
+    cleanup = "zap";
   };
   brewPrefix = "/opt/homebrew/bin";
   caskArgs = {
