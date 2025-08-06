@@ -2,7 +2,7 @@
   enable = true;
   enableZshIntegration = true;
   settings = {
-    add_newline = false;
+    add_newline = true;
     # format = "$directory$git_branch$git_status$git_metrics$character";
     directory.style = "bold blue";
     git_branch = {
