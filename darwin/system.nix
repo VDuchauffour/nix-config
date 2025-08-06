@@ -62,6 +62,12 @@
       ];
       persistent-others = [];
     };
+    WindowManager = {
+      EnableStandardClickToShowDesktop = false;
+    };
+    controlcenter = {
+      BatteryShowPercentage = false;
+    };
     finder = {
       FXPreferredViewStyle = "clmv";
       ShowPathbar = true;
