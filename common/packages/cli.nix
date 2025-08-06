@@ -28,6 +28,8 @@ with pkgs; [
   jless
   imagemagick
   tldr
+  tree-sitter
+  nodejs_24
 
   # tui tools
   neovim
