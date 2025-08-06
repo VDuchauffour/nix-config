@@ -34,7 +34,7 @@
     "libreoffice"
     "slack"
     "aws-vpn-client"
-    "nikitabobko/tap/aerospace"
+    "aerospace"
   ];
   brews = [
     "mactop"
@@ -47,6 +47,8 @@
     "alejandra"
     "pkgconf"
   ];
-  taps = [];
+  taps = [
+    "nikitabobko/tap"
+  ];
   masApps = {};
 }
