@@ -32,6 +32,9 @@
     "macfuse"
     "fuse-t"
     "libreoffice"
+    "slack"
+    "aws-vpn-client"
+    "nikitabobko/tap/aerospace"
   ];
   brews = [
     "mactop"
