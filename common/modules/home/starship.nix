@@ -3,14 +3,19 @@
   enableZshIntegration = true;
   settings = {
     add_newline = true;
-    # format = "$directory$git_branch$git_status$git_metrics$character";
     directory.style = "bold blue";
     git_branch = {
       format = "[$branch(:$remote_branch)]($style) ";
       style = "green";
     };
-    git_metrics = {
-      format = "(+$added($added_style) )(-$deleted($deleted_style) )";
+    git_status = {
+      # format = "(\[$all_status[$ahead_behind]\]($style) )";
+      modified = "!\($count\)";
+      staged = "+\($count\)";
+      untracked = "?\($count\)";
+      ahead = "⇡\($count\)";
+      diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
+      behind = "⇣\($count\)";
     };
     cmd_duration = {
       format = "[$duration]($style) ";
