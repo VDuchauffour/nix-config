@@ -30,6 +30,10 @@ in {
     ".tmux.conf" = {
       source = ../dots/tmux/.tmux.conf;
     };
+
+    ".aerospace.toml" = {
+      source = ../dots/aerospace/.aerospace.toml;
+    };
   };
 
   programs = {
