@@ -56,9 +56,6 @@
         {
           app = "/Applications/Alacritty.app";
         }
-        # {
-        #   app = "/Users/k/Applications/Home Manager Trampolines/LibreWolf.app";
-        # }
       ];
       persistent-others = [];
     };
