@@ -14,9 +14,9 @@
 
   "browser.topsites.contile.enabled" = false;
   "browser.formfill.enable" = true;
-  "browser.search.suggest.enabled" = false;
+  "browser.search.suggest.enabled" = true;
   "browser.search.suggest.enabled.private" = false;
-  "browser.urlbar.suggest.searches" = false;
+  "browser.urlbar.suggest.searches" = true;
   "browser.urlbar.showSearchSuggestionsFirst" = false;
   "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
   "browser.newtabpage.activity-stream.feeds.snippets" = false;
