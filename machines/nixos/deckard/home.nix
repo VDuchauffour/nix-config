@@ -62,22 +62,21 @@
 
   programs = {
     zsh =
-      import ../../../common/modules/home/zsh.nix
+      import ../../../nix/home/zsh.nix
       // {
         initContent = ''
           eval "$(/opt/homebrew/bin/brew shellenv)"
         '';
       };
-    starship = import ../../../common/modules/home/starship.nix;
-    git = import ../../../common/modules/home/git.nix;
-    direnv = import ../../../common/modules/home/direnv.nix;
-    alacritty = import ../../../common/modules/home/alacritty.nix;
-    bottom = import ../../../common/modules/home/bottom.nix;
-    btop = import ../../../common/modules/home/btop.nix;
-    firefox = import ../../../common/modules/home/gecko/firefox.nix;
-    librewolf = import ../../../common/modules/home/gecko/librewolf.nix {pkgs = pkgs;};
-
-    # nautilus = import ../../../common/modules/home/nautilus.nix;
+    starship = import ../../../nix/home/starship.nix;
+    git = import ../../../nix/home/git.nix;
+    direnv = import ../../../nix/home/direnv.nix;
+    alacritty = import ../../../nix/home/alacritty.nix;
+    bottom = import ../../../nix/home/bottom.nix;
+    btop = import ../../../nix/home/btop.nix;
+    firefox = import ../../../nix/home/gecko/firefox.nix;
+    librewolf = import ../../../nix/home/gecko/librewolf.nix {pkgs = pkgs;};
+    # nautilus = import ../../../nix/home/nautilus.nix;
   };
 
   xdg = {

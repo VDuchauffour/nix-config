@@ -5,7 +5,7 @@
   vars,
   ...
 }: let
-  zsh_config = import ../../../common/modules/home/zsh.nix {inherit vars;};
+  zsh_config = import ../../../nix/home/zsh.nix {inherit vars;};
 in {
   programs.home-manager.enable = true;
 
@@ -50,15 +50,15 @@ in {
           ''
         ];
       };
-    starship = import ../../../common/modules/home/starship.nix;
-    git = import ../../../common/modules/home/git.nix;
-    direnv = import ../../../common/modules/home/direnv.nix;
-    alacritty = import ../../../common/modules/home/alacritty.nix;
-    bottom = import ../../../common/modules/home/bottom.nix;
-    btop = import ../../../common/modules/home/btop.nix;
-    k9s = import ../../../common/modules/home/k9s.nix;
-    firefox = import ../../../common/modules/home/gecko/firefox.nix;
-    librewolf = import ../../../common/modules/home/gecko/librewolf.nix {pkgs = pkgs;};
+    starship = import ../../../nix/home/starship.nix;
+    git = import ../../../nix/home/git.nix;
+    direnv = import ../../../nix/home/direnv.nix;
+    alacritty = import ../../../nix/home/alacritty.nix;
+    bottom = import ../../../nix/home/bottom.nix;
+    btop = import ../../../nix/home/btop.nix;
+    k9s = import ../../../nix/home/k9s.nix;
+    firefox = import ../../../nix/home/gecko/firefox.nix;
+    librewolf = import ../../../nix/home/gecko/librewolf.nix {pkgs = pkgs;};
   };
 
   xdg = {
