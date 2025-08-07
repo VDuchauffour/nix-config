@@ -61,12 +61,12 @@
   };
 
   imports = [
-    ../../../nix/home/default.nix
+    ../../../users/${vars.user}/home/default.nix
   ];
 
   programs = {
     zsh =
-      (import ../../../nix/home/zsh/default.nix {inherit vars;}).programs.zsh
+      (import ../../../users/${vars.user}/home/zsh/default.nix {inherit vars;}).programs.zsh
       // {
         initContent =
           zsh_init_content
@@ -74,7 +74,7 @@
             eval "$(/opt/homebrew/bin/brew shellenv)"
           '';
       };
-    nautilus = import ../../../nix/home/nautilus.nix;
+    nautilus = import ../../../users/${vars.user}/home/nautilus.nix;
   };
 
   xdg = {
