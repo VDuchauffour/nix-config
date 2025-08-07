@@ -10,6 +10,9 @@
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
+  nix.optimise = {
+    automatic = true;
+  };
 
   users.users.k = {
     home = "/Users/${vars.user}";
