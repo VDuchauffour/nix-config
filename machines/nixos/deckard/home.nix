@@ -15,47 +15,47 @@
 
   home.file = {
     ".config/nvim" = {
-      source = ../../../dots/astronvim;
+      source = ../../../users/${vars.user}/dots/astronvim;
       recursive = true;
     };
     ".config/lazygit" = {
-      source = ../../../dots/lazygit;
+      source = ../../../users/${vars.user}/dots/lazygit;
     };
     ".config/k9s" = {
-      source = ../../../dots/k9s;
+      source = ../../../users/${vars.user}/dots/k9s;
       recursive = true;
     };
     ".config/ranger" = {
-      source = ../../../dots/ranger;
+      source = ../../../users/${vars.user}/dots/ranger;
       recursive = true;
     };
     ".tmux.conf" = {
-      source = ../../../dots/tmux/.tmux.conf;
+      source = ../../../users/${vars.user}/dots/tmux/.tmux.conf;
     };
 
     ".config/dunst" = {
-      source = ../../../dots/dunst/dunstrc;
+      source = ../../../users/${vars.user}/dots/dunst/dunstrc;
     };
     ".config/gsimplecal" = {
-      source = ../../../dots/gsimplecal/config;
+      source = ../../../users/${vars.user}/dots/gsimplecal/config;
     };
     ".config/hypr" = {
-      source = ../../../dots/hypr;
+      source = ../../../users/${vars.user}/dots/hypr;
       recursive = true;
     };
     ".config/libinput-gestures.conf" = {
-      source = ../../../dots/libinput-gestures/libinput-gestures.conf;
+      source = ../../../users/${vars.user}/dots/libinput-gestures/libinput-gestures.conf;
     };
     ".config/mpv" = {
-      source = ../../../dots/mpv;
+      source = ../../../users/${vars.user}/dots/mpv;
       recursive = true;
     };
     ".config/rofi" = {
-      source = ../../../dots/rofi;
+      source = ../../../users/${vars.user}/dots/rofi;
       recursive = true;
     };
     ".config/waybar" = {
-      source = ../../../dots/waybar;
+      source = ../../../users/${vars.user}/dots/waybar;
       recursive = true;
     };
   };

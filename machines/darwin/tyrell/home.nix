@@ -20,22 +20,22 @@ in {
 
   home.file = {
     ".config/nvim" = {
-      source = ../../../dots/astronvim;
+      source = ../../../users/${vars.user}/dots/astronvim;
       recursive = true;
     };
     ".config/lazygit" = {
-      source = ../../../dots/lazygit;
+      source = ../../../users/${vars.user}/dots/lazygit;
     };
     ".config/ranger" = {
-      source = ../../../dots/ranger;
+      source = ../../../users/${vars.user}/dots/ranger;
       recursive = true;
     };
     ".tmux.conf" = {
-      source = ../../../dots/tmux/.tmux.conf;
+      source = ../../../users/${vars.user}/dots/tmux/.tmux.conf;
     };
 
     ".aerospace.toml" = {
-      source = ../../../dots/aerospace/.aerospace.toml;
+      source = ../../../users/${vars.user}/dots/aerospace/.aerospace.toml;
     };
   };
 
