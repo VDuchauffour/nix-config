@@ -5,7 +5,7 @@
   vars,
   ...
 }: let
-  zsh_init_content = (import ../../../users/${vars.user}/programs/zsh/init-content.nix).initContent;
+  zsh_init_content = (import ./programs/zsh/init-content.nix).initContent;
 in {
   programs.home-manager.enable = true;
 
@@ -20,31 +20,31 @@ in {
 
   home.file = {
     ".config/nvim" = {
-      source = ../../../users/${vars.user}/dots/astronvim;
+      source = ./dots/astronvim;
       recursive = true;
     };
     ".config/lazygit" = {
-      source = ../../../users/${vars.user}/dots/lazygit;
+      source = ./dots/lazygit;
     };
     ".config/ranger" = {
-      source = ../../../users/${vars.user}/dots/ranger;
+      source = ./dots/ranger;
       recursive = true;
     };
     ".tmux.conf" = {
-      source = ../../../users/${vars.user}/dots/tmux/.tmux.conf;
+      source = ./dots/tmux/.tmux.conf;
     };
 
     ".aerospace.toml" = {
-      source = ../../../users/${vars.user}/dots/aerospace/.aerospace.toml;
+      source = ./dots/aerospace/.aerospace.toml;
     };
   };
 
   imports = [
-    ../../../users/${vars.user}/programs/default.nix
+    ./programs/default.nix
   ];
 
   programs.zsh =
-    (import ../../../users/${vars.user}/programs/zsh/default.nix {inherit vars;}).programs.zsh
+    (import ./programs/zsh/default.nix {inherit vars;}).programs.zsh
     // {
       initContent =
         zsh_init_content
