@@ -16,7 +16,7 @@
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    packages = import ../../../common/packages {inherit pkgs;};
+    packages = import ../../../nix/packages {inherit pkgs;};
     vars = {
       user = "k";
       computerName = "nixos";
