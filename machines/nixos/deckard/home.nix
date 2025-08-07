@@ -4,7 +4,9 @@
   pkgs,
   vars,
   ...
-}: {
+}: let
+  zsh_init_content = (import ../../../users/${vars.user}/programs/zsh/init-content.nix).initContent;
+in {
   programs.home-manager.enable = true;
 
   home.username = "${vars.user}";
@@ -61,12 +63,12 @@
   };
 
   imports = [
-    ../../../users/${vars.user}/home/default.nix
+    ../../../users/${vars.user}/programs/default.nix
   ];
 
   programs = {
     zsh =
-      (import ../../../users/${vars.user}/home/zsh/default.nix {inherit vars;}).programs.zsh
+      (import ../../../users/${vars.user}/programs/zsh/default.nix {inherit vars;}).programs.zsh
       // {
         initContent =
           zsh_init_content
@@ -74,7 +76,7 @@
             eval "$(/opt/homebrew/bin/brew shellenv)"
           '';
       };
-    nautilus = import ../../../users/${vars.user}/home/nautilus.nix;
+    nautilus = import ../../../users/${vars.user}/programs/nautilus.nix;
   };
 
   xdg = {
