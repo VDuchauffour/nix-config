@@ -65,6 +65,15 @@
   ];
 
   programs = {
+    zsh =
+      (import ../../../nix/home/zsh/default.nix {inherit vars;}).programs.zsh
+      // {
+        initContent =
+          zsh_init_content
+          + ''
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+          '';
+      };
     nautilus = import ../../../nix/home/nautilus.nix;
   };
 
