@@ -49,7 +49,5 @@
   environment.systemPackages = import ../../../nix/packages {inherit pkgs;} ++ [pkgs.defaultbrowser];
   homebrew = import ./homebrew.nix;
 
-  fonts = {
-    packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-  };
+  fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
