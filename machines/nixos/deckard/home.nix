@@ -60,23 +60,12 @@
     };
   };
 
+  imports = [
+    ../../../nix/home/default.nix
+  ];
+
   programs = {
-    zsh =
-      import ../../../nix/home/zsh.nix
-      // {
-        initContent = ''
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        '';
-      };
-    starship = import ../../../nix/home/starship.nix;
-    git = import ../../../nix/home/git.nix;
-    direnv = import ../../../nix/home/direnv.nix;
-    alacritty = import ../../../nix/home/alacritty.nix;
-    bottom = import ../../../nix/home/bottom.nix;
-    btop = import ../../../nix/home/btop.nix;
-    firefox = import ../../../nix/home/gecko/firefox.nix;
-    librewolf = import ../../../nix/home/gecko/librewolf.nix {pkgs = pkgs;};
-    # nautilus = import ../../../nix/home/nautilus.nix;
+    nautilus = import ../../../nix/home/nautilus.nix;
   };
 
   xdg = {

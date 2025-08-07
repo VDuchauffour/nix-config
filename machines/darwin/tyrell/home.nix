@@ -5,7 +5,7 @@
   vars,
   ...
 }: let
-  zsh_config = import ../../../nix/home/zsh.nix {inherit vars;};
+  zsh_init_content = (import ../../../nix/home/zsh/init-content.nix).initContent;
 in {
   programs.home-manager.enable = true;
 
@@ -39,27 +39,19 @@ in {
     };
   };
 
-  programs = {
-    zsh =
-      zsh_config
-      // {
-        initContent = lib.concatLines [
-          zsh_config.initContent
-          ''
-            eval "$(/opt/homebrew/bin/brew shellenv)"
-          ''
-        ];
-      };
-    starship = import ../../../nix/home/starship.nix;
-    git = import ../../../nix/home/git.nix;
-    direnv = import ../../../nix/home/direnv.nix;
-    alacritty = import ../../../nix/home/alacritty.nix;
-    bottom = import ../../../nix/home/bottom.nix;
-    btop = import ../../../nix/home/btop.nix;
-    k9s = import ../../../nix/home/k9s.nix;
-    firefox = import ../../../nix/home/gecko/firefox.nix;
-    librewolf = import ../../../nix/home/gecko/librewolf.nix {pkgs = pkgs;};
-  };
+  imports = [
+    ../../../nix/home/default.nix
+  ];
+
+  programs.zsh =
+    (import ../../../nix/home/zsh/default.nix {inherit vars;}).programs.zsh
+    // {
+      initContent =
+        zsh_init_content
+        + ''
+          eval "$(/opt/homebrew/bin/brew shellenv)"
+        '';
+    };
 
   xdg = {
     enable = true;

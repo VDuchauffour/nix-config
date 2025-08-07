@@ -1,4 +1,6 @@
 {
-  enable = true;
-  terminal = "alacritty";
+  programs.nautilus = {
+    enable = true;
+    terminal = "alacritty";
+  };
 }
