@@ -24,6 +24,7 @@
     "visual-studio-code"
     "cursor"
     "logi-options+"
+    "logitech-g-hub"
     "stats"
     "MonitorControl"
     "protonvpn"
