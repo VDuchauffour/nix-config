@@ -64,6 +64,8 @@
     };
     controlcenter = {
       BatteryShowPercentage = false;
+      NowPlaying = false;
+      Sound = true;
     };
     finder = {
       FXPreferredViewStyle = "clmv";
