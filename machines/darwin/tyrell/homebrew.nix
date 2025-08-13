@@ -36,6 +36,7 @@
     "slack"
     "aws-vpn-client"
     "aerospace"
+    "dbeaver-community"
   ];
   brews = [
     "mactop"

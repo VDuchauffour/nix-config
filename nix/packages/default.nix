@@ -31,6 +31,7 @@ with pkgs; [
   tree-sitter
   nodejs_24
   hadolint
+  go
 
   # tui tools
   neovim
