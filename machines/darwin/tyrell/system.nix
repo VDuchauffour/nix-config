@@ -7,6 +7,8 @@
       InitialKeyRepeat = 12;
       KeyRepeat = 3;
       "com.apple.trackpad.scaling" = 2.0;
+      AppleEnableMouseSwipeNavigateWithScrolls = true;
+      AppleEnableSwipeNavigateWithScrolls = true;
     };
     trackpad = {
       Clicking = true;
