@@ -28,6 +28,7 @@
     "stats"
     "MonitorControl"
     "protonvpn"
+    "rawtherapee"
     "qbittorrent"
     "utm"
     "macfuse"
