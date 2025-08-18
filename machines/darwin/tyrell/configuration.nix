@@ -35,18 +35,9 @@
     defaultbrowser "${vars.defaultBrowser}"
   '';
 
-  # TODO doesnt works either
-  system.activationScripts.setExt4Fuse.text = ''
-    echo "Setting up ext4fuse"
-    if [ ! -f ~/.local/bin/ext4fuse ]; then
-      git clone https://github.com/gerard/ext4fuse.git && cd "$(basename "$_" .git)"
-      make
-    fi
-  '';
-
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = import ../../../nix/packages {inherit pkgs;} ++ [pkgs.defaultbrowser];
+  environment.systemPackages = import ../../../nix/packages {inherit pkgs;} ++ [pkgs.defaultbrowser pkgs.ext4fuse];
   homebrew = import ./homebrew.nix;
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
