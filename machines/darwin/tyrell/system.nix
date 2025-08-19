@@ -54,6 +54,7 @@
       show-recents = false;
       tilesize = 20;
       mru-spaces = false; # avoid automatically rearrange Spaces based on most recent use
+      expose-animation-duration = 0.0;
       persistent-apps = [
         {
           app = "/Applications/Alacritty.app";
