@@ -37,7 +37,7 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = import ../../../nix/packages {inherit pkgs;} ++ [pkgs.defaultbrowser pkgs.ext4fuse];
+  environment.systemPackages = with pkgs; (import ../../../nix/packages {inherit pkgs;} ++ [defaultbrowser ext4fuse texliveFull]);
   homebrew = import ./homebrew.nix;
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
