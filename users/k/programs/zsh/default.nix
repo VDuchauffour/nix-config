@@ -22,13 +22,15 @@
       lt = "ls --tree";
       tree = "ls --tree";
 
-      vpn-on = "wg-quick up wg0";
-      vpn-off = "wg-quick down wg0";
+      vpn-on = "wg-quick up";
+      vpn-off = "wg-quick down";
 
       k = "kubectl";
       ks = "kubens";
       kx = "kubectx";
       kn = "k9s";
+
+      tf = "terraform";
 
       open = "xdg-open";
       getmod = "stat --format '%a'";
