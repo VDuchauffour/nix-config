@@ -33,7 +33,7 @@
     };
   };
 
-  programs = {
-    nautilus = import ../../../users/${vars.user}/programs/nautilus.nix;
-  };
+  # programs = {
+  #   nautilus = import ../../../users/${vars.user}/programs/nautilus.nix;
+  # };
 }
