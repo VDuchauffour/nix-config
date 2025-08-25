@@ -4,37 +4,8 @@
   pkgs,
   vars,
   ...
-}: let
-  zsh_init_content = (import ../../../users/${vars.user}/programs/zsh/init-content.nix).initContent;
-in {
-  programs.home-manager.enable = true;
-
-  home.username = "${vars.user}";
-  home.homeDirectory = "/home/${vars.user}";
-  home.stateVersion = "25.05";
-
-  home.packages = [];
-
+}: {
   home.file = {
-    ".config/nvim" = {
-      source = ../../../users/${vars.user}/dots/astronvim;
-      recursive = true;
-    };
-    ".config/lazygit" = {
-      source = ../../../users/${vars.user}/dots/lazygit;
-    };
-    ".config/k9s" = {
-      source = ../../../users/${vars.user}/dots/k9s;
-      recursive = true;
-    };
-    ".config/ranger" = {
-      source = ../../../users/${vars.user}/dots/ranger;
-      recursive = true;
-    };
-    ".tmux.conf" = {
-      source = ../../../users/${vars.user}/dots/tmux/.tmux.conf;
-    };
-
     ".config/dunst" = {
       source = ../../../users/${vars.user}/dots/dunst/dunstrc;
     };
@@ -62,24 +33,8 @@ in {
     };
   };
 
-  imports = [
-    ../../../users/${vars.user}/programs/default.nix
-  ];
-
   programs = {
-    zsh =
-      (import ../../../users/${vars.user}/programs/zsh/default.nix {inherit vars;}).programs.zsh
-      // {
-        initContent =
-          zsh_init_content
-          + ''
-            eval "$(/opt/homebrew/bin/brew shellenv)"
-          '';
-      };
+    zsh = import ../../../users/${vars.user}/programs/zsh/default.nix {inherit vars;}.programs.zsh;
     nautilus = import ../../../users/${vars.user}/programs/nautilus.nix;
-  };
-
-  xdg = {
-    enable = true;
   };
 }

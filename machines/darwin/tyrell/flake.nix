@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,7 +52,10 @@
           }: {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.k = import ../../../users/${vars.user}/default.nix {inherit config lib vars pkgs;};
+            home-manager.users."${vars.user}" = lib.mkMerge [
+              (import ../../../users/${vars.user}/default.nix {inherit config lib vars pkgs;})
+              (import ./home.nix {inherit config lib vars pkgs;})
+            ];
             home-manager.backupFileExtension = "backup";
             home-manager.sharedModules = [
               mac-app-util.homeManagerModules.default

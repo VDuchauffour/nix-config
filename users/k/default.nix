@@ -4,9 +4,7 @@
   pkgs,
   vars,
   ...
-}: let
-  zsh_init_content = (import ./programs/zsh/init-content.nix).initContent;
-in {
+}: {
   programs.home-manager.enable = true;
 
   home.username = "${vars.user}";
@@ -33,25 +31,13 @@ in {
     ".tmux.conf" = {
       source = ./dots/tmux/.tmux.conf;
     };
-
-    ".aerospace.toml" = {
-      source = ./dots/aerospace/.aerospace.toml;
-    };
   };
 
   imports = [
     ./programs/default.nix
   ];
 
-  programs.zsh =
-    (import ./programs/zsh/default.nix {inherit vars;}).programs.zsh
-    // {
-      initContent =
-        zsh_init_content
-        + ''
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        '';
-    };
+  programs.zsh = (import ./programs/zsh/default.nix {inherit vars;}).programs.zsh;
 
   xdg = {
     enable = true;
