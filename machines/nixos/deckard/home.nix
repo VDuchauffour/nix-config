@@ -34,7 +34,6 @@
   };
 
   programs = {
-    zsh = import ../../../users/${vars.user}/programs/zsh/default.nix {inherit vars;}.programs.zsh;
     nautilus = import ../../../users/${vars.user}/programs/nautilus.nix;
   };
 }
