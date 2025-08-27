@@ -65,6 +65,7 @@ with pkgs; [
   # kubectl-aliases
   eksctl
   kubernetes-helm
+  helmfile
   kubeseal
   awscli2
 ]
