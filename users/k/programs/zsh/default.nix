@@ -8,7 +8,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "docker" "direnv" "uv" "poetry"];
+      plugins = ["git" "direnv" "uv" "docker" "kubectl"];
       theme = "robbyrussell";
     };
 
