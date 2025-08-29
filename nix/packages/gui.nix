@@ -7,7 +7,7 @@ with pkgs; [
   alacritty
   neovide
   galculator
-  visual-studio-code
+  vscode
   audacious
   audacious-plugins
   mpv
