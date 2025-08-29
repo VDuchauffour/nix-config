@@ -45,4 +45,5 @@
       extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
     };
   };
+  gtk.enable = true;
 }

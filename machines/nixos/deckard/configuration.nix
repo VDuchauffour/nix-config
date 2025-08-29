@@ -27,13 +27,14 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
     (import ../../../nix/packages {inherit pkgs;})
-    ++ (import ../../../nix/packages {inherit pkgs;})
+    ++ (import ../../../nix/packages/gui.nix {inherit pkgs;})
     ++ [
       playerctl
       brightnessctl
       pavucontrol
-      nwg-displays
       rofi-wayland
+      papirus-icon-theme
+      whitesur-gtk-theme
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);

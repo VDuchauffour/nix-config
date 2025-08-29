@@ -12,6 +12,14 @@
     ".config/gsimplecal" = {
       source = ../../../users/${vars.user}/dots/gsimplecal/config;
     };
+    ".config/gtk-3.0" = {
+      source = ../../../users/${vars.user}/dots/gtk/gtk-3.0;
+      recursive = true;
+    };
+    ".config/gtk-4.0" = {
+      source = ../../../users/${vars.user}/dots/gtk/gtk-4.0;
+      recursive = true;
+    };
     ".config/hypr" = {
       source = ../../../users/${vars.user}/dots/hypr;
       recursive = true;
