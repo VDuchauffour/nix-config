@@ -1,5 +1,4 @@
 {
-
   time.timeZone = "Europe/Paris";
 
   # Select internationalisation properties.
