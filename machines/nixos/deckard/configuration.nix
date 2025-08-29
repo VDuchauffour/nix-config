@@ -19,7 +19,9 @@
     name = "${vars.user}";
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -30,7 +32,16 @@
       playerctl
       brightnessctl
       pavucontrol
+      nwg-displays
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ../../../nix/core
+    ];
+
+
 }
