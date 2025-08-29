@@ -41,5 +41,8 @@
 
   xdg = {
     enable = true;
+    portal = {
+      extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
+    };
   };
 }
