@@ -7,4 +7,6 @@ result-*
 # Ignore automatically generated direnv output
 .direnv
 
+*.null-ls*.nix
+
 dots/astronvim/lazy-lock.json
