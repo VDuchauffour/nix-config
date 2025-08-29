@@ -8,6 +8,7 @@ with pkgs; [
   neovide
   galculator
   vscode
+  code-cursor
   audacious
   audacious-plugins
   mpv
