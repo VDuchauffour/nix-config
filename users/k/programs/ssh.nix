@@ -5,7 +5,6 @@
       Include config-ext
       Host github.com
         AddKeysToAgent yes
-        UseKeychain yes
         IdentityFile ~/.ssh/github
     '';
   };
