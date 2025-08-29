@@ -66,4 +66,6 @@ with pkgs; [
   eksctl
   kubeseal
   awscli2
+
+  alejandra
 ]

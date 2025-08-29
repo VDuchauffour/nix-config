@@ -1,7 +1,9 @@
 {pkgs, ...}: {
-  services.displayManager.ly.enable = true;
-  services.displayManager.ly.settings = {
-    animation = "colormix";
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "colormix";
+    };
   };
   programs.hyprland = {
     enable = true;
