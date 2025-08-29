@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  services.display-manager.ly.enable = true;
-  services.display-manager.ly.settings = {
+  services.displayManager.ly.enable = true;
+  services.displayManager.ly.settings = {
     animation = "colormix";
   };
   programs.hyprland = {
