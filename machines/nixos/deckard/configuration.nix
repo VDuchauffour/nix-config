@@ -35,6 +35,7 @@
       rofi-wayland
       papirus-icon-theme
       whitesur-gtk-theme
+      wl-clipboard
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
