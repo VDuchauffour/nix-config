@@ -13,7 +13,7 @@
 #waybar {
   background: @black;
   color: @white;
-  font-family: "JetBrains Mono";
+  font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 16px;
   border-radius: 7px;
