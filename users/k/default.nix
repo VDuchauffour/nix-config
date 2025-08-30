@@ -39,11 +39,6 @@
 
   programs.zsh = (import ./programs/zsh/default.nix {inherit vars;}).programs.zsh;
 
-  xdg = {
-    enable = true;
-    portal = {
-      extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
-    };
-  };
+  xdg.enable = true;
   gtk.enable = true;
 }

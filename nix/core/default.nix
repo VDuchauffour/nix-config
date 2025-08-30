@@ -6,6 +6,7 @@
     ./display.nix
     ./docker.nix
     ./gc.nix
+    ./keyring.nix
     ./locale.nix
     ./network.nix
     ./storage.nix

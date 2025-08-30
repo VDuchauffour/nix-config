@@ -15,4 +15,5 @@ with pkgs; [
 
   # tools
   nwg-displays
+  seahorse
 ]
