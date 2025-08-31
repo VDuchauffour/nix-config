@@ -36,6 +36,7 @@
       papirus-icon-theme
       whitesur-gtk-theme
       wl-clipboard
+      avizo # for playerctl, lightctl and volumectl
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
