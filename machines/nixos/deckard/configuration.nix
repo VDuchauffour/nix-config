@@ -18,7 +18,7 @@
     home = "/home/${vars.user}";
     name = "${vars.user}";
     isNormalUser = true;
-    extraGroups = ["wheel" "docker"];
+    extraGroups = ["wheel" "docker" "audio" "video"];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
@@ -33,17 +33,17 @@
       brightnessctl
       pavucontrol
       rofi-wayland
-      papirus-icon-theme
-      whitesur-gtk-theme
       wl-clipboard
       avizo # for playerctl, lightctl and volumectl
+      networkmanagerapplet
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
+  security.pam.services.hyprlock = {};
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../../nix/core
+    ../../../users/${vars.user}/programs/nautilus.nix
   ];
 }

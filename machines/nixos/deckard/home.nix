@@ -12,14 +12,6 @@
     ".config/gsimplecal" = {
       source = ../../../users/${vars.user}/dots/gsimplecal/config;
     };
-    ".config/gtk-3.0" = {
-      source = ../../../users/${vars.user}/dots/gtk/gtk-3.0;
-      recursive = true;
-    };
-    ".config/gtk-4.0" = {
-      source = ../../../users/${vars.user}/dots/gtk/gtk-4.0;
-      recursive = true;
-    };
     ".config/hypr" = {
       source = ../../../users/${vars.user}/dots/hypr;
       recursive = true;
@@ -41,10 +33,6 @@
     };
   };
 
-  # programs = {
-  #   nautilus = import ../../../users/${vars.user}/programs/nautilus.nix;
-  # };
-
   services.udiskie.enable = true;
 
   services.gnome-keyring.enable = true;
@@ -55,5 +43,41 @@
     portal = {
       extraPortals = with pkgs; [xdg-desktop-portal-hyprland gnome-keyring];
     };
+  };
+
+  imports = [
+    ../../../users/${vars.user}/programs/hyprland.nix
+  ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "WhiteSur-Dark";
+      package = pkgs.whitesur-gtk-theme;
+    };
+    iconTheme = {
+      name = "WhiteSur";
+      package = pkgs.whitesur-icon-theme;
+    };
+    cursorTheme = {
+      name = "macOS";
+      package = pkgs.apple-cursor;
+    };
+    gtk3 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+    };
+    gtk4 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+    };
+  };
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "macOS";
+    package = pkgs.apple-cursor;
+    size = 24;
   };
 }
