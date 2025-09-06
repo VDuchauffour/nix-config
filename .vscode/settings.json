@@ -1,5 +1,6 @@
 {
   "files.exclude": {
-    "**/result-*": true
+    "**/result-*": true,
+    "**/.null-ls*.nix": true
   }
 }
