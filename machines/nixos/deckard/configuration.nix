@@ -40,6 +40,7 @@
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   security.pam.services.hyprlock = {};
   imports = [
     ./hardware-configuration.nix
