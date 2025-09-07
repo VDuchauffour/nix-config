@@ -11,6 +11,9 @@ with pkgs; [
   nautilus
   nautilus-open-any-terminal
   code-nautilus
+  viewnior
+  eog # eye of gnome
+  papers # pdf viewer of gnome
   galculator
   audacious
   audacious-plugins
@@ -22,4 +25,5 @@ with pkgs; [
   networkmanagerapplet
   hypridle
   hyprpaper
+  hyprpicker
 ]
