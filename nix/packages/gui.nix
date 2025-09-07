@@ -16,5 +16,4 @@ with pkgs; [
   # tools
   # nwg-displays
   nwg-look
-  seahorse
 ]

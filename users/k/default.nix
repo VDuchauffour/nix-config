@@ -37,7 +37,7 @@
     ./programs/default.nix
   ];
 
-  programs.zsh = (import ./programs/zsh/default.nix {inherit vars;}).programs.zsh;
+  programs.zsh = (import ./programs/zsh/default.nix {inherit vars pkgs;}).programs.zsh;
 
   xdg.enable = true;
 }

@@ -5,6 +5,8 @@
   vars,
   ...
 }: {
+  home.packages = [];
+
   home.file = {
     ".config/dunst" = {
       source = ../../../users/${vars.user}/dots/dunst/dunstrc;
@@ -30,9 +32,6 @@
   };
 
   services.udiskie.enable = true;
-
-  services.gnome-keyring.enable = true;
-  home.packages = [pkgs.gcr]; # Provides org.gnome.keyring.SystemPrompter
 
   xdg = {
     enable = true;

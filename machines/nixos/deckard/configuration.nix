@@ -22,6 +22,7 @@
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
+  programs.seahorse.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -37,6 +38,7 @@
       avizo # for playerctl, lightctl and volumectl
       networkmanagerapplet
       hypridle
+      libsecret
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);

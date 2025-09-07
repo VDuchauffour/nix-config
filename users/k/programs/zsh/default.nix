@@ -1,4 +1,8 @@
-{vars, ...}: {
+{
+  vars,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     history.size = 10000;
