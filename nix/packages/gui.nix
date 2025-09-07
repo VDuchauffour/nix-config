@@ -14,6 +14,6 @@ with pkgs; [
   mpv
 
   # tools
-  # nwg-displays
+  nwg-displays
   nwg-look
 ]
