@@ -16,28 +16,17 @@
   };
   casks = [
     "iina"
-    "chromium"
     "openmtp"
-    "alacritty"
-    "bitwarden"
     "scroll-reverser"
-    "visual-studio-code"
-    "cursor"
     "logi-options+"
     "logitech-g-hub"
     "stats"
     "MonitorControl"
-    "protonvpn"
-    "rawtherapee"
-    "qbittorrent"
     "utm"
     "macfuse"
     "fuse-t"
-    "libreoffice"
     "slack"
-    "aws-vpn-client"
     "aerospace"
-    "dbeaver-community"
   ];
   brews = [
     "mactop"
@@ -48,7 +37,6 @@
     "docker-completion"
     "docker-clean"
     "alejandra"
-    "pkgconf"
   ];
   taps = [
     "nikitabobko/tap"

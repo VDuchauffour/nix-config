@@ -28,18 +28,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
     (import ../../../nix/packages {inherit pkgs;})
-    ++ (import ../../../nix/packages/gui.nix {inherit pkgs;})
-    ++ [
-      playerctl
-      brightnessctl
-      pavucontrol
-      rofi-wayland
-      wl-clipboard
-      avizo # for playerctl, lightctl and volumectl
-      networkmanagerapplet
-      hypridle
-      libsecret
-    ];
+    ++ (import ../../../nix/packages/nixos.nix {inherit pkgs;});
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 

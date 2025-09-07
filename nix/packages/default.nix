@@ -47,6 +47,7 @@ with pkgs; [
   k9s
 
   # programming
+  pkgconf
   llvm
   gcc
   rustup
@@ -68,4 +69,17 @@ with pkgs; [
   awscli2
 
   alejandra
+
+  # apps
+  alacritty
+  neovide
+  vscode
+  code-cursor
+  chromium
+  bitwarden
+  protonvpn-gui
+  rawtherapee
+  qbittorrent
+  libreoffice
+  dbeaver-bin
 ]
