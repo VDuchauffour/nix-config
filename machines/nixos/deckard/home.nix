@@ -8,9 +8,6 @@
   home.packages = [];
 
   home.file = {
-    ".config/dunst" = {
-      source = ../../../users/${vars.user}/dots/dunst/dunstrc;
-    };
     ".config/gsimplecal" = {
       source = ../../../users/${vars.user}/dots/gsimplecal/config;
     };
@@ -51,7 +48,10 @@
     };
   };
 
-  imports = [../../../users/${vars.user}/programs/hyprland];
+  imports = [
+    ../../../users/${vars.user}/programs/hyprland
+    ../../../users/${vars.user}/programs/dunst.nix
+  ];
 
   gtk = {
     enable = true;
