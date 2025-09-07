@@ -8,7 +8,8 @@
         transparency = 0;
         width = "470";
         height = "90";
-        offset = "24x64";
+        # offset = "24x64";
+        offset = "24x32";
         scale = 0;
         padding = 8;
         horizontal_padding = 8;
