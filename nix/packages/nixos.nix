@@ -21,4 +21,5 @@ with pkgs; [
   rofi-wayland
   networkmanagerapplet
   hypridle
+  hyprpaper
 ]
