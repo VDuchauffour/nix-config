@@ -12,10 +12,6 @@
     ".config/gsimplecal" = {
       source = ../../../users/${vars.user}/dots/gsimplecal/config;
     };
-    ".config/hypr" = {
-      source = ../../../users/${vars.user}/dots/hypr;
-      recursive = true;
-    };
     ".config/libinput-gestures.conf" = {
       source = ../../../users/${vars.user}/dots/libinput-gestures/libinput-gestures.conf;
     };
@@ -56,9 +52,7 @@
     };
   };
 
-  imports = [
-    ../../../users/${vars.user}/programs/hyprland.nix
-  ];
+  imports = [../../../users/${vars.user}/programs/hyprland];
 
   gtk = {
     enable = true;

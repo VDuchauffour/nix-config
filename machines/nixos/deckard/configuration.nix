@@ -36,6 +36,7 @@
       wl-clipboard
       avizo # for playerctl, lightctl and volumectl
       networkmanagerapplet
+      hypridle
     ];
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
