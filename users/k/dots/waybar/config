@@ -14,7 +14,6 @@
 	"spacing": 10,
 	"fixed-center": true,
 	"exclusive": true,
-  "layer": "top", // don't dim in special workspaces
 
   // modules
   "modules-left": ["hyprland/workspaces"],
