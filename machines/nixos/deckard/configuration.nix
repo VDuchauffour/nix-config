@@ -3,6 +3,7 @@
   lib,
   pkgs,
   vars,
+  apple-fonts,
   ...
 }: {
   nix.settings.experimental-features = "nix-command flakes";
@@ -30,7 +31,10 @@
     (import ../../../nix/packages {inherit pkgs;})
     ++ (import ../../../nix/packages/nixos.nix {inherit pkgs;});
 
-  fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages =
+    (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts))
+    ++ (builtins.attrValues apple-fonts.packages.${pkgs.system});
+  fonts.fontconfig.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   security.pam.services.hyprlock = {};

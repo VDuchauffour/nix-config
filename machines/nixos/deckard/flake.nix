@@ -7,11 +7,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
+    apple-fonts,
     home-manager,
   }: let
     vars = {
@@ -24,12 +26,16 @@
       lib,
       pkgs,
       config,
+      apple-fonts,
       ...
     }:
-      import ./configuration.nix {inherit config lib pkgs vars;};
+      import ./configuration.nix {inherit config lib pkgs vars apple-fonts;};
   in {
     nixosConfigurations.${vars.computerName} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        inherit apple-fonts;
+      };
       modules = [
         configuration
         home-manager.nixosModules.home-manager
