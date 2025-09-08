@@ -71,6 +71,8 @@
 
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
+
+        # resize_on_border = true;
       };
 
       decoration = {
@@ -145,6 +147,7 @@
         "float,class:^(pavucontrol)$,title:^(.*)$"
         "float,class:^(galculator)$,title:^(.*)$"
         "noblur,class:^()$,title:^()"
+        "bordersize 2, floating:1" # only show borders on floating windows
       ];
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       #
