@@ -39,4 +39,9 @@
     ../../../nix/core
     ../../../users/${vars.user}/programs/nautilus.nix
   ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    uv
+  ];
 }
