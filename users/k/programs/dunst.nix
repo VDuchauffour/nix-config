@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       global = {
-        font = "JetBrainsMono Nerd Font 10";
+        font = "SF Pro Display 12";
         separator_height = 1;
         transparency = 0;
         width = "470";
