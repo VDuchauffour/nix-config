@@ -39,5 +39,11 @@
 
   programs.zsh = (import ./programs/zsh/default.nix {inherit vars pkgs;}).programs.zsh;
 
-  xdg.enable = true;
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
 }
