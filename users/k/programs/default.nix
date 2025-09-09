@@ -10,6 +10,5 @@
     ./k9s.nix
     ./ssh.nix
     ./starship.nix
-    ./steam.nix
   ];
 }

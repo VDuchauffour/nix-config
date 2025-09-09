@@ -9,6 +9,7 @@
     ./keyring.nix
     ./locale.nix
     ./network.nix
+    ./steam.nix
     ./storage.nix
   ];
 }
