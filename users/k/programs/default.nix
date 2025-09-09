@@ -8,7 +8,8 @@
     ./git.nix
     ./gecko/librewolf.nix
     ./k9s.nix
-    ./starship.nix
     ./ssh.nix
+    ./starship.nix
+    ./steam.nix
   ];
 }
