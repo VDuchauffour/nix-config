@@ -4,9 +4,18 @@ This repository contains the configuration files for my Nix-based devices, both 
 
 You can customize the configuration to your liking.
 
-## Nix-darwin
+## Prerequisites
 
-Before using the nix-darwin configuration, you need to install the prerequisites.
+Before using a NixOS or nix-darwin configuration, you need to install the prerequisites.
+
+<details>
+<summary>NixOS prerequisites</summary>
+
+```shell
+
+```
+
+</details>
 
 <details>
 <summary>nix-darwin prerequisites</summary>
@@ -29,18 +38,23 @@ exec $SHELL
 
 </details>
 
+## Installation
+
 ### Set up the configuration
 
 ```python
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
 cd ~/.nix-config
-sudo nix run nix-darwin -- switch --flake ./machines/darwin/tyrell/#k-MacBook-Pro
+
+sudo nix run nix-darwin -- switch --flake .#tyrell
+# or
+sudo nixos-rebuild switch --flake .#deckard
 ```
 
 ### Post-install configuration
 
 <details>
-<summary>Logitech G Hub</summary>
+<summary>Logitech G Hub (nix-darwin only)</summary>
 
 Go to `System Settings > Privacy & Security` and apply the following changes:
 
