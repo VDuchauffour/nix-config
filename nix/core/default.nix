@@ -9,6 +9,7 @@
     ./gc.nix
     ./keyring.nix
     ./locale.nix
+    ./logid_m3s
     ./network.nix
     ./steam.nix
     ./storage.nix
