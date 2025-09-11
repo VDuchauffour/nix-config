@@ -79,7 +79,7 @@
             inputs,
             ...
           }: {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.users."${darwinVars.user}" = lib.mkMerge [
               (import ./users/${darwinVars.user}/default.nix {
