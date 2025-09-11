@@ -5,6 +5,7 @@
     ./bootloader.nix
     ./display.nix
     ./docker.nix
+    ./g810-led
     ./gc.nix
     ./keyring.nix
     ./locale.nix
