@@ -74,7 +74,7 @@
       FXPreferredViewStyle = "clmv";
       ShowPathbar = true;
       ShowStatusBar = true;
-      # NewWindowTargetPath = "file:///Users/${vars.user}/"; # Set home directory as startup window
+      # NewWindowTargetPath = "file:///Users/${vars.userName}/"; # Set home directory as startup window
       NewWindowTarget = "Home";
       FXDefaultSearchScope = "SCcf"; # Set search scope to directory
     };
@@ -82,7 +82,7 @@
       GuestEnabled = false;
       LoginwindowText = "k";
     };
-    screencapture.location = "/Users/${vars.user}/Pictures/screenshots";
+    screencapture.location = "/Users/${vars.userName}/Pictures/screenshots";
     screensaver.askForPasswordDelay = 10;
   };
 }

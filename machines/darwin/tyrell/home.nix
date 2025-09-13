@@ -5,16 +5,16 @@
   vars,
   ...
 }: let
-  zsh_init_content = (import ../../../users/${vars.user}/programs/zsh/init-content.nix).initContent;
+  zsh_init_content = (import ../../../users/${vars.userName}/programs/zsh/init-content.nix).initContent;
 in {
   home.file = {
     ".aerospace.toml" = {
-      source = ../../../users/${vars.user}/dots/aerospace/.aerospace.toml;
+      source = ../../../users/${vars.userName}/dots/aerospace/.aerospace.toml;
     };
   };
 
   programs.zsh =
-    (import ../../../users/${vars.user}/programs/zsh/default.nix {inherit vars pkgs;}).programs.zsh
+    (import ../../../users/${vars.userName}/programs/zsh/default.nix {inherit vars pkgs;}).programs.zsh
     // {
       initContent =
         zsh_init_content

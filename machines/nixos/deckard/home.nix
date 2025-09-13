@@ -9,21 +9,21 @@
 
   home.file = {
     ".config/gsimplecal" = {
-      source = ../../../users/${vars.user}/dots/gsimplecal/config;
+      source = ../../../users/${vars.userName}/dots/gsimplecal/config;
     };
     ".config/libinput-gestures.conf" = {
-      source = ../../../users/${vars.user}/dots/libinput-gestures/libinput-gestures.conf;
+      source = ../../../users/${vars.userName}/dots/libinput-gestures/libinput-gestures.conf;
     };
     ".config/mpv" = {
-      source = ../../../users/${vars.user}/dots/mpv;
+      source = ../../../users/${vars.userName}/dots/mpv;
       recursive = true;
     };
     ".config/rofi" = {
-      source = ../../../users/${vars.user}/dots/rofi;
+      source = ../../../users/${vars.userName}/dots/rofi;
       recursive = true;
     };
     ".config/waybar" = {
-      source = ../../../users/${vars.user}/dots/waybar;
+      source = ../../../users/${vars.userName}/dots/waybar;
       recursive = true;
     };
   };
@@ -50,8 +50,8 @@
   };
 
   imports = [
-    ../../../users/${vars.user}/programs/hyprland
-    ../../../users/${vars.user}/programs/dunst.nix
+    ../../../users/${vars.userName}/programs/hyprland
+    ../../../users/${vars.userName}/programs/dunst.nix
   ];
 
   gtk = {

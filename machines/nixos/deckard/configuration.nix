@@ -15,9 +15,9 @@
     automatic = true;
   };
 
-  users.users."${vars.user}" = {
-    home = "/home/${vars.user}";
-    name = "${vars.user}";
+  users.users."${vars.userName}" = {
+    home = "/home/${vars.userName}";
+    name = "${vars.userName}";
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "audio" "video"];
     shell = pkgs.zsh;
@@ -53,7 +53,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../../nix/core
-    ../../../users/${vars.user}/programs/nautilus.nix
+    ../../../users/${vars.userName}/programs/nautilus.nix
   ];
 
   programs.nix-ld.enable = true;

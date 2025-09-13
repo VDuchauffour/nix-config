@@ -29,10 +29,10 @@ in {
   };
 
   users.users.k = {
-    home = "/Users/${vars.user}";
-    name = "${vars.user}";
+    home = "/Users/${vars.userName}";
+    name = "${vars.userName}";
   };
-  system.primaryUser = vars.user;
+  system.primaryUser = vars.userName;
 
   system.defaults = (import ./system.nix {inherit vars;}).defaults;
   security.pam.services.sudo_local.touchIdAuth = true;
@@ -46,7 +46,7 @@ in {
 
   # TODO fix this
   system.activationScripts.defaultBrowser.text = ''
-    defaultbrowser "${vars.defaultBrowser}"
+    defaultbrowser "librewolf"
   '';
 
   # List packages installed in system profile. To search by name, run:

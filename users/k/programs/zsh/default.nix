@@ -44,9 +44,10 @@
 
     sessionVariables = let
       XDG_BIN_HOME = "$HOME/.local/bin";
+      EDITOR = "nvim";
     in {
-      EDITOR = "${vars.editor}";
-      VISUAL = "${vars.editor}";
+      EDITOR = EDITOR;
+      VISUAL = EDITOR;
 
       XDG_BIN_HOME = XDG_BIN_HOME;
       PATH = "${XDG_BIN_HOME}:$PATH";
