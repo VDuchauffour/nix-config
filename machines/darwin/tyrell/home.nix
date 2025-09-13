@@ -14,7 +14,7 @@ in {
   };
 
   programs.zsh =
-    (import ../../../users/${vars.userName}/programs/zsh/default.nix {inherit vars pkgs;}).programs.zsh
+    (import ../../../users/${vars.userName}/programs/zsh {inherit vars pkgs;}).programs.zsh
     // {
       initContent =
         zsh_init_content
