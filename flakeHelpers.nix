@@ -1,5 +1,5 @@
 {inputs, ...}: let
-  homeManagerCfg = metaConfig: useUserPackages: extraImports: {
+  homeManagerCfg = platformName: machineHostname: metaConfig: useUserPackages: extraImports: {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = useUserPackages;
@@ -11,6 +11,7 @@
       users.${metaConfig.userName}.imports =
         [
           ./users/${metaConfig.userName}/default.nix
+          ./machines/${platformName}/${machineHostname}/home.nix
         ]
         ++ extraImports;
     };
@@ -27,7 +28,7 @@ in {
         [
           inputs.mac-app-util.darwinModules.default
           ./machines/darwin/${machineHostname}/configuration.nix
-          (nixpkgsVersion.lib.attrsets.recursiveUpdate (homeManagerCfg metaConfig true ([./machines/darwin/${machineHostname}/home.nix] ++ extraHmModules)) {
+          (nixpkgsVersion.lib.attrsets.recursiveUpdate (homeManagerCfg "darwin" machineHostname metaConfig true extraHmModules) {
             home-manager.sharedModules = [
               inputs.mac-app-util.homeManagerModules.default
             ];
@@ -48,10 +49,7 @@ in {
       modules =
         [
           ./machines/nixos/${machineHostname}/configuration.nix
-          (homeManagerCfg metaConfig false ([
-              ./machines/nixos/${machineHostname}/home.nix
-            ]
-            ++ extraHmModules))
+          (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
         ]
         ++ extraModules;
     };

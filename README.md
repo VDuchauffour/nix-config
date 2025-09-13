@@ -64,3 +64,11 @@ Go to `System Settings > Privacy & Security` and apply the following changes:
 You may need to add manually the Applications to the list of allowed applications.
 
 </details>
+
+## Misc
+
+Use the following to check the value of an option on your current system:
+
+```shell
+nixos-option --flake .#hostName options.path.value
+```
