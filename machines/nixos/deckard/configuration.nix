@@ -37,15 +37,6 @@
       ++ (builtins.attrValues apple-fonts.packages.${pkgs.system})
       ++ [pkgs.corefonts];
     fontDir.enable = true;
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        emoji = ["Noto Color Emoji"];
-        monospace = ["MesloLGL Nerd Font Mono"];
-        sansSerif = ["MesloLGL Nerd Font"];
-        serif = ["Times New Roman"];
-      };
-    };
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
