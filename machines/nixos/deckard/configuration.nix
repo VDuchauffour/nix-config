@@ -60,4 +60,19 @@
   programs.nix-ld.libraries = with pkgs; [
     uv
   ];
+  networking.firewall.checkReversePath = false;
+  # environment.systemPackages = with pkgs; [wireguard-tools protonvpn-gui];
+  # Enable NAT
+  networking.nat = {
+    enable = true;
+    enableIPv6 = true;
+    externalInterface = "eth0";
+    internalInterfaces = ["wg0"];
+  };
+  # Open ports in the firewall
+  networking.firewall = {
+    allowedTCPPorts = [53];
+    allowedUDPPorts = [53 51820];
+  };
+  networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
 }

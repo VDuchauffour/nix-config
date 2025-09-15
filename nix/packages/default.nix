@@ -81,6 +81,7 @@ with pkgs; [
   protonvpn-gui
   rawtherapee
   qbittorrent
+  wireguard-tools
   libreoffice
   dbeaver-bin
 ]
