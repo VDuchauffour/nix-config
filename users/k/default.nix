@@ -25,9 +25,6 @@
       source = ./dots/ranger;
       recursive = true;
     };
-    ".tmux.conf" = {
-      source = ./dots/tmux/.tmux.conf;
-    };
   };
 
   imports = [

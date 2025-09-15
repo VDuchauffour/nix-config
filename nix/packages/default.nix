@@ -44,8 +44,6 @@ with pkgs; [
   procs
   sysz
   sshs
-  tmux
-  k9s
 
   # programming
   pkgconf
