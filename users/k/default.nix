@@ -21,9 +21,6 @@
       source = ./dots/astronvim;
       recursive = true;
     };
-    ".config/lazygit" = {
-      source = ./dots/lazygit;
-    };
     ".config/ranger" = {
       source = ./dots/ranger;
       recursive = true;

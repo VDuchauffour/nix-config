@@ -8,6 +8,7 @@
     ./git.nix
     ./gecko/librewolf.nix
     ./k9s.nix
+    ./lazygit.nix
     ./ssh.nix
     ./starship.nix
     ./zsh.nix
