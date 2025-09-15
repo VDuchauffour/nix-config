@@ -14,6 +14,7 @@ with pkgs; [
   viewnior
   eog # eye of gnome
   papers # pdf viewer of gnome
+  gnome-disk-utility # disk utility of gnome
   galculator
   audacious
   audacious-plugins
