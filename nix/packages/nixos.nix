@@ -22,7 +22,7 @@ with pkgs; [
   nwg-displays
   nwg-look
   pavucontrol
-  rofi-wayland
+  rofi
   networkmanagerapplet
   hypridle
   hyprpaper
