@@ -10,5 +10,6 @@
     ./k9s.nix
     ./ssh.nix
     ./starship.nix
+    ./zsh.nix
   ];
 }

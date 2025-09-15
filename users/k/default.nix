@@ -37,8 +37,6 @@
     ./programs
   ];
 
-  programs.zsh = (import ./programs/zsh {inherit vars pkgs;}).programs.zsh;
-
   xdg = {
     enable = true;
     userDirs = {

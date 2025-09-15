@@ -13,15 +13,9 @@ in {
     };
   };
 
-  programs.zsh =
-    (import ../../../users/${vars.userName}/programs/zsh {inherit vars pkgs;}).programs.zsh
-    // {
-      initContent =
-        zsh_init_content
-        + ''
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        '';
-    };
+  programs.zsh.initContent = lib.mkAfter ''
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  '';
 
   programs.ssh = {
     enable = true;
