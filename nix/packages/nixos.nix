@@ -27,4 +27,5 @@ with pkgs; [
   hypridle
   hyprpaper
   hyprpicker
+  gsimplecal
 ]
