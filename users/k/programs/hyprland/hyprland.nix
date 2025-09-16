@@ -253,6 +253,10 @@
       ];
 
       # bind = SUPER, T, overview:toggle
+
+      gesture = [
+        "3, horizontal, workspace"
+      ];
     };
   };
 }
