@@ -10,6 +10,10 @@
         disable_logs = false;
       };
 
+      ecosystem = {
+        no-update-news = true;
+      };
+
       source = "~/.config/hypr/monitors.conf";
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
