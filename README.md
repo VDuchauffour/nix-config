@@ -67,8 +67,14 @@ You may need to add manually the Applications to the list of allowed application
 
 ## Misc
 
-Use the following to check the value of an option on your current system:
+Use the following command to check the value of an option on your current system:
 
 ```shell
 nixos-option --flake .#hostName options.path.value
+```
+
+Use the following command to update only the Nix-related inputs in the lock file:
+
+```shell
+nix flake update nixpkgs nixpkgs-unstable nixpkgs-nixos nix-darwin home-manager home-manager-unstable
 ```
