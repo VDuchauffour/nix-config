@@ -14,10 +14,6 @@
     ".config/libinput-gestures.conf" = {
       source = ../../../users/${vars.userName}/dots/libinput-gestures/libinput-gestures.conf;
     };
-    ".config/mpv" = {
-      source = ../../../users/${vars.userName}/dots/mpv;
-      recursive = true;
-    };
     ".config/rofi" = {
       source = ../../../users/${vars.userName}/dots/rofi;
       recursive = true;
