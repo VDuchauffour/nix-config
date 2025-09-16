@@ -10,9 +10,9 @@
         disable_logs = false;
       };
 
-      ecosystem = {
-        no-update-news = true;
-      };
+      # eco-system = {
+      #   no-update-news = true;
+      # };
 
       source = "~/.config/hypr/monitors.conf";
 
@@ -124,11 +124,6 @@
       master = {
         # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
         # new_is_master = true
-      };
-
-      gestures = {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = true;
       };
 
       misc = {
