@@ -2,9 +2,9 @@
   description = "My unified Nix configuration for all machines";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable?shallow=true";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable?shallow=true";
-    nixpkgs-nixos.url = "github:NixOS/nixpkgs/nixos-unstable?shallow=true";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
+    nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
