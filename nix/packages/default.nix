@@ -37,8 +37,8 @@ with pkgs; [
   # tui tools
   neovim
   fzf
-  ranger
   lazygit
+  ueberzugpp # for yazi, image preview in terminal
   htop
   bottom
   procs

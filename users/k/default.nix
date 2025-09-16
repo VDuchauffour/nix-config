@@ -21,10 +21,6 @@
       source = ./dots/astronvim;
       recursive = true;
     };
-    ".config/ranger" = {
-      source = ./dots/ranger;
-      recursive = true;
-    };
   };
 
   imports = [
