@@ -29,7 +29,9 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
     (import ../../../nix/packages {inherit pkgs;})
-    ++ (import ../../../nix/packages/nixos.nix {inherit pkgs;});
+    ++ (import ../../../nix/packages/nixos.nix {inherit pkgs;}) ++ [pkgs.ledger-live-desktop];
+
+  services.udev.packages = [pkgs.ledger-udev-rules pkgs.ledger-live-desktop];
 
   fonts = {
     packages =
