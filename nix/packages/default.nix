@@ -74,7 +74,6 @@ with pkgs; [
   neovide
   vscode
   code-cursor
-  chromium
   bitwarden
   protonvpn-gui
   rawtherapee

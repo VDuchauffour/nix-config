@@ -28,4 +28,5 @@ with pkgs; [
   hyprpaper
   hyprpicker
   gsimplecal
+  chromium
 ]
