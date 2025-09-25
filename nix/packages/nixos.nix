@@ -31,4 +31,5 @@ with pkgs; [
   gsimplecal
   chromium
   protonvpn-gui
+  libreoffice
 ]

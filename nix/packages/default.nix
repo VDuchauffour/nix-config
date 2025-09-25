@@ -77,6 +77,5 @@ with pkgs; [
   rawtherapee
   qbittorrent
   wireguard-tools
-  libreoffice
   dbeaver-bin
 ]

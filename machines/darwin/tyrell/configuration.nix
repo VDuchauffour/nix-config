@@ -52,6 +52,7 @@ in {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; (import ../../../nix/packages {inherit pkgs;}
+    ++ (import ../../../nix/packages/darwin.nix {inherit pkgs;})
     ++ [
       defaultbrowser
       ext4fuse
