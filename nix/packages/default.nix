@@ -74,7 +74,6 @@ with pkgs; [
   vscode
   code-cursor
   bitwarden
-  rawtherapee
   qbittorrent
   wireguard-tools
   dbeaver-bin

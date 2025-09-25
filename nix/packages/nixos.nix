@@ -32,4 +32,5 @@ with pkgs; [
   chromium
   protonvpn-gui
   libreoffice
+  rawtherapee
 ]
