@@ -6,6 +6,7 @@ with pkgs; [
   avizo # for playerctl, lightctl and volumectl
   wl-clipboard
   libsecret
+  xdg-user-dirs-gtk
 
   # apps
   nautilus

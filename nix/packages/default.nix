@@ -5,7 +5,6 @@ with pkgs; [
   zsh-syntax-highlighting
   zsh-autosuggestions
   xdg-utils
-  xdg-user-dirs-gtk
   direnv
   stow
   gnumake
