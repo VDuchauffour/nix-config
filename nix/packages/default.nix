@@ -75,7 +75,6 @@ with pkgs; [
   vscode
   code-cursor
   bitwarden
-  protonvpn-gui
   rawtherapee
   qbittorrent
   wireguard-tools

@@ -29,4 +29,5 @@ with pkgs; [
   hyprpicker
   gsimplecal
   chromium
+  protonvpn-gui
 ]
