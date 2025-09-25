@@ -28,6 +28,10 @@
 
   xdg = {
     enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
     portal = {
       extraPortals = with pkgs; [xdg-desktop-portal-hyprland gnome-keyring];
     };
