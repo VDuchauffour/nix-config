@@ -60,12 +60,12 @@
     enable = true;
     enableIPv6 = true;
     externalInterface = "eth0";
-    internalInterfaces = ["wg0"];
+    # internalInterfaces = ["wg0"];
   };
   # Open ports in the firewall
   networking.firewall = {
     allowedTCPPorts = [53];
     allowedUDPPorts = [53 51820];
   };
-  networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
+  # networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
 }
