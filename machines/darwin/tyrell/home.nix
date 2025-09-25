@@ -4,9 +4,7 @@
   pkgs,
   vars,
   ...
-}: let
-  zsh_init_content = (import ../../../users/${vars.userName}/programs/zsh/init-content.nix).initContent;
-in {
+}: {
   home.file = {
     ".aerospace.toml" = {
       source = ../../../users/${vars.userName}/dots/aerospace/.aerospace.toml;
