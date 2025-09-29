@@ -2,12 +2,11 @@
   config,
   lib,
   pkgs,
-  vars,
   ...
 }: {
   home.file = {
     ".aerospace.toml" = {
-      source = ../../../home/users/${vars.userName}/dots/aerospace/.aerospace.toml;
+      source = ./dots/aerospace/.aerospace.toml;
     };
   };
 
