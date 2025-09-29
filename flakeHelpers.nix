@@ -50,6 +50,9 @@ in {
         [
           ./machines/nixos/${machineHostname}/configuration.nix
           (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
+          {
+            networking.hostName = machineHostname;
+          }
         ]
         ++ extraModules;
     };
