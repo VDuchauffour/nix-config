@@ -51,8 +51,8 @@ in {
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; (import ../../../nix/packages {inherit pkgs;}
-    ++ (import ../../../nix/packages/darwin.nix {inherit pkgs;})
+  environment.systemPackages = with pkgs; (import ../../../packages {inherit pkgs;}
+    ++ (import ../../../packages/darwin.nix {inherit pkgs;})
     ++ [
       defaultbrowser
       ext4fuse
@@ -63,4 +63,8 @@ in {
   homebrew = import ./homebrew.nix;
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+
+  imports = [
+    ../../../modules/common
+  ];
 }

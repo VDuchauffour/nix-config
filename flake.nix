@@ -1,5 +1,5 @@
 {
-  description = "My unified Nix configuration for all machines";
+  description = "My unified Nix configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";

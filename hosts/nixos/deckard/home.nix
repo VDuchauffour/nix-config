@@ -5,21 +5,19 @@
   vars,
   ...
 }: {
-  home.packages = [];
-
   home.file = {
     ".config/gsimplecal" = {
-      source = ../../../users/${vars.userName}/dots/gsimplecal/config;
+      source = ../../../modules/home/${vars.userName}/dots/gsimplecal/config;
     };
     ".config/libinput-gestures.conf" = {
-      source = ../../../users/${vars.userName}/dots/libinput-gestures/libinput-gestures.conf;
+      source = ../../../modules/home/${vars.userName}/dots/libinput-gestures/libinput-gestures.conf;
     };
     ".config/rofi" = {
-      source = ../../../users/${vars.userName}/dots/rofi;
+      source = ../../../modules/home/${vars.userName}/dots/rofi;
       recursive = true;
     };
     ".config/waybar" = {
-      source = ../../../users/${vars.userName}/dots/waybar;
+      source = ../../../modules/home/${vars.userName}/dots/waybar;
       recursive = true;
     };
   };
@@ -50,8 +48,8 @@
   };
 
   imports = [
-    ../../../users/${vars.userName}/programs/hyprland
-    ../../../users/${vars.userName}/programs/dunst.nix
+    ../../../modules/home/${vars.userName}/programs/hyprland
+    ../../../modules/home/${vars.userName}/programs/dunst.nix
   ];
 
   fonts = {

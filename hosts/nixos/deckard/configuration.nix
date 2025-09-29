@@ -28,8 +28,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
-    (import ../../../nix/packages {inherit pkgs;})
-    ++ (import ../../../nix/packages/nixos.nix {inherit pkgs;});
+    (import ../../../packages {inherit pkgs;})
+    ++ (import ../../../packages/nixos.nix {inherit pkgs;});
 
   fonts = {
     packages =
@@ -43,8 +43,9 @@
   security.pam.services.hyprlock = {};
   imports = [
     ./hardware-configuration.nix
-    ../../../nix/core
-    ../../../users/${vars.userName}/programs/nautilus.nix
+    ../../../modules/common
+    ../../../modules/nixos
+    ../../../modules/home/${vars.userName}/programs/nautilus.nix
   ];
 
   programs.nix-ld.enable = true;

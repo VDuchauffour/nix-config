@@ -6,7 +6,6 @@
     ./display.nix
     ./docker.nix
     ./g810-led
-    ./gc.nix
     ./keyring.nix
     ./locale.nix
     ./logid_m3s
