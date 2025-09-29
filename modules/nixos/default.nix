@@ -8,6 +8,7 @@
     ./g810-led
     ./keyring.nix
     ./locale.nix
+    ./nautilus.nix
     ./logid_m3s
     ./network.nix
     ./steam.nix

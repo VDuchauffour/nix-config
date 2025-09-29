@@ -22,7 +22,7 @@
   };
 
   imports = [
-    ./programs
+    ../../common
   ];
 
   xdg.enable = true;

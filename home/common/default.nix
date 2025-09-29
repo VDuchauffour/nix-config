@@ -9,7 +9,6 @@
     ./gecko/librewolf.nix
     ./k9s.nix
     ./lazygit.nix
-    ./mpv.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix

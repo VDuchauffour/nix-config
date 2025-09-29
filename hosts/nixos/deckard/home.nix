@@ -48,8 +48,7 @@
   };
 
   imports = [
-    ../../../home/users/${vars.userName}/programs/hyprland
-    ../../../home/users/${vars.userName}/programs/dunst.nix
+    ../../../home/nixos
   ];
 
   fonts = {
