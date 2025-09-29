@@ -19,7 +19,7 @@
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio" "video"];
+    extraGroups = ["wheel" "docker" "audio" "video" "users" "input"];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
