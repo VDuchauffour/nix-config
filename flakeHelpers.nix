@@ -10,7 +10,7 @@
       };
       users.${metaConfig.userName}.imports =
         [
-          ./modules/home/${metaConfig.userName}
+          ./home/${metaConfig.userName}
           ./hosts/${platformName}/${machineHostname}/home.nix
         ]
         ++ extraImports;

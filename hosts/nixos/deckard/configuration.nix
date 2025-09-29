@@ -45,7 +45,7 @@
     ./hardware-configuration.nix
     ../../../modules/common
     ../../../modules/nixos
-    ../../../modules/home/${vars.userName}/programs/nautilus.nix
+    ../../../home/${vars.userName}/programs/nautilus.nix
   ];
 
   programs.nix-ld.enable = true;

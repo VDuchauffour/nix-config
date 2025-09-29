@@ -7,7 +7,7 @@
 }: {
   home.file = {
     ".aerospace.toml" = {
-      source = ../../../modules/home/${vars.userName}/dots/aerospace/.aerospace.toml;
+      source = ../../../home/${vars.userName}/dots/aerospace/.aerospace.toml;
     };
   };
 
