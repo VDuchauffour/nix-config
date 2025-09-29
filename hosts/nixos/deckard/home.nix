@@ -7,17 +7,17 @@
 }: {
   home.file = {
     ".config/gsimplecal" = {
-      source = ../../../home/${vars.userName}/dots/gsimplecal/config;
+      source = ../../../home/users/${vars.userName}/dots/gsimplecal/config;
     };
     ".config/libinput-gestures.conf" = {
-      source = ../../../home/${vars.userName}/dots/libinput-gestures/libinput-gestures.conf;
+      source = ../../../home/users/${vars.userName}/dots/libinput-gestures/libinput-gestures.conf;
     };
     ".config/rofi" = {
-      source = ../../../home/${vars.userName}/dots/rofi;
+      source = ../../../home/users/${vars.userName}/dots/rofi;
       recursive = true;
     };
     ".config/waybar" = {
-      source = ../../../home/${vars.userName}/dots/waybar;
+      source = ../../../home/users/${vars.userName}/dots/waybar;
       recursive = true;
     };
   };
@@ -48,8 +48,8 @@
   };
 
   imports = [
-    ../../../home/${vars.userName}/programs/hyprland
-    ../../../home/${vars.userName}/programs/dunst.nix
+    ../../../home/users/${vars.userName}/programs/hyprland
+    ../../../home/users/${vars.userName}/programs/dunst.nix
   ];
 
   fonts = {
