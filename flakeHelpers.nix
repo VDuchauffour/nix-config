@@ -11,7 +11,8 @@
       users.${metaConfig.userName}.imports =
         [
           ./home/users/${metaConfig.userName}
-          ./hosts/${platformName}/${machineHostname}/home.nix
+          ./home/users/${metaConfig.userName}/${platformName}.nix
+          # ./hosts/${platformName}/${machineHostname}/home.nix
         ]
         ++ extraImports;
     };
