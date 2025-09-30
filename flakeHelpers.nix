@@ -12,7 +12,6 @@
         [
           ./home/users/${metaConfig.userName}
           ./home/users/${metaConfig.userName}/${platformName}.nix
-          # ./hosts/${platformName}/${machineHostname}/home.nix
         ]
         ++ extraImports;
     };

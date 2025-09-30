@@ -6,6 +6,7 @@
     ./direnv.nix
     ./gecko/firefox.nix
     ./git.nix
+    ./helm.nix
     ./gecko/librewolf.nix
     ./k9s.nix
     ./lazygit.nix
