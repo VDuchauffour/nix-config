@@ -1,3 +1,3 @@
 {
-  imports = [./gc.nix];
+  imports = [./gc.nix ./store.nix];
 }
