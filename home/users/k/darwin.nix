@@ -4,12 +4,6 @@
   pkgs,
   ...
 }: {
-  home.file = {
-    ".aerospace.toml" = {
-      source = ./dots/aerospace/.aerospace.toml;
-    };
-  };
-
   programs.zsh.initContent = lib.mkAfter ''
     eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
@@ -24,4 +18,8 @@
         IdentityFile ~/.ssh/github
     '';
   };
+
+  imports = [
+    ../../darwin
+  ];
 }
