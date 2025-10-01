@@ -6,17 +6,16 @@
   "baseBranchPatterns": ["main"],
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true
+    "automerge": true,
+    "extends": ["schedule:weekly"]
   },
-  "postUpdateOptions": ["lockFileMaintenance"],
-  "updateLockFiles": true,
   "nix": {
     "enabled": true
   },
   "pre-commit": {
     "enabled": true
   },
-  "enabledManagers": ["github-actions", "pre-commit", "nix"],
+  "enabledManagers": ["github-actions", "pre-commit"],
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
@@ -29,9 +28,8 @@
       "automerge": true
     },
     {
-      "matchManagers": ["nix"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "groupName": "{{manager}} lock file maintenance"
     }
   ]
 }
