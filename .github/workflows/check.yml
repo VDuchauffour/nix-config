@@ -12,6 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v17
+        uses: DeterminateSystems/nix-installer-action@v20
       - name: Check flake
         run: nix flake check
