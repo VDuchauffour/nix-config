@@ -9,6 +9,7 @@
     "automerge": true,
     "extends": ["schedule:weekly"]
   },
+  "updateLockFiles": true,
   "nix": {
     "enabled": true
   },
