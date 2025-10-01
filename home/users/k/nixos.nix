@@ -5,9 +5,6 @@
   ...
 }: {
   home.file = {
-    ".config/gsimplecal" = {
-      source = ./dots/gsimplecal/config;
-    };
     ".config/libinput-gestures.conf" = {
       source = ./dots/libinput-gestures/libinput-gestures.conf;
     };

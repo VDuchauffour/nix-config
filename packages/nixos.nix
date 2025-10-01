@@ -28,7 +28,6 @@ with pkgs; [
   hypridle
   hyprpaper
   hyprpicker
-  gsimplecal
   chromium
   protonvpn-gui
   libreoffice
