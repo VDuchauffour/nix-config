@@ -16,7 +16,7 @@
   "pre-commit": {
     "enabled": true
   },
-  "enabledManagers": ["github-actions", "pre-commit"],
+  "enabledManagers": ["github-actions", "pre-commit", "nix"],
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
@@ -25,6 +25,11 @@
     },
     {
       "matchManagers": ["pre-commit"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["nix"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
