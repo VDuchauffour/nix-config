@@ -10,9 +10,9 @@
         disable_logs = false;
       };
 
-      # eco-system = {
-      #   no-update-news = true;
-      # };
+      ecosystem = {
+        no_update_news = true;
+      };
 
       source = "~/.config/hypr/monitors.conf";
 
