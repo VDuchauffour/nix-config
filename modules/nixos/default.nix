@@ -11,6 +11,7 @@
     ./nautilus.nix
     ./logid_m3s
     ./network.nix
+    ./power.nix
     ./steam.nix
     ./storage.nix
   ];
