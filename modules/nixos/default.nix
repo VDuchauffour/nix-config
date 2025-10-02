@@ -14,5 +14,6 @@
     ./power.nix
     ./steam.nix
     ./storage.nix
+    ./touchegg.nix
   ];
 }
