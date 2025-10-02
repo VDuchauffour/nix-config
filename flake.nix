@@ -45,6 +45,7 @@
         ])
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/nixos/laptop.nix
         ] [
         ])
     ];
