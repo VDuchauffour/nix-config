@@ -51,7 +51,7 @@
   programs.nix-ld.libraries = with pkgs; [
     uv
   ];
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.nameservers = ["1.1.1.1"];
   networking.firewall.checkReversePath = false;
   # environment.systemPackages = with pkgs; [wireguard-tools protonvpn-gui];
   # Enable NAT
