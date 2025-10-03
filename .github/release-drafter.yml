@@ -13,6 +13,7 @@ categories:
   - title: 🧹 Maintenance
     labels:
       - maintenance
+      - dependencies
       - refactoring
       - cosmetic
       - chore
@@ -21,9 +22,7 @@ categories:
       - documentation
       - docs
 change-template: '- $TITLE (#$NUMBER)'
-change-title-escapes: \<*_& # You can add  # and @ to disable mentions
-exclude-labels:
-  - dependenices
+change-title-escapes: \<*_&   # You can add  # and @ to disable mentions
 version-resolver:
   major:
     labels:
