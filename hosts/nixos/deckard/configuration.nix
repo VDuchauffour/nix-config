@@ -51,6 +51,8 @@
   programs.nix-ld.libraries = with pkgs; [
     uv
   ];
+  networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "none";
   networking.nameservers = ["1.1.1.1"];
   networking.firewall.checkReversePath = false;
   # environment.systemPackages = with pkgs; [wireguard-tools protonvpn-gui];
