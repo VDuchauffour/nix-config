@@ -51,19 +51,4 @@
   programs.nix-ld.libraries = with pkgs; [
     uv
   ];
-
-  networking.firewall.checkReversePath = false;
-
-  # Enable NAT
-  networking.nat = {
-    enable = true;
-    enableIPv6 = true;
-    externalInterface = "eth0";
-    # internalInterfaces = ["wg0"];
-  };
-  # Open ports in the firewall
-  networking.firewall = {
-    allowedTCPPorts = [53];
-    allowedUDPPorts = [53 51820];
-  };
 }
