@@ -19,7 +19,7 @@
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio" "video" "users" "input"];
+    extraGroups = ["wheel" "docker" "audio" "video" "users" "input" "networkmanager"];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
@@ -51,20 +51,4 @@
   programs.nix-ld.libraries = with pkgs; [
     uv
   ];
-  networking.nameservers = ["1.1.1.1"];
-  networking.firewall.checkReversePath = false;
-  # environment.systemPackages = with pkgs; [wireguard-tools protonvpn-gui];
-  # Enable NAT
-  networking.nat = {
-    enable = true;
-    enableIPv6 = true;
-    externalInterface = "eth0";
-    # internalInterfaces = ["wg0"];
-  };
-  # Open ports in the firewall
-  networking.firewall = {
-    allowedTCPPorts = [53];
-    allowedUDPPorts = [53 51820];
-  };
-  # networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
 }

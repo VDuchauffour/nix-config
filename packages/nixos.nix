@@ -8,6 +8,9 @@ with pkgs; [
   libsecret
   xdg-user-dirs-gtk
 
+  protonvpn-cli
+  protonvpn-gui
+
   # apps
   nautilus
   nautilus-open-any-terminal
@@ -15,7 +18,7 @@ with pkgs; [
   viewnior
   eog # eye of gnome
   papers # pdf viewer of gnome
-  gnome-disk-utility # disk utility of gnome
+  gnome-disk-utility
   galculator
   audacious
   audacious-plugins
@@ -29,7 +32,6 @@ with pkgs; [
   hyprpaper
   hyprpicker
   chromium
-  protonvpn-gui
   libreoffice
   rawtherapee
 ]
