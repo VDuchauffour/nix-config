@@ -1,7 +1,7 @@
 {
   imports = [
     ./dunst.nix
-    ./fonts.nix
+    ./font-config.nix
     ./gsimplecal.nix
     ./gtk.nix
     ./hyprland
