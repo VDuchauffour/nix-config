@@ -5,15 +5,18 @@
     ./bootloader.nix
     ./display.nix
     ./docker.nix
+    ./fonts.nix
     ./g810-led
     ./keyring.nix
     ./locale.nix
     ./nautilus.nix
     ./logid_m3s
     ./network.nix
+    ./nix-ld.nix
     ./power.nix
     ./steam.nix
     ./storage.nix
     ./touchegg.nix
+    ./uv.nix
   ];
 }
