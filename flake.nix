@@ -48,9 +48,10 @@
         ])
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
-          ./modules/system/laptop
           ./modules/system/g810-led
           ./modules/system/logid-m3s
+          ./modules/system/laptop
+          ./modules/system/nixos-desktop.nix
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
