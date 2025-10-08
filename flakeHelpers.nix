@@ -32,6 +32,7 @@ in {
 
           ./hosts/darwin/${machineHostname}/configuration.nix
           ./modules/system
+          ./modules/system/darwin.nix
 
           (nixpkgsVersion.lib.attrsets.recursiveUpdate (homeManagerCfg "darwin" machineHostname metaConfig true extraHmModules) {
             home-manager.sharedModules = [

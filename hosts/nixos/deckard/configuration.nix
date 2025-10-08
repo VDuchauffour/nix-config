@@ -16,12 +16,6 @@
   };
   programs.zsh.enable = true;
 
-  # To search by name, run: nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs;
-    (import ../../../packages {inherit pkgs;})
-    ++ (import ../../../packages/nixos.nix {inherit pkgs;});
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   imports = [
     ./hardware.nix
   ];
