@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./display
+    ./nautilus
+    ./steam
+  ];
+}

@@ -5,11 +5,8 @@
   vars,
   ...
 }: {
-  nix.settings.experimental-features = "nix-command flakes";
-  system.configurationRevision = config.rev or config.dirtyRev or null;
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
-  nixpkgs.config.allowUnfree = true;
 
   users.users.k = {
     home = "/Users/${vars.userName}";
@@ -44,8 +41,4 @@
   homebrew = import ./homebrew.nix;
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-  imports = [
-    ../../../modules/common
-  ];
 }

@@ -41,12 +41,20 @@
     mkMerge [
       (mkDarwin "tyrell" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.darwinModules.home-manager
+          ./modules/system/g810-led
+          ./modules/system/logid-m3s
         ] [
+          ./modules/user/common-desktop.nix
         ])
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
-          ./modules/nixos/laptop.nix
+          ./modules/system/g810-led
+          ./modules/system/logid-m3s
+          ./modules/system/laptop
+          ./modules/system/nixos-desktop.nix
         ] [
+          ./modules/user/common-desktop.nix
+          ./modules/user/nixos-desktop.nix
         ])
     ];
 }
