@@ -10,8 +10,10 @@
       };
       users.${metaConfig.userName}.imports =
         [
-          ./home/users/${metaConfig.userName}
-          ./home/users/${metaConfig.userName}/${platformName}.nix
+          ./home/${metaConfig.userName}
+          ./home/${metaConfig.userName}/${platformName}.nix
+          ./modules/user
+          ./modules/user/${platformName}.nix
         ]
         ++ extraImports;
     };
@@ -27,7 +29,10 @@ in {
       modules =
         [
           inputs.mac-app-util.darwinModules.default
+
           ./hosts/darwin/${machineHostname}/configuration.nix
+          ./modules/system
+
           (nixpkgsVersion.lib.attrsets.recursiveUpdate (homeManagerCfg "darwin" machineHostname metaConfig true extraHmModules) {
             home-manager.sharedModules = [
               inputs.mac-app-util.homeManagerModules.default
@@ -49,6 +54,9 @@ in {
       modules =
         [
           ./hosts/nixos/${machineHostname}/configuration.nix
+          ./modules/system
+          ./modules/system/nixos.nix
+
           (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
           {
             networking.hostName = machineHostname;

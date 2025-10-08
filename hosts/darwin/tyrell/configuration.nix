@@ -44,8 +44,4 @@
   homebrew = import ./homebrew.nix;
 
   fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-  imports = [
-    ../../../modules/common
-  ];
 }

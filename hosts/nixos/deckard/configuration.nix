@@ -26,8 +26,6 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   imports = [
-    ./hardware-configuration.nix
-    ../../../modules/common
-    ../../../modules/nixos
+    ./hardware.nix
   ];
 }

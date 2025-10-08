@@ -1,0 +1,20 @@
+{
+  imports = [
+    ./audio
+    ./bluetooth
+    ./bootloader
+    ./display
+    ./docker
+    ./fonts
+    ./keyring
+    ./locale
+    ./nautilus
+    ./network
+    ./nix-ld
+    ./power
+    ./steam
+    ./storage
+    ./touchegg
+    ./uv
+  ];
+}
