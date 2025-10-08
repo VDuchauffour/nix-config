@@ -78,3 +78,9 @@ Use the following command to update only the Nix-related inputs in the lock file
 ```shell
 nix flake update nixpkgs nixpkgs-unstable nixpkgs-nixos nix-darwin home-manager home-manager-unstable
 ```
+
+Use the following command to list all installed packages on your machine:
+
+```shell
+nix-env -qaP
+```
