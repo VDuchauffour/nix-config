@@ -147,6 +147,7 @@
         "float,class:^(galculator)$,title:^(.*)$"
         "noblur,class:^()$,title:^()"
         "bordersize 2, floating:1" # only show borders on floating windows
+        "size 1200 400, class:^(.protonvpn-app-wrapped)$"
       ];
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       #
