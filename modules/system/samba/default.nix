@@ -5,9 +5,7 @@
   vars,
   ...
 }: {
-  networking.firewall = {
-    enable = true;
-  };
+  # TODO: needs agenix to be set up
   # system.activationScripts.samba_user_create = ''
   #   smb_password=$(cat "${config.age.secrets.sambaPassword.path}")
   #   echo -e "$smb_password\n$smb_password\n" | ${lib.getExe' pkgs.samba "smbpasswd"} -a -s ${vars.userName}
@@ -27,18 +25,6 @@
         "guest account" = "nobody";
         "map to guest" = "bad user";
       };
-    };
-  };
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      domain = true;
-      hinfo = true;
-      userServices = true;
-      workstation = true;
     };
   };
 }
