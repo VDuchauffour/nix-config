@@ -1,11 +1,15 @@
 {
   programs.ssh = {
     enable = true;
-    extraConfig = ''
-      Include config-ext
-      Host github.com
-        AddKeysToAgent yes
-        IdentityFile ~/.ssh/github
-    '';
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "*" = {};
+      "github.com" = {
+        hostname = "github.com";
+        addKeysToAgent = "yes";
+        identityFile = "~/.ssh/github";
+      };
+    };
+    includes = ["config-ext"];
   };
 }
