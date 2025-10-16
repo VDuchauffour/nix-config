@@ -57,7 +57,7 @@
           ./modules/system/logid-m3s
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
-          ./modules/system/homelab.nix
+          # ./modules/system/homelab.nix
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
