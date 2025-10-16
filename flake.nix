@@ -19,6 +19,10 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util?shallow=true";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix?shallow=true";
+    agenix = {
+      url = "github:ryantm/agenix?shallow=true";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -31,6 +35,7 @@
     home-manager-unstable,
     mac-app-util,
     apple-fonts,
+    agenix,
   }: let
     metaConfig = {
       userName = "k";

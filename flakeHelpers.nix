@@ -14,6 +14,8 @@
           ./home/${metaConfig.userName}/${platformName}.nix
           ./modules/user
           ./modules/user/${platformName}.nix
+
+          inputs.agenix.homeManagerModules.default
         ]
         ++ extraImports;
     };
@@ -58,9 +60,12 @@ in {
           ./modules/system
           ./modules/system/nixos.nix
 
+          inputs.agenix.nixosModules.default
+
           (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
           {
             networking.hostName = machineHostname;
+            environment.systemPackages = [inputs.agenix.packages.x86_64-linux.default];
           }
         ]
         ++ extraModules;
