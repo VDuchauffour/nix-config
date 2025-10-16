@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./avahi
+    ./samba
+    ./ups
+  ];
+}
