@@ -1,0 +1,27 @@
+name: update-flake-lock
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1" # At 03:00 on Monday
+
+jobs:
+  update-flake-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v12
+      - name: Update lockfile
+        uses: DeterminateSystems/update-flake-lock@v23
+        id: update
+        with:
+          commit-msg: "chore(flake.lock): update"
+          pr-title: "chore(flake.lock): update"
+          pr-labels: dependencies
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Merge PR
+        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        if: ${{ steps.update.outputs.pull-request-number != '' }}
