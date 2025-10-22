@@ -57,7 +57,7 @@
         follow_mouse = 1;
         touchpad = {
           disable_while_typing = false;
-          tap-to-click = false;
+          tap-to-click = true;
           natural_scroll = true;
           scroll_factor = 1.25;
         };
