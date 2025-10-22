@@ -1,9 +1,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Vincent Duchauffour";
-    userEmail = "vincent.duchauffour@proton.me";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Vincent Duchauffour";
+        email = "vincent.duchauffour@proton.me";
+      };
       init = {
         defaultBranch = "main";
       };
