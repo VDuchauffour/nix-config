@@ -19,6 +19,8 @@ with pkgs; [
   dust
   duf
   doggo
+  fzf
+  ncdu
   ripgrep
   lsd
   fd
@@ -35,7 +37,6 @@ with pkgs; [
 
   # tui tools
   neovim
-  fzf
   lazygit
   ueberzugpp # for yazi, image preview in terminal
   htop
