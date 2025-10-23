@@ -15,5 +15,12 @@ jobs:
         uses: cachix/install-nix-action@v31
         with:
           nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+      - name: Use Cachix binary cache
+        uses: cachix/cachix-action@v14
+        with:
+          name: my-cache
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Check flake
         run: nix flake check --all-systems
