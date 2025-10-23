@@ -4,7 +4,7 @@
     ./font-config
     ./gsimplecal
     ./gtk
-    ./hyprland
+    ./hypr
     ./mpv
     ./pointer-cursor
   ];
