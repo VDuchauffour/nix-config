@@ -4,7 +4,6 @@
   ...
 }: {
   wayland.windowManager.hyprland = {
-    enable = true;
     settings = {
       "$t1" = "ampersand";
       "$t2" = "eacute";

@@ -4,7 +4,6 @@
   ...
 }: {
   wayland.windowManager.hyprland = {
-    enable = true;
     settings = {
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input = {
