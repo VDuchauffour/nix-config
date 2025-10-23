@@ -20,6 +20,6 @@ jobs:
       - name: Use Cachix binary cache
         uses: cachix/cachix-action@v14
         with:
-          name: ton-nom-de-cache
+          name: my-cache
       - name: Check flake
         run: nix flake check --all-systems
