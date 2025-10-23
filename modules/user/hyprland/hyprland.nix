@@ -177,7 +177,6 @@
         "SUPER, TAB, fullscreen, 1"
         # "SUPER, J, changegroupactive, f"
         # "SUPER, K, changegroupactive, b"
-        "SUPER CTRL ALT, F, togglefloating"
         # "SUPER, J, togglesplit" # dwindle
 
         # Move focus with SUPER + arrow keys
@@ -252,7 +251,7 @@
       # Mouse
       bindm = [
         "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
+        "SUPER SHIFT, mouse:272, resizewindow"
       ];
 
       # bind = SUPER, T, overview:toggle
