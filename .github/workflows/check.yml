@@ -17,20 +17,9 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             experimental-features = nix-command flakes
-      - name: Restore/save Nix cache
-        uses: nix-community/cache-nix-action@v6
+      - name: Use Cachix binary cache
+        uses: cachix/cachix-action@v14
         with:
-          primary-key: nix-${{ runner.os }}-lock-${{ hashFiles('**/flake.lock') }}
-          restore-prefixes-first-match: |
-            nix-${{ runner.os }}-lock-
-            nix-${{ runner.os }}-
-          gc-max-store-size-linux: 15G
-          purge: true
-          purge-prefixes: |
-            nix-${{ runner.os }}-lock-
-            nix-${{ runner.os }}-
-          purge-created: 7
-          purge-last-accessed: 7
-          purge-primary-key: keep
+          name: ton-nom-de-cache
       - name: Check flake
         run: nix flake check --all-systems
