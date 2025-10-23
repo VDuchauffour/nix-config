@@ -26,7 +26,7 @@
       };
 
       misc = {
-        force_default_wallpaper = 0; # Set to 0 or 1 to disable the anime mascot wallpapers
+        force_default_wallpaper = 1; # Set to 0 or 1 to disable the anime mascot wallpapers
       };
 
       source = "~/.config/hypr/monitors.conf";

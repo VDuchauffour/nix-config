@@ -5,7 +5,6 @@
 }: {
   wayland.windowManager.hyprland = {
     settings = {
-      # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input = {
         kb_layout = "fr";
         kb_variant = "";
