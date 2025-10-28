@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       animation = "colormix";
+      session_log = ".ly-session.log";
     };
   };
   programs.hyprland = {
