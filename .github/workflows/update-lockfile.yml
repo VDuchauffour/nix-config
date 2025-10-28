@@ -21,7 +21,7 @@ jobs:
           pr-labels: dependencies
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Merge PR
-        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --squash
+        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --squash --delete-branch
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: ${{ steps.update.outputs.pull-request-number != '' }}
