@@ -20,7 +20,11 @@
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "audio" "video" "users" "input" "networkmanager"];
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFV5qP4VYazqQcca7jxvMH1Wulbl7MS+5C7rKjyyGf2J personal"
+    ];
   };
+  programs.openssh.enable = true;
   programs.zsh.enable = true;
 
   imports = [
