@@ -14,6 +14,11 @@
   boot.zfs.extraPools = ["storage"];
   boot.kernelParams = ["zfs.zfs_arc_max=17179869184"]; # 16GB of RAM for ARC cache
 
+  fileSystems."/mnt/storage" = {
+    device = "storage";
+    fsType = "zfs";
+  };
+
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
