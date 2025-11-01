@@ -2,7 +2,7 @@
   services.samba = {
     settings = {
       media = {
-        path = "/tank/media";
+        path = "/mnt/storage/media";
         browsable = "yes";
         public = "no";
         writeable = "yes";
