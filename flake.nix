@@ -57,10 +57,14 @@
           ./modules/system/logid-m3s
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
-          # ./modules/system/homelab.nix
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
+        ])
+      (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
+          inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/homelab.nix
+        ] [
         ])
     ];
 }
