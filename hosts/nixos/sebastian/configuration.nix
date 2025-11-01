@@ -28,7 +28,7 @@
   programs.zsh.enable = true;
 
   imports = [
-    ./hardware.nix
+    # ./hardware.nix
     ./samba-storage.nix
     ./smartd-devices.nix
   ];
