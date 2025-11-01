@@ -24,7 +24,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFV5qP4VYazqQcca7jxvMH1Wulbl7MS+5C7rKjyyGf2J personal"
     ];
   };
-  programs.openssh.enable = true;
+  services.openssh.enable = true;
   programs.zsh.enable = true;
 
   imports = [
