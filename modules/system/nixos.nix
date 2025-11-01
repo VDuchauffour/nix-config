@@ -4,7 +4,6 @@
     ./bluetooth
     ./bootloader
     ./docker
-    ./fonts
     ./keyring
     ./locale
     ./network
