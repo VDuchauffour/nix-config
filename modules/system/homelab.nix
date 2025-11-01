@@ -4,5 +4,6 @@
     ./samba
     ./smartd
     ./ups
+    ./zfs
   ];
 }
