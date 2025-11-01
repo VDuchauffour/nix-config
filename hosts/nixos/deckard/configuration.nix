@@ -7,6 +7,8 @@
   system.stateVersion = "25.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 
+  networking.hostId = "1a2b3c4d";
+
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
