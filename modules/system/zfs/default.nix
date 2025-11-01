@@ -8,5 +8,12 @@
       weekly = 1;
       monthly = 0;
     };
+    autoScrub = {
+      enable = true;
+      interval = "weekly";
+    };
+    trim = {
+      enable = true;
+    };
   };
 }
