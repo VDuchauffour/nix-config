@@ -31,7 +31,7 @@
       ];
     };
     users."nut-admin" = {
-      passwordFile = lib.mkDefault "password";
+      passwordFile = lib.mkDefault "";
       upsmon = "primary";
     };
     upsmon = {
@@ -39,7 +39,7 @@
         system = "UPS-1@localhost";
         powerValue = 1;
         user = "nut-admin";
-        passwordFile = lib.mkDefault "password";
+        passwordFile = lib.mkDefault "";
         type = "primary";
       };
       settings = {
