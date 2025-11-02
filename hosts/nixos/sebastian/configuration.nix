@@ -19,6 +19,11 @@
     fsType = "zfs";
   };
 
+  age.identityPaths = [
+    "/root/.ssh/agenix"
+    # "/etc/ssh/ssh_host_ed25519_key"  # if secrets are also encrypted to host key
+  ];
+
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
