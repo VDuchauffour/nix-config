@@ -21,6 +21,7 @@
         echo "[samba-user-create] done"
       else
         echo "[samba-user-create] secret missing, skipping" >&2
+        exit 1
       fi
     '';
   };
