@@ -40,6 +40,7 @@
     mac-app-util,
     apple-fonts,
     agenix,
+    secrets,
   }: let
     metaConfig = {
       userName = "k";

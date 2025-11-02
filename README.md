@@ -46,9 +46,9 @@ exec $SHELL
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
 cd ~/.nix-config
 
-sudo nix run nix-darwin -- switch --flake .#tyrell
+sudo -E nix run nix-darwin -- switch --flake .#tyrell
 # or
-sudo nixos-rebuild switch --flake .#deckard
+sudo -E nixos-rebuild switch --flake .#deckard
 ```
 
 ### Post-install configuration

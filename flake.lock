@@ -348,7 +348,24 @@
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-nixos": "nixpkgs-nixos",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760009391,
+        "narHash": "sha256-Xpea/x5zW1X1K0MDDjXXtKYxuEj17js002rrJ5VShPs=",
+        "ref": "refs/heads/main",
+        "rev": "3be2eb57643346e16f77312392acdc00bf1ad96d",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
       }
     },
     "sf-arabic": {
