@@ -72,6 +72,8 @@ scp ~/.ssh/id_ed25519 root@$NIXOS_HOST:/root/
 
 SSH into the target machine and adds keys to the SSH agent
 
+You may need to copy keys to `/mnt/root/.ssh`
+
 ```shell
 ssh root@$NIXOS_HOST
 
@@ -88,6 +90,12 @@ Install the system
 
 ```shell
 nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#sebastian"
+```
+
+Add user password
+
+```shell
+nixos-enter --root /mnt -c 'passwd alice'
 ```
 
 For security, remove the keys when done
