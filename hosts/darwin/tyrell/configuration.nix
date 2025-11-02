@@ -8,9 +8,12 @@
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  users.users.k = {
+  users.users."${vars.userName}" = {
     home = "/Users/${vars.userName}";
     name = "${vars.userName}";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMrUzaZb81MZwpL3rF/qdErnrw7u2aiBBinp4r+h6i4q"
+    ];
   };
   system.primaryUser = vars.userName;
 

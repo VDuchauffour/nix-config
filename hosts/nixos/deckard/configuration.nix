@@ -15,6 +15,9 @@
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "audio" "video" "users" "input" "networkmanager"];
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMlRJiPvCCb+jOZOp1lXoGV79WfSAl2tXYrDamBUdjcF"
+    ];
   };
   programs.zsh.enable = true;
 

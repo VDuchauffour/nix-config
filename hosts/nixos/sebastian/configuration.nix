@@ -26,7 +26,8 @@
     extraGroups = ["wheel" "docker" "audio" "video" "users" "input" "networkmanager"];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFV5qP4VYazqQcca7jxvMH1Wulbl7MS+5C7rKjyyGf2J personal"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEhWwl9v5H/L422LWcyHsgtFfsyCL/v29lMRQuRgnWgF"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAD7sVA3owAZ3+FLv56+PkNa0FoJogZwHuUAftY3G93O"
     ];
   };
   services.openssh.enable = true;
