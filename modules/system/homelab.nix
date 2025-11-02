@@ -1,5 +1,6 @@
 {
   imports = [
+    ./agenix
     ./avahi
     ./samba
     ./smartd
