@@ -40,15 +40,79 @@ exec $SHELL
 
 ## Installation
 
+<details>
+<summary>Homelab</summary>
+
+Create a root password using the TTY
+
+```shell
+sudo su
+passwd
+```
+
+Get the IP adress of the target machine
+
+```shell
+ip a
+```
+
+Ensure that the SSH server is running
+
+```shell
+sudo systemctl start sshd
+```
+
+From your host, copy your SSH keys to the server
+
+```shell
+export NIXOS_HOST=192.168.1.xxx
+
+scp ~/.ssh/id_ed25519 root@$NIXOS_HOST:/root/
+
+ssh root@$NIXOS_HOST
+
+mkdir -p /root/.ssh
+mv /root/id_ed25519 /root/.ssh/id_ed25519
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/id_ed25519
+```
+
+Install the system
+
+```shell
+nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#sebastian"
+```
+
+For security, remove the keys when done
+
+```shell
+shred -u /root/.ssh/id_ed25519
+```
+
+Unmount the filesystems
+
+```shell
+umount -Rl "/mnt"
+zpool export -a
+```
+
+Reboot
+
+```shell
+reboot
+```
+
+</details>
+
 ### Set up the configuration
 
 ```python
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
 cd ~/.nix-config
 
-sudo -E nix run nix-darwin -- switch --flake .#tyrell
+sudo -E nix run nix-darwin -- switch --flake ~/.nix-config#tyrell
 # or
-sudo -E nixos-rebuild switch --flake .#deckard
+sudo -E nixos-rebuild switch --flake ~/.nix-config#deckard
 ```
 
 ### Post-install configuration
