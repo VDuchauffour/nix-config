@@ -35,7 +35,8 @@
 
   imports = [
     ./hardware.nix
-    ./samba-storage.nix
+    ./samba.nix
     ./smartd-devices.nix
+    ./ups.nix
   ];
 }

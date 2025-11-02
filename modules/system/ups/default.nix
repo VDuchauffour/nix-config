@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -30,7 +31,7 @@
       ];
     };
     users."nut-admin" = {
-      passwordFile = "${../resources/ups-passwd.txt}";
+      passwordFile = lib.mkDefault "";
       upsmon = "primary";
     };
     upsmon = {
@@ -38,7 +39,7 @@
         system = "UPS-1@localhost";
         powerValue = 1;
         user = "nut-admin";
-        passwordFile = "${../resources/ups-passwd.txt}";
+        passwordFile = lib.mkDefault "";
         type = "primary";
       };
       settings = {
