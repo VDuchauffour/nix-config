@@ -68,13 +68,20 @@ From your host, copy your SSH keys to the server
 export NIXOS_HOST=192.168.1.xxx
 
 scp ~/.ssh/id_ed25519 root@$NIXOS_HOST:/root/
+```
 
+SSH into the target machine and adds keys to the SSH agent
+
+```shell
 ssh root@$NIXOS_HOST
 
 mkdir -p /root/.ssh
 mv /root/id_ed25519 /root/.ssh/id_ed25519
 chmod 700 /root/.ssh
 chmod 600 /root/.ssh/id_ed25519
+
+eval "$(ssh-agent -s)"
+ssh-add /root/.ssh/id_ed25519
 ```
 
 Install the system
