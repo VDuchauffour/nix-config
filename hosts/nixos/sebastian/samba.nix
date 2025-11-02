@@ -27,7 +27,7 @@
       if [ -n "$sp" ] && [ -r "$sp" ]; then
         install -d -m 0755 /var/lock/samba /var/lib/samba/private
         pw="$(cat "$sp")"
-        echo -e "$pw\n$pw\n" | ${lib.getExe' pkgs.samba "smbpasswd"} -a -s ${hl.user}
+        echo -e "$pw\n$pw\n" | ${lib.getExe' pkgs.samba "smbpasswd"} -a -s ${vars.userName}
       else
         echo "[samba-user-create] secret missing, skipping" >&2
       fi
