@@ -11,10 +11,10 @@
 
   boot.loader.grub.zfsSupport = true;
   boot.supportedFilesystems = ["zfs"];
-  boot.zfs.extraPools = ["storage"];
+  # boot.zfs.extraPools = ["storage"];
   boot.kernelParams = ["zfs.zfs_arc_max=17179869184"]; # 16GB of RAM for ARC cache
 
-  fileSystems."/mnt/storage" = {
+  fileSystems."/storage" = {
     device = "storage";
     fsType = "zfs";
   };
