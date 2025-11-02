@@ -14,9 +14,8 @@
     };
     script = ''
       set -euo pipefail
-      smb_password="${config.age.secrets.sambaPassword.path:-}"
-      if [ -n "$smb_password" ] && [ -r "$smb_password" ]; then
-        smb_password=$(cat "${config.age.secrets.sambaPassword.path}")
+      smb_password=$(cat "${config.age.secrets.sambaPassword.path}")
+      if [ -n "$smb_password" ]; then
         echo -e "$smb_password\n$smb_password\n" | ${lib.getExe' pkgs.samba "smbpasswd"} -a -s ${vars.userName}
         echo "[samba-user-create] done"
       else
