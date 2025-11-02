@@ -13,7 +13,7 @@
   services.samba = {
     settings = {
       media = {
-        path = "/mnt/storage/media";
+        path = "/mnt/tank/media";
         browsable = "yes";
         public = "no";
         writeable = "yes";
