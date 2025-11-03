@@ -12,6 +12,7 @@ categories:
       - bug
   - title: 🧹 Maintenance
     labels:
+      - dependencies
       - maintenance
       - refactoring
       - cosmetic
