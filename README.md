@@ -163,3 +163,7 @@ Use the following command to list all installed packages on your machine:
 ```shell
 nix-env -qaP
 ```
+
+## Acknowledgments
+
+- The tree structure and module definitions are inspired by [notthebee's nix-config](https://github.com/notthebee/nix-config/)
