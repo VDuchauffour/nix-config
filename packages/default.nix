@@ -56,6 +56,7 @@ with pkgs; [
   uv
   lua-language-server
   stylua
+  lua52Packages.luarocks
   shellcheck
   shfmt
   terraform
