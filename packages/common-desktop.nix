@@ -5,7 +5,7 @@ with pkgs; [
   neovide
   vscode
   code-cursor
-  bitwarden
+  bitwarden-desktop
   qbittorrent
   wireguard-tools
   dbeaver-bin
