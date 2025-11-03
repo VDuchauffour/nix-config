@@ -17,6 +17,13 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             experimental-features = nix-command flakes
+      - name: Configure SSH for private flakes
+        if: secrets.NIX_PRIVATE_DEPLOY_KEY != ''
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.NIX_PRIVATE_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t rsa,ed25519 github.com >> ~/.ssh/known_hosts
       - name: Use Cachix binary cache
         uses: cachix/cachix-action@v14
         with:
