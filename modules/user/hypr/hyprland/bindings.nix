@@ -13,7 +13,9 @@
 
       "$terminal" = "alacritty";
       "$fileManager" = "nautilus";
-      "$menu" = "bash -c $HOME/.config/rofi/launchers/type-3/launcher.sh";
+      "$menu" = "walker";
+      "$screenshotEntireScreen" = "hyprshot -m output -m active -o ~/Pictures/Screenshots";
+      "$screenshotWindow" = "hyprshot -m window -o ~/Pictures/Screenshots";
 
       bind = [
         # App shorcuts
@@ -21,6 +23,8 @@
         "SUPER, Q, killactive"
         "SUPER, F, exec, $fileManager"
         "SUPER, SPACE, exec, $menu"
+        ", PRINT, exec, $screenshotEntireScreen"
+        "SHIFT, PRINT, exec, $screenshotWindow"
 
         # Hyprland
         "SUPER CTRL ALT, R, exec, hyprctl reload"

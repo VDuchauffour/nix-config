@@ -5,6 +5,7 @@ with pkgs; [
   brightnessctl
   avizo # for playerctl, lightctl and volumectl
   wl-clipboard
+  gscreenshot
 
   # apps
   protonvpn-gui
