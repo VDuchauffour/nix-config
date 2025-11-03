@@ -25,6 +25,6 @@ in {
   ];
 
   programs.zsh.initContent = lib.mkAfter ''
-    eval "$(${my-helmfile} completions zsh)"
+    eval "$(${my-helmfile}/bin/helmfile completion zsh)"
   '';
 }

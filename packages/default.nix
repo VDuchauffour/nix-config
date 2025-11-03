@@ -68,14 +68,4 @@ with pkgs; [
   awscli2
 
   alejandra
-
-  # apps
-  alacritty
-  neovide
-  vscode
-  code-cursor
-  bitwarden
-  qbittorrent
-  wireguard-tools
-  dbeaver-bin
 ]

@@ -23,6 +23,10 @@
       url = "github:ryantm/agenix?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    secrets = {
+      url = "git+ssh://git@github.com/VDuchauffour/nix-private.git";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -36,6 +40,7 @@
     mac-app-util,
     apple-fonts,
     agenix,
+    secrets,
   }: let
     metaConfig = {
       userName = "k";
@@ -60,6 +65,11 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
+        ])
+      (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
+          inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/homelab.nix
+        ] [
         ])
     ];
 }
