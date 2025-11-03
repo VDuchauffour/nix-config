@@ -12,6 +12,12 @@ jobs:
         uses: actions/checkout@v5
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v12
+      - name: Configure SSH for private flakes
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.NIX_PRIVATE_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t rsa,ed25519 github.com >> ~/.ssh/known_hosts
       - name: Update lockfile
         uses: DeterminateSystems/update-flake-lock@v23
         id: update
