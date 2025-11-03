@@ -7,5 +7,6 @@
     ./hypr
     ./mpv
     ./pointer-cursor
+    ./walker
   ];
 }

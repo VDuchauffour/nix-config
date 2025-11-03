@@ -52,11 +52,7 @@
       "headphone": "",
       "phone": "",
       "car": "",
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "on-click": "pavucontrol",
     "on-click-right": "killall pavucontrol"

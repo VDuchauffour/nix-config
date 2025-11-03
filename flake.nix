@@ -17,8 +17,6 @@
       url = "github:nix-community/home-manager/master?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    mac-app-util.url = "github:hraban/mac-app-util?shallow=true";
-    apple-fonts.url = "github:Lyndeno/apple-fonts.nix?shallow=true";
     agenix = {
       url = "github:ryantm/agenix?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +24,13 @@
     secrets = {
       url = "git+ssh://git@github.com/VDuchauffour/nix-private.git";
       flake = false;
+    };
+    mac-app-util.url = "github:hraban/mac-app-util?shallow=true";
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix?shallow=true";
+    elephant.url = "github:abenz1267/elephant";
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
     };
   };
 
@@ -37,10 +42,12 @@
     nixpkgs-nixos,
     home-manager,
     home-manager-unstable,
-    mac-app-util,
-    apple-fonts,
     agenix,
     secrets,
+    mac-app-util,
+    apple-fonts,
+    elephant,
+    walker,
   }: let
     metaConfig = {
       userName = "k";
@@ -65,6 +72,7 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
+          inputs.walker.homeManagerModules.default
         ])
       (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
