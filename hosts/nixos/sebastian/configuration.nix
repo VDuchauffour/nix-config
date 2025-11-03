@@ -14,10 +14,10 @@
   # boot.zfs.extraPools = ["tank"];
   boot.kernelParams = ["zfs.zfs_arc_max=17179869184"]; # 16GB of RAM for ARC cache
 
-  # fileSystems."/mnt/tank" = {
-  #   device = "tank";
-  #   fsType = "zfs";
-  # };
+  fileSystems."/mnt/tank" = {
+    device = "tank";
+    fsType = "zfs";
+  };
 
   age.identityPaths = [
     "/root/.ssh/agenix"
