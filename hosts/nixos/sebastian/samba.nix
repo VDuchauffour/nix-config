@@ -39,6 +39,18 @@
         "create mask" = "0755";
         "directory mask" = "0775";
       };
+      storage-share = {
+        path = "/mnt/tank/storage-share";
+        browsable = "yes";
+        public = "no";
+        writeable = "yes";
+        "guest ok" = "no";
+        "valid users" = vars.userName;
+        "force user" = vars.userName;
+        "force group" = "users";
+        "create mask" = "0755";
+        "directory mask" = "0775";
+      };
     };
   };
 }

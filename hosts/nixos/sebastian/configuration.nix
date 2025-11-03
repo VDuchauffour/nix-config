@@ -19,6 +19,14 @@
     device = "tank";
     fsType = "zfs";
   };
+  fileSystems."/mnt/tank/media" = {
+    device = "tank/media";
+    fsType = "zfs";
+  };
+  fileSystems."/mnt/tank/storage-share" = {
+    device = "tank/storage-share";
+    fsType = "zfs";
+  };
 
   age.identityPaths = [
     "/root/.ssh/agenix"
