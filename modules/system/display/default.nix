@@ -1,5 +1,12 @@
 {pkgs, ...}: {
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    OZONE_PLATFORM = "wayland";
+    OZONE_PLATFORM_HINT = "wayland";
+    # WAYLAND_DISPLAY = "wayland-0";
+    # MOZ_ENABLE_WAYLAND = "1";
+    ELECTRON_ENABLE_WAYLAND = "1";
+  };
   services.displayManager.ly = {
     enable = true;
     settings = {
