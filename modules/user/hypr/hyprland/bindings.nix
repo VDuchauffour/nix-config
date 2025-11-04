@@ -13,7 +13,8 @@
 
       "$terminal" = "alacritty";
       "$fileManager" = "nautilus";
-      "$menu" = "walker";
+      # "$menu" = "walker";
+      "$menu" = "bash -c $HOME/.config/rofi/launchers/type-3/launcher.sh";
       "$screenshotEntireScreen" = "hyprshot -m output -m active -o ~/Pictures/Screenshots";
       "$screenshotWindow" = "hyprshot -m window -o ~/Pictures/Screenshots";
 
