@@ -34,6 +34,7 @@ with pkgs; [
   nodejs_24
   hadolint
   go
+  unzip
 
   # tui tools
   neovim
