@@ -32,6 +32,7 @@
         "SUPER CTRL ALT, Q, exec, pkill Hyprland"
         "SUPER CTRL, Q, exec, hyprlock"
         "SUPER CTRL ALT, F, fullscreen, 0"
+        "SUPER CTRL ALT SHIFT, F, togglefloating"
         "SUPER, TAB, fullscreen, 1"
         # "SUPER, J, changegroupactive, f"
         # "SUPER, K, changegroupactive, b"
