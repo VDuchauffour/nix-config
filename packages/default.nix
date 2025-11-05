@@ -55,6 +55,7 @@ with pkgs; [
   cargo
   pre-commit
   poetry
+  pkgs.python3
   uv
   lua-language-server
   stylua
