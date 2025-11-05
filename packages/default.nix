@@ -35,6 +35,7 @@ with pkgs; [
   hadolint
   go
   unzip
+  yt-dlp
 
   # tui tools
   neovim
