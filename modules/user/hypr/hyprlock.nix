@@ -63,7 +63,7 @@
         # DATE
         {
           monitor = "";
-          text = "cmd[update:60000] echo \"<span foreground=\'##ffffff\'>$(date \'+%a %d %b\')</span>\"";
+          text = "cmd[update:60000] echo \"<span foreground=\'##ffffff\'>$(LC_TIME=en_US.UTF-8 date \'+%a %d %b\')</span>\"";
           color = "rgba(1,1,1,1.0)";
           font_size = 30;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
