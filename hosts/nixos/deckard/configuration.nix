@@ -9,6 +9,15 @@
 
   networking.hostId = "1a2b3c4d";
 
+  services.dnsmasq = {
+    enable = true;
+    settings = {
+      domain = "home.arpa";
+      address = ["/home.arpa/192.168.1.18"]; # wildcard for *.home.arpa
+      listen-address = ["127.0.0.1" "192.168.1.18"];
+    };
+  };
+
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
