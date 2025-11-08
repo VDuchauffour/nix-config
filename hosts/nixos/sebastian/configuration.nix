@@ -47,6 +47,8 @@
   services.openssh.enable = true;
   programs.zsh.enable = true;
 
+  networking.firewall.allowedTCPPorts = [80 443];
+
   imports = [
     ./hardware.nix
     ./samba.nix
