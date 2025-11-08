@@ -15,4 +15,5 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.nix" },
+  { import = "astrocommunity.pack.helm" },
 }
