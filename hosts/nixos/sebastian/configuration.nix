@@ -23,10 +23,6 @@
     device = "tank/media";
     fsType = "zfs";
   };
-  fileSystems."/mnt/tank/storage-share" = {
-    device = "tank/storage-share";
-    fsType = "zfs";
-  };
 
   age.identityPaths = [
     "/root/.ssh/agenix"
@@ -47,10 +43,9 @@
   services.openssh.enable = true;
   programs.zsh.enable = true;
 
-  networking.firewall.allowedTCPPorts = [80 443];
-
   imports = [
     ./hardware.nix
+    ./kubernetes.nix
     ./samba.nix
     ./smartd-devices.nix
     ./ups.nix
