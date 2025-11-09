@@ -36,7 +36,7 @@
         "valid users" = vars.userName;
         "force user" = vars.userName;
         "force group" = "users";
-        "create mask" = "0755";
+        "create mask" = "0644";
         "directory mask" = "0775";
       };
     };
