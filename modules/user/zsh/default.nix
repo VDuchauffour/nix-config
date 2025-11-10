@@ -52,6 +52,8 @@
       XDG_BIN_HOME = XDG_BIN_HOME;
       PATH = "${XDG_BIN_HOME}:$PATH";
       GTK_THEME = "WhiteSur-Dark";
+
+      TERM = "xterm-256color";
     };
 
     initContent = ''
