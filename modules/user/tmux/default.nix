@@ -1,13 +1,14 @@
 {pkgs, ...}: {
   programs.tmux = {
     enable = true;
-    prefix = "C-a";
+    shell = "${pkgs.zsh}/bin/zsh";
     baseIndex = 1;
     terminal = "xterm-256color";
     mouse = true;
     historyLimit = 10000;
     plugins = [
       pkgs.tmuxPlugins.sensible
+      pkgs.tmuxPlugins.better-mouse-mode
     ];
     extraConfig = ''
       set -g pane-base-index 1
