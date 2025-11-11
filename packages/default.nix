@@ -36,6 +36,8 @@ with pkgs; [
   go
   unzip
   yt-dlp
+  ghostscript
+  imagemagick
 
   # tui tools
   neovim
