@@ -6,7 +6,12 @@
       createDirectories = true;
     };
     portal = {
-      extraPortals = with pkgs; [xdg-desktop-portal-hyprland gnome-keyring];
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+        gnome-keyring
+      ];
     };
     mime.enable = true;
     mimeApps = {
@@ -26,6 +31,7 @@
         "image/x-icon" = "org.gnome.eog.desktop";
         "image/svg+xml" = "org.gnome.eog.desktop";
         "image/webp" = "org.gnome.eog.desktop";
+        "x-scheme-handler/slack" = ["slack.desktop"];
       };
     };
   };

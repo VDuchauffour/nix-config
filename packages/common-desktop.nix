@@ -9,4 +9,5 @@ with pkgs; [
   qbittorrent
   wireguard-tools
   dbeaver-bin
+  slack
 ]
