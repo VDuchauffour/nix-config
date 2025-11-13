@@ -35,6 +35,7 @@
       kn = "k9s";
 
       tf = "terraform";
+      tg = "terragrunt";
 
       open = "xdg-open";
       getmod = "stat --format '%a'";

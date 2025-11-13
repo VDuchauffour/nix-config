@@ -65,6 +65,7 @@ with pkgs; [
   shellcheck
   shfmt
   terraform
+  terragrunt
   kubectl
   kubectx
   k9s
