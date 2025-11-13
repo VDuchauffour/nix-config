@@ -167,3 +167,4 @@ nix-env -qaP
 ## Acknowledgments
 
 - The tree structure and module definitions are inspired by [notthebee's nix-config](https://github.com/notthebee/nix-config/)
+- The Makefile comes from [minego's nixos-config](https://github.com/minego/nixos-config)

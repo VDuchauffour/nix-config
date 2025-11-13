@@ -1,6 +1,7 @@
 {pkgs, ...}:
 with pkgs; [
   # cli tools
+  nvd
   nerd-fonts.symbols-only
   zsh-syntax-highlighting
   zsh-autosuggestions
