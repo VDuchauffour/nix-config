@@ -72,6 +72,7 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
+          ./modules/user/gcp
           inputs.walker.homeManagerModules.default
         ])
       (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
