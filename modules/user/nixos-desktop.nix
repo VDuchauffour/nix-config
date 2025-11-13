@@ -1,6 +1,7 @@
 {
   imports = [
     ./dunst
+    ./eog
     ./font-config
     ./gsimplecal
     ./gtk

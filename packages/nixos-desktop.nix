@@ -13,7 +13,6 @@ with pkgs; [
   nautilus-open-any-terminal
   code-nautilus
   viewnior
-  eog # eye of gnome
   papers # pdf viewer of gnome
   gnome-disk-utility
   galculator
