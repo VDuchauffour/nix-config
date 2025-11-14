@@ -10,6 +10,7 @@ with pkgs; [
   stow
   gnumake
   coreutils
+  wireguard-tools
   openssl
   wget
   aria2
@@ -29,7 +30,6 @@ with pkgs; [
   xh
   jq
   jless
-  imagemagick
   tldr
   tree-sitter
   nodejs_24

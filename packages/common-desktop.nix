@@ -7,6 +7,5 @@ with pkgs; [
   code-cursor
   bitwarden-desktop
   qbittorrent
-  wireguard-tools
   dbeaver-bin
 ]
