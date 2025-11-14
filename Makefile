@@ -17,11 +17,14 @@ build:
 	$(TOOL) build --flake ./#$(HOSTNAME) $(ARGS)
 	nvd diff /run/current-system result
 
+boot:
+	$(TOOL) boot --flake ./#$(HOSTNAME) $(ARGS) --show-trace
+
 switch:
 	$(TOOL) switch --flake ./#$(HOSTNAME) $(ARGS) --show-trace
 
-boot:
-	$(TOOL) boot --flake ./#$(HOSTNAME) $(ARGS) --show-trace
+switch-impure:
+	$(TOOL) switch --flake ./#$(HOSTNAME) $(ARGS) --show-trace --impure
 
 switch-debug: check
 	$(TOOL) switch --flake ./#$(HOSTNAME) --option eval-cache false --show-trace $(ARGS)
