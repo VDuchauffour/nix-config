@@ -89,7 +89,7 @@ ssh-add /root/.ssh/id_ed25519
 Install the system
 
 ```shell
-nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#sebastian"
+nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#joi"
 ```
 
 Add user password

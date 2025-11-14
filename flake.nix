@@ -75,7 +75,7 @@
           ./modules/user/gcp
           inputs.walker.homeManagerModules.default
         ])
-      (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
+      (mkNixos "joi" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/homelab.nix
         ] [
