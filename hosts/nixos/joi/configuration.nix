@@ -23,6 +23,10 @@
     device = "tank/media";
     fsType = "zfs";
   };
+  fileSystems."/vm-pool" = {
+    device = "vm-pool";
+    fsType = "zfs";
+  };
 
   age.identityPaths = [
     "/root/.ssh/agenix"
