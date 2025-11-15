@@ -18,7 +18,7 @@
     home = "/home/${vars.userName}";
     name = "${vars.userName}";
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio" "video" "users" "input" "networkmanager"];
+    extraGroups = ["wheel" "docker" "audio" "video" "render" "users" "input" "networkmanager"];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEhWwl9v5H/L422LWcyHsgtFfsyCL/v29lMRQuRgnWgF"
@@ -28,12 +28,22 @@
   services.openssh.enable = true;
   programs.zsh.enable = true;
 
+  environment.systemPackages = [pkgs.steam];
+  services.sunshine.settings = {
+    "name" = "Steam Big Picture";
+    "cmd" = "steam -tenfoot -fullscreen";
+    "detached" = false;
+  };
+  networking.firewall.allowedTCPPorts = [47990];
+  networking.firewall.allowedUDPPorts = [47998 48000];
+
   imports = [
     ./hardware.nix
     ./kubernetes.nix
     ./samba.nix
     ./smartd-devices.nix
     ./ups.nix
+    ./virtual-display.nix
     ./zfs.nix
   ];
 }

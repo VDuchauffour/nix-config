@@ -5,6 +5,7 @@
     ./k3s
     ./samba
     ./smartd
+    ./sunshine
     ./ups
     ./zfs
   ];
