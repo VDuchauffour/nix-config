@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       global = {
-        font = "SF Pro Display 12";
+        font = "MesloLGS Nerd Font 10";
         separator_height = 1;
         transparency = 0;
         width = "470";
