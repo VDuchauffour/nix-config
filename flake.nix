@@ -68,6 +68,20 @@
         ] [
           ./modules/user/common-desktop.nix
         ])
+      (mkNixos "wallace" metaConfig inputs.nixpkgs-unstable [
+          inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/g810-led
+          ./modules/system/logid-m3s
+          # ./modules/system/solaar
+          ./modules/system/laptop
+          ./modules/system/nixos-desktop.nix
+          inputs.solaar.nixosModules.default
+        ] [
+          ./modules/user/common-desktop.nix
+          ./modules/user/nixos-desktop.nix
+          ./modules/user/gcp
+          inputs.walker.homeManagerModules.default
+        ])
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/g810-led
