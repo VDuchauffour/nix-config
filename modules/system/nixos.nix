@@ -8,6 +8,7 @@
     ./locale
     ./network
     ./nix-ld
+    ./openssh
     ./power
     ./storage
     ./touchegg
