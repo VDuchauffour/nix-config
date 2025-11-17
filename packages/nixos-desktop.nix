@@ -1,5 +1,6 @@
 {pkgs, ...}:
 with pkgs; [
+  kitty # because it's the default terminal for hyprland
   # cli tools
   playerctl
   brightnessctl
