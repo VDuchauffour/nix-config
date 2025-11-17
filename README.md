@@ -4,6 +4,15 @@ This repository contains the configuration files for my Nix-based devices, both 
 
 You can customize the configuration to your liking.
 
+## How to use the configuration
+
+```python
+git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
+cd ~/.nix-config
+
+make switch
+```
+
 ## Installation
 
 <details>
@@ -85,18 +94,7 @@ reboot
 
 </details>
 
-### Set up the configuration
-
-```python
-git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
-cd ~/.nix-config
-
-make switch
-```
-
 ## Nix-darwin installation
-
-### Prerequisites
 
 Before using a nix-darwin configuration, you need to set up the prerequisites.
 
