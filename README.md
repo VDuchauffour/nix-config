@@ -25,6 +25,8 @@ sudo su
 passwd
 ```
 
+[Set up the network](https://nixos.org/manual/nixos/stable/#sec-installation-manual-networking) in the installer if needed.
+
 Get the IP adress of the target machine
 
 ```shell
@@ -37,46 +39,66 @@ Ensure that the SSH server is running
 sudo systemctl start sshd
 ```
 
-From your host, copy your SSH keys to the server
+From your host, copy the public SSH key to the server
 
 ```shell
 export NIXOS_HOST=192.168.1.xxx
 
-scp ~/.ssh/id_ed25519 root@$NIXOS_HOST:/root/
+# you may need to run eval "$(ssh-agent -s)"
+# and also generate a new pair of keys with ssh-keygen -t ed25519 -f ~/.ssh/new-hostname
+
+ssh-add ~/.ssh/new-hostname
+ssh-copy-id -i ~/.ssh/new-hostname root@$NIXOS_HOST
 ```
 
-SSH into the target machine and adds keys to the SSH agent
-
-You may need to copy keys to `/mnt/root/.ssh`
+SSH into the host with agent forwarding enabled (for the secrets repo access)
 
 ```shell
+ssh -A root@$NIXOS_HOST
+```
+
+Perform [partitioning and formatting](https://nixos.org/manual/nixos/stable/#sec-installation-manual-partitioning) if needed. Then run `nixos-generate-config --root /mnt` to get device ID.
+
+Install git
+
+```bash
+nix-env -f '<nixpkgs>' -iA git
+```
+
+Clone this repository
+
+```bash
+mkdir -p /mnt/etc/nixos
+git clone https://github.com/VDuchauffour/nix-config.git /mnt/etc/nixos
+```
+
+Put the private key into place (required for secret management) and any other required keys (like GitHub)
+
+```shell
+mkdir -p /mnt/home/k/.ssh
+exit
+
+scp ~/.ssh/new-hostname root@$NIXOS_HOST:/mnt/home/k/.ssh
 ssh root@$NIXOS_HOST
-
-mkdir -p /root/.ssh
-mv /root/id_ed25519 /root/.ssh/id_ed25519
-chmod 700 /root/.ssh
-chmod 600 /root/.ssh/id_ed25519
-
-eval "$(ssh-agent -s)"
-ssh-add /root/.ssh/id_ed25519
+chmod 700 /mnt/home/k/.ssh
+chmod 600 /mnt/home/k/.ssh/*
 ```
 
 Install the system
 
 ```shell
-nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#hostname"
+nixos-install \
+--root "/mnt" \
+--flake "git+file:///mnt/etc/nixos#hostname"
 ```
 
-Add user password
+Apply final tweaks on the new NixOS
 
 ```shell
-nixos-enter --root /mnt -c 'passwd k'
-```
-
-For security, remove the keys when done
-
-```shell
-shred -u /root/.ssh/id_ed25519
+nixos-enter --root
+passwd k
+git clone git@github.com:VDuchauffour/nix-config.git ~/.nix-config
+# checks also owner and groups for ~/.ssh
 ```
 
 Unmount the filesystems
