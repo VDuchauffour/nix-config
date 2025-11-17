@@ -32,6 +32,10 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -48,6 +52,7 @@
     apple-fonts,
     elephant,
     walker,
+    solaar,
   }: let
     metaConfig = {
       userName = "k";
@@ -67,8 +72,10 @@
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/g810-led
           ./modules/system/logid-m3s
+          # ./modules/system/solaar
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
+          inputs.solaar.nixosModules.default
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
