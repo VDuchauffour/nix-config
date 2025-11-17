@@ -4,44 +4,10 @@ This repository contains the configuration files for my Nix-based devices, both 
 
 You can customize the configuration to your liking.
 
-## Prerequisites
-
-Before using a NixOS or nix-darwin configuration, you need to install the prerequisites.
-
-<details>
-<summary>NixOS prerequisites</summary>
-
-```shell
-
-```
-
-</details>
-
-<details>
-<summary>nix-darwin prerequisites</summary>
-
-```shell
-# install XCode CLI tools
-xcode-select --install
-
-# install Rosetta
-sudo softwareupdate --install-rosetta
-
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# install nix
-# say no when asking for determinate OS
-curl -fsSL https://install.determinate.systems/nix | sh -s -- install
-exec $SHELL
-```
-
-</details>
-
 ## Installation
 
 <details>
-<summary>Homelab</summary>
+<summary>Remote installation</summary>
 
 Create a root password using the TTY
 
@@ -89,13 +55,13 @@ ssh-add /root/.ssh/id_ed25519
 Install the system
 
 ```shell
-nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#joi"
+nixos-install --flake "git+ssh://git@github.com/VDuchauffour/nix-config.git#hostname"
 ```
 
 Add user password
 
 ```shell
-nixos-enter --root /mnt -c 'passwd alice'
+nixos-enter --root /mnt -c 'passwd k'
 ```
 
 For security, remove the keys when done
@@ -125,10 +91,37 @@ reboot
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
 cd ~/.nix-config
 
-sudo -E nix run nix-darwin -- switch --flake ~/.nix-config#tyrell
-# or
-sudo -E nixos-rebuild switch --flake ~/.nix-config#deckard
+make switch
 ```
+
+## Nix-darwin installation
+
+### Prerequisites
+
+Before using a nix-darwin configuration, you need to set up the prerequisites.
+
+</details>
+
+<details>
+<summary>nix-darwin prerequisites</summary>
+
+```shell
+# install XCode CLI tools
+xcode-select --install
+
+# install Rosetta
+sudo softwareupdate --install-rosetta
+
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# install nix
+# say no when asking for determinate OS
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install
+exec $SHELL
+```
+
+</details>
 
 ### Post-install configuration
 
@@ -152,10 +145,10 @@ Use the following command to check the value of an option on your current system
 nixos-option --flake .#hostName options.path.value
 ```
 
-Use the following command to update only the Nix-related inputs in the lock file:
+Use the following command to update the lock file:
 
 ```shell
-nix flake update nixpkgs nixpkgs-unstable nixpkgs-nixos nix-darwin home-manager home-manager-unstable
+make update
 ```
 
 Use the following command to list all installed packages on your machine:
