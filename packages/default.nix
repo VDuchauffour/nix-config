@@ -12,6 +12,7 @@ with pkgs; [
   coreutils
   wireguard-tools
   openssl
+  pwgen
   wget
   aria2
   git
