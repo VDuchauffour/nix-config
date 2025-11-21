@@ -22,6 +22,7 @@ in {
   home.packages = with pkgs; [
     my-kubernetes-helm
     my-helmfile
+    vals
   ];
 
   programs.zsh.initContent = lib.mkAfter ''
