@@ -61,6 +61,7 @@ with pkgs; [
   poetry
   pkgs.python3
   uv
+  pnpm
   lua-language-server
   stylua
   lua52Packages.luarocks
@@ -71,9 +72,9 @@ with pkgs; [
   kubectl
   kubectx
   k9s
-  # kubectl-aliases
   eksctl
   kubeseal
+  mkcert
   awscli2
 
   alejandra
