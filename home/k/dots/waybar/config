@@ -28,7 +28,6 @@
     "battery",
     "clock",
     "custom/notif",
-    "custom/exit",
   ],
 }
 

@@ -29,8 +29,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
     "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
     "tooltip-format-disconnected": "Not Connected to any type of Network",
-    "tooltip": true,
-    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu"
+    "tooltip": true
   },
   "cpu": {
     "on-click": "btop -p 2",
@@ -104,11 +103,6 @@
     "format": "    ",
     "on-click": "dunstctl history-pop",
     "on-click-right": "dunstctl close-all",
-    "tooltip": false
-  },
-  "custom/exit": {
-    "format": "⏻",
-    "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh",
     "tooltip": false
   }
 }

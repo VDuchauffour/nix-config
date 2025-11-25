@@ -12,6 +12,11 @@
         "bordersize 2, floating:1" # only show borders on floating windows
         "size 1200 400, class:^(.protonvpn-app-wrapped)$"
       ];
+      layerrule = [
+        "blur,vicinae"
+        "ignorealpha 0, vicinae"
+        "noanim, vicinae"
+      ];
     };
   };
 }
