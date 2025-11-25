@@ -23,7 +23,6 @@ with pkgs; [
   nwg-displays
   nwg-look
   pavucontrol
-  rofi
   networkmanagerapplet
   hypridle
   hyprpaper

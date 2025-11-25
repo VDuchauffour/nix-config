@@ -86,12 +86,6 @@
   padding: 0px;
   margin: 0px 10px 0px 0px;
 }
-#custom-exit {
-  margin: 0px 18px 0px 0px;
-  padding: 0px;
-  font-size: 20px;
-  color: @text;
-}
 
 /* tooltip */
 tooltip {

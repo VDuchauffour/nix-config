@@ -1,6 +1,11 @@
 {
   description = "My unified Nix configuration";
 
+  nixConfig = {
+    extra-substituters = ["https://vicinae.cachix.org"];
+    extra-trusted-public-keys = ["vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
@@ -27,15 +32,11 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util?shallow=true";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix?shallow=true";
-    elephant.url = "github:abenz1267/elephant";
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs = inputs @ {
@@ -50,9 +51,8 @@
     secrets,
     mac-app-util,
     apple-fonts,
-    elephant,
-    walker,
     solaar,
+    vicinae,
   }: let
     metaConfig = {
       userName = "k";
@@ -80,7 +80,7 @@
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
           ./modules/user/gcp
-          inputs.walker.homeManagerModules.default
+          inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
@@ -94,7 +94,7 @@
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
           ./modules/user/gcp
-          inputs.walker.homeManagerModules.default
+          inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "joi" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager

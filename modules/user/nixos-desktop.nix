@@ -8,6 +8,6 @@
     ./hypr
     ./mpv
     ./pointer-cursor
-    ./walker
+    ./vicinae
   ];
 }

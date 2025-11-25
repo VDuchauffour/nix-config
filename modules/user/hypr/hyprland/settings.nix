@@ -27,6 +27,7 @@
 
       misc = {
         force_default_wallpaper = 1; # Set to 0 or 1 to disable the anime mascot wallpapers
+        focus_on_activate = true;
       };
 
       source = "~/.config/hypr/monitors.conf";
@@ -40,6 +41,7 @@
         "blueman-applet &"
         "udiskie &"
         "exec \"avizo-service\" &"
+        "vicinae server"
       ];
 
       env = [
