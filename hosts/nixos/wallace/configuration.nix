@@ -27,6 +27,9 @@
   # };
   # hardware.enableRedistributableFirmware = true;
 
+  # allows applications to update firmware
+  services.fwupd.enable = true;
+
   imports = [
     ./hardware.nix
     ./nvidia.nix
