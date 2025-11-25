@@ -21,6 +21,12 @@
   };
   programs.zsh.enable = true;
 
+  # hardware.ipu6 = {
+  #   enable = true;
+  #   platform = "ipu6ep";
+  # };
+  hardware.enableRedistributableFirmware = true;
+
   imports = [
     ./hardware.nix
     ./nvidia.nix
