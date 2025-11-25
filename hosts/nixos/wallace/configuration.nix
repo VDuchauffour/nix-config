@@ -25,7 +25,7 @@
   #   enable = true;
   #   platform = "ipu6ep";
   # };
-  hardware.enableRedistributableFirmware = true;
+  # hardware.enableRedistributableFirmware = true;
 
   imports = [
     ./hardware.nix
