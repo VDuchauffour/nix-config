@@ -2,7 +2,9 @@
   vars,
   pkgs,
   ...
-}: {
+}: let
+  kvalsScript = pkgs.writeText "kvals.sh" (builtins.readFile ./kvals.sh);
+in {
   programs.zsh = {
     enable = true;
     history.size = 10000;
@@ -64,6 +66,8 @@
       [[ ! -f ~/.envrc ]] || source ~/.envrc
 
       ksh() { kubectl exec --stdin --tty "$1" -- /bin/bash; }
+
+      source ${kvalsScript}
     '';
   };
 }
