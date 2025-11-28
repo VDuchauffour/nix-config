@@ -10,6 +10,6 @@
         identityFile = "~/.ssh/github";
       };
     };
-    includes = ["config-ext"];
+    includes = ["config-ext" "config-devpod"];
   };
 }
