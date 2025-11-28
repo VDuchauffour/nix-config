@@ -58,6 +58,13 @@ ssh -A root@$NIXOS_HOST
 ```
 
 Perform [partitioning and formatting](https://nixos.org/manual/nixos/stable/#sec-installation-manual-partitioning) if needed. Then run `nixos-generate-config --root /mnt` to get device ID.
+If you want to use disko, run
+
+```shell
+nix --experimental-features "nix-command flakes" \
+  run github:nix-community/disko \
+  -- -m destroy,format,mount path/to/disko.nix
+```
 
 Install git
 
@@ -176,6 +183,8 @@ Use the following command to list all installed packages on your machine:
 ```shell
 nix-env -qaP
 ```
+
+To generate an `hostId`, see this [link](https://mynixos.com/nixpkgs/option/networking.hostId).
 
 ## Acknowledgments
 
