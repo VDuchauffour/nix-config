@@ -19,7 +19,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHoPCo3E+ATI/9Fcjgsv5lW2z79E1BpmOyjmGIDPllV0"
     ];
   };
-  programs.zsh.enable = true;
 
   # hardware.ipu6 = {
   #   enable = true;

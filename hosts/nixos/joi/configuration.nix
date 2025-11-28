@@ -26,7 +26,6 @@
     ];
   };
   services.openssh.enable = true;
-  programs.zsh.enable = true;
 
   environment.systemPackages = [pkgs.steam];
   services.sunshine.settings = {
