@@ -2,7 +2,6 @@
   imports = [
     ./audio
     ./bluetooth
-    ./bootloader
     ./docker
     ./keyring
     ./locale
