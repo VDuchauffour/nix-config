@@ -43,12 +43,13 @@ From your host, copy the public SSH key to the server
 
 ```shell
 export NIXOS_HOST=192.168.1.xxx
+export NEW_HOSTNAME=XYZ
 
 # you may need to run eval "$(ssh-agent -s)"
-# and also generate a new pair of keys with ssh-keygen -t ed25519 -f ~/.ssh/new-hostname
+# and also generate a new pair of keys with ssh-keygen -t ed25519 -f ~/.ssh/$NEW_HOSTNAME
 
-ssh-add ~/.ssh/new-hostname
-ssh-copy-id -i ~/.ssh/new-hostname root@$NIXOS_HOST
+ssh-add ~/.ssh/$NEW_HOSTNAME
+ssh-copy-id -i ~/.ssh/$NEW_HOSTNAME root@$NIXOS_HOST
 ```
 
 SSH into the host with agent forwarding enabled (for the secrets repo access)
@@ -87,7 +88,7 @@ Put the private key into place (required for secret management) and any other re
 mkdir -p /mnt/home/k/.ssh
 exit
 
-scp ~/.ssh/new-hostname root@$NIXOS_HOST:/mnt/home/k/.ssh
+scp ~/.ssh/$NEW_HOSTNAME root@$NIXOS_HOST:/mnt/home/k/.ssh
 ssh root@$NIXOS_HOST
 chmod 700 /mnt/home/k/.ssh
 chmod 600 /mnt/home/k/.ssh/*
@@ -98,7 +99,7 @@ Install the system
 ```shell
 nixos-install \
 --root "/mnt" \
---flake "git+file:///mnt/etc/nixos#hostname"
+--flake "git+file:///mnt/etc/nixos#$NEW_HOSTNAME"
 ```
 
 Apply final tweaks on the new NixOS
