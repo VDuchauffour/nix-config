@@ -33,6 +33,10 @@
       url = "github:nix-community/home-manager/master?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     agenix = {
       url = "github:ryantm/agenix?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,6 +62,7 @@
     nixpkgs-nixos,
     home-manager,
     home-manager-unstable,
+    disko,
     agenix,
     secrets,
     mac-app-util,
@@ -110,6 +115,11 @@
       (mkNixos "joi" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/homelab.nix
+        ] [
+        ])
+      (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
+          inputs.disko.nixosModules.disko
+          inputs.home-manager-unstable.nixosModules.home-manager
         ] [
         ])
     ];
