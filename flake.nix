@@ -18,6 +18,11 @@
   };
 
   inputs = {
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
     nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
@@ -32,10 +37,6 @@
     home-manager-unstable = {
       url = "github:nix-community/home-manager/master?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix = {
       url = "github:ryantm/agenix?shallow=true";
@@ -54,22 +55,7 @@
     vicinae.url = "github:vicinaehq/vicinae";
   };
 
-  outputs = inputs @ {
-    self,
-    nix-darwin,
-    nixpkgs,
-    nixpkgs-unstable,
-    nixpkgs-nixos,
-    home-manager,
-    home-manager-unstable,
-    disko,
-    agenix,
-    secrets,
-    mac-app-util,
-    apple-fonts,
-    solaar,
-    vicinae,
-  }: let
+  outputs = {self, ...} @ inputs: let
     metaConfig = {
       userName = "k";
     };
@@ -99,6 +85,7 @@
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
+          # inputs.nixos-hardware.nixosModules.dell-xps-13-9310
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/g810-led
           ./modules/system/logid-m3s
