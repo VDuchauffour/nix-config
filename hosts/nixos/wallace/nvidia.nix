@@ -30,7 +30,7 @@
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1"; # prevents cursor glitches
+    WLR_NO_HARDWARE_CURSORS = "1"; # fixes blank cursor / black screens
     LIBVA_DRIVER_NAME = "nvidia";
   };
 }
