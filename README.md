@@ -61,6 +61,8 @@ Perform [partitioning and formatting](https://nixos.org/manual/nixos/stable/#sec
 If you want to use disko, run
 
 ```shell
+nixos-generate-config --root /mnt --no-filesystems  # to get default hardware-configuration.nix without the filesystem mapping
+
 nix --experimental-features "nix-command flakes" \
   run github:nix-community/disko \
   -- -m destroy,format,mount path/to/disko.nix
