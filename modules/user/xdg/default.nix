@@ -5,19 +5,8 @@
       enable = true;
       createDirectories = true;
     };
-    portal = {
-      xdgOpenUsePortal = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-hyprland
-        gnome-keyring
-      ];
-    };
+    portal.xdgOpenUsePortal = true;
     mime.enable = true;
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = "papers.desktop";
-      };
-    };
+    mimeApps.enable = true;
   };
 }

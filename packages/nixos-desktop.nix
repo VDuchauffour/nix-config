@@ -14,7 +14,6 @@ with pkgs; [
   nautilus-open-any-terminal
   code-nautilus
   viewnior
-  papers # pdf viewer of gnome
   gnome-disk-utility
   galculator
   audacious

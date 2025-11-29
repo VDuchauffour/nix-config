@@ -7,6 +7,7 @@
     ./gtk
     ./hypr
     ./mpv
+    ./papers
     ./pointer-cursor
     ./vicinae
   ];
