@@ -72,6 +72,7 @@
         ])
       (mkNixos "wallace" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
           # ./modules/system/solaar
@@ -87,6 +88,7 @@
       (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
           # inputs.nixos-hardware.nixosModules.dell-xps-13-9310
           inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
           # ./modules/system/solaar
@@ -101,12 +103,14 @@
         ])
       (mkNixos "joi" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/systemd-boot
           ./modules/system/homelab.nix
         ] [
         ])
       (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
           inputs.disko.nixosModules.disko
           inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/systemd-boot
         ] [
         ])
     ];

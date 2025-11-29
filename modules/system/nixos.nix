@@ -3,7 +3,6 @@
     ./audio
     ./bluetooth
     ./docker
-    ./grub
     ./keyring
     ./locale
     ./network
