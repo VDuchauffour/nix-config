@@ -186,6 +186,8 @@ nix-env -qaP
 
 To generate an `hostId`, see this [link](https://mynixos.com/nixpkgs/option/networking.hostId).
 
+To use `fprint`, run `sudo fprintd-enroll <username>`.
+
 ## Acknowledgments
 
 - The tree structure and module definitions are inspired by [notthebee's nix-config](https://github.com/notthebee/nix-config/)
