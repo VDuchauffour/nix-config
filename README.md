@@ -126,7 +126,34 @@ reboot
 
 </details>
 
-## Nix-darwin installation
+## Specifical cases
+
+### Raspberry Pi
+
+To handle the small RAM size, add a swap during installation
+
+```shell
+# create a 3G swap file (you can do 2048 if you prefer 2G)
+dd if=/dev/zero of=/swapfile bs=1M count=3072
+
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+
+free -h
+```
+
+And use the following option to reduce memory pressure during `nixos-install` command
+
+```shell
+  --option max-jobs 1 \
+  --option cores 1
+
+# if still OOM, add
+  --option sandbox false
+```
+
+### Nix-darwin
 
 Before using a nix-darwin configuration, you need to set up the prerequisites.
 
