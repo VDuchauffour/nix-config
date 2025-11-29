@@ -126,11 +126,11 @@ reboot
 
 </details>
 
-## Specifical cases
+## Special cases
 
 ### Raspberry Pi
 
-To handle the small RAM size, add a swap during installation
+To handle the lack of RAM, add a swap during installation
 
 ```shell
 # create a 3G swap file (you can do 2048 if you prefer 2G)
