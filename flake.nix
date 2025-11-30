@@ -63,14 +63,14 @@
     inherit (helpers) mkMerge mkNixos mkDarwin;
   in
     mkMerge [
-      (mkDarwin "tyrell" metaConfig inputs.nixpkgs-unstable [
+      (mkDarwin "tyrell" "aarch64-darwin" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.darwinModules.home-manager
           ./modules/system/g810-led
           ./modules/system/logid-m3s
         ] [
           ./modules/user/common-desktop.nix
         ])
-      (mkNixos "wallace" metaConfig inputs.nixpkgs-unstable [
+      (mkNixos "wallace" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/g810-led
@@ -85,7 +85,7 @@
           ./modules/user/gcp
           inputs.vicinae.homeManagerModules.default
         ])
-      (mkNixos "deckard" metaConfig inputs.nixpkgs-unstable [
+      (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
           # inputs.nixos-hardware.nixosModules.dell-xps-13-9310
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
@@ -101,13 +101,13 @@
           ./modules/user/gcp
           inputs.vicinae.homeManagerModules.default
         ])
-      (mkNixos "joi" metaConfig inputs.nixpkgs-unstable [
+      (mkNixos "joi" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/homelab.nix
         ] [
         ])
-      (mkNixos "sebastian" metaConfig inputs.nixpkgs-unstable [
+      (mkNixos "sebastian" "aarch64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.nixos-hardware.nixosModules.raspberry-pi-3
           inputs.disko.nixosModules.disko
           inputs.home-manager-unstable.nixosModules.home-manager

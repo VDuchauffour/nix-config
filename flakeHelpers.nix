@@ -21,9 +21,9 @@
     };
   };
 in {
-  mkDarwin = machineHostname: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
+  mkDarwin = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
     darwinConfigurations.${machineHostname} = inputs.nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
+      system = "${machineArchitecture}";
       specialArgs = {
         inherit inputs;
         vars = metaConfig;
@@ -46,9 +46,9 @@ in {
     };
   };
 
-  mkNixos = machineHostname: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
+  mkNixos = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
     nixosConfigurations.${machineHostname} = nixpkgsVersion.lib.nixosSystem {
-      system = "x86_64-linux";
+      system = "${machineArchitecture}";
       specialArgs = {
         inherit inputs;
         apple-fonts = inputs.apple-fonts;
@@ -65,7 +65,7 @@ in {
           (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
           {
             networking.hostName = machineHostname;
-            environment.systemPackages = [inputs.agenix.packages.x86_64-linux.default];
+            environment.systemPackages = [inputs.agenix.packages.${machineArchitecture}.default];
           }
         ]
         ++ extraModules;
