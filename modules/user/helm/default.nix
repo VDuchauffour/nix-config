@@ -15,9 +15,10 @@
       ];
     };
 
-  my-helmfile = pkgs.helmfile-wrapped.override {
-    inherit (my-kubernetes-helm) pluginsDir;
-  };
+  my-helmfile = pkgs.writeShellScriptBin "helmfile" ''
+    export HELM_PLUGINS=${my-kubernetes-helm.pluginsDir}
+    exec ${pkgs.helmfile}/bin/helmfile "$@"
+  '';
 in {
   home.packages = with pkgs; [
     my-kubernetes-helm
