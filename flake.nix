@@ -111,7 +111,6 @@
           inputs.nixos-hardware.nixosModules.raspberry-pi-3
           inputs.disko.nixosModules.disko
           inputs.home-manager-unstable.nixosModules.home-manager
-          ./modules/system/systemd-boot
         ] [
         ])
     ];

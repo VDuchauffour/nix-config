@@ -20,6 +20,10 @@
     ];
   };
 
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub.enable = false;
+  boot.loader.generic-extlinux-compatible.enable = true;
+
   imports = [
     ./disko.nix
     ./hardware.nix
