@@ -11,10 +11,8 @@ cd ~/.nix-config
 make switch
 ```
 
-## Installation
-
 <details>
-<summary>Remote</summary>
+<summary>Remote installation</summary>
 
 Create a root password using the TTY
 
