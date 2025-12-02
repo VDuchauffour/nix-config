@@ -9,6 +9,8 @@
 
   networking.hostId = "1a2b3c4d";
 
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   services.dnsmasq = {
     enable = true;
     settings = {
