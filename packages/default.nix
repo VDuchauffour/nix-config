@@ -67,8 +67,6 @@ with pkgs; [
   lua52Packages.luarocks
   shellcheck
   shfmt
-  awscli2
-  eksctl
 
   alejandra
 ]
