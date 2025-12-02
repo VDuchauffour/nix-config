@@ -17,6 +17,7 @@ in {
   ];
   services.k3s.enable = true;
   services.k3s.role = "server";
+  # TODO see --disable servicelb --localstorage --disable traefik
 
   system.activationScripts.k3sKubeconfig = {
     deps = ["etc"];
