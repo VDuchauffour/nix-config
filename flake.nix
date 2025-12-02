@@ -49,7 +49,7 @@
     mac-app-util.url = "github:hraban/mac-app-util?shallow=true";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix?shallow=true";
     solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vicinae.url = "github:vicinaehq/vicinae";
