@@ -3,6 +3,7 @@
     ./agenix
     ./avahi
     ./k3s
+    ./openssh
     ./samba
     ./smartd
     ./sunshine
