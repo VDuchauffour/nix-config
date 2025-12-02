@@ -101,6 +101,7 @@
           inputs.disko.nixosModules.disko
           inputs.home-manager-unstable.nixosModules.home-manager
         ] [
+          inputs.home-manager-unstable.nixosModules.home-manager
         ])
     ];
 }
