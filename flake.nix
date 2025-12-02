@@ -67,6 +67,7 @@
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
           ./modules/user/gcp
+          ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
@@ -83,6 +84,7 @@
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
           ./modules/user/gcp
+          ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "joi" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [

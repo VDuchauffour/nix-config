@@ -67,8 +67,6 @@ with pkgs; [
   lua52Packages.luarocks
   shellcheck
   shfmt
-  terraform
-  terragrunt
   kubectl
   kubectx
   k9s
