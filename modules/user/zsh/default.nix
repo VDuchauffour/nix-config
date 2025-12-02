@@ -28,12 +28,6 @@ in {
       lt = "ls --tree";
       tree = "ls --tree";
 
-      vpn-on = "wg-quick up";
-      vpn-off = "wg-quick down";
-
-      tf = "terraform";
-      tg = "terragrunt";
-
       open = "xdg-open";
       getmod = "stat --format '%a'";
 

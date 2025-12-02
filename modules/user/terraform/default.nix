@@ -3,4 +3,11 @@
     terraform
     terragrunt
   ];
+
+  programs.zsh = {
+    shellAliases = {
+      tf = "terraform";
+      tg = "terragrunt";
+    };
+  };
 }
