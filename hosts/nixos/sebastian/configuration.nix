@@ -16,7 +16,7 @@
     extraGroups = ["wheel" "docker" "audio" "video" "users" "input"];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0XEG7AYdKiTu/DVxnVq22Cvdc3XK56g5oLZVp5uqzW"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0XEG7AYdKiTu/DVxnVq22Cvdc3XK56g5oLZVp5uqzW sebastian-github"
     ];
   };
 

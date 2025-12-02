@@ -12,7 +12,7 @@
     home = "/Users/${vars.userName}";
     name = "${vars.userName}";
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMrUzaZb81MZwpL3rF/qdErnrw7u2aiBBinp4r+h6i4q"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMrUzaZb81MZwpL3rF/qdErnrw7u2aiBBinp4r+h6i4q tyrell-github"
     ];
   };
   system.primaryUser = vars.userName;
