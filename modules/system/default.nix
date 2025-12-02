@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  imports = [./nix ./zsh];
+  imports = [./nix ./ssh ./zsh];
 
   environment.systemPackages = with pkgs; (import ../../packages {inherit pkgs;});
 
