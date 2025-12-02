@@ -128,7 +128,8 @@ reboot
 
 ## Special cases
 
-### Raspberry Pi
+<details>
+<summary>Raspberry Pi</summary>
 
 To handle the lack of RAM, add a swap during installation
 
@@ -146,6 +147,9 @@ free -h
 And use the following option to reduce memory pressure during `nixos-install` command
 
 ```shell
+nixos-install \
+  --root "/mnt" \
+  --flake "git+file:///mnt/etc/nixos#$NEW_HOSTNAME" \
   --option max-jobs 1 \
   --option cores 1
 
@@ -153,14 +157,14 @@ And use the following option to reduce memory pressure during `nixos-install` co
   --option sandbox false
 ```
 
-### Nix-darwin
-
-Before using a nix-darwin configuration, you need to set up the prerequisites.
+</details>
 
 </details>
 
 <details>
-<summary>nix-darwin prerequisites</summary>
+<summary>Nix-darwin</summary>
+
+Before using a nix-darwin configuration, you need to set up the prerequisites.
 
 ```shell
 # install XCode CLI tools
