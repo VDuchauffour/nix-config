@@ -6,22 +6,29 @@
       content = {
         type = "gpt";
         partitions = {
-          ESP = {
-            size = "512M";
+          boot = {
+            start = "1M";
+            end = "30M";
+            label = "FIRMWARE";
             type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
-              mountpoint = "/boot";
-              mountOptions = ["umask=0077"];
+              mountpoint = "/boot/firmware";
+              mountOptions = [
+                "nofail"
+                "noauto"
+              ];
             };
           };
           root = {
             size = "100%";
+            label = "NIXOS_SD";
             content = {
               type = "filesystem";
               format = "ext4";
               mountpoint = "/";
+              mountOptions = ["noatime"];
             };
           };
         };
