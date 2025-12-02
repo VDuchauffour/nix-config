@@ -40,7 +40,7 @@
         sideBySide = false;
         syntaxTheme = "DarkNeon";
         hyperlinks = true;
-        hyperlinksFileLinkFormat = "vscode://file/{path}:{line}";
+        # hyperlinksFileLinkFormat = "vscode://file/{path}:{line}";
       };
       merge = {
         conflictstyle = "diff3";
