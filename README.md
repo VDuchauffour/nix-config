@@ -58,11 +58,12 @@ Perform [partitioning and formatting](https://nixos.org/manual/nixos/stable/#sec
 If you want to use disko, run
 
 ```shell
-nixos-generate-config --root /mnt --no-filesystems  # to get default hardware-configuration.nix without the filesystem mapping
+curl https://raw.githubusercontent.com/vduchauffour/nix-config/main/hosts/nixos/$NEW_HOSTNAME/disko.nix \
+  -o /tmp/disko.nix
 
 nix --experimental-features "nix-command flakes" \
   run github:nix-community/disko \
-  -- -m destroy,format,mount path/to/disko.nix
+  -- -m destroy,format,mount /tmp/disko.nix
 ```
 
 Install git
@@ -131,7 +132,7 @@ To handle the lack of RAM, add a swap during installation
 
 ```shell
 # create a 3G swap file (you can do 2048 if you prefer 2G)
-dd if=/dev/zero of=/swapfile bs=1M count=3072
+dd if=/dev/zero of=/swapfile bs=1M count=3072 status=progress
 
 chmod 600 /swapfile
 mkswap /swapfile
@@ -218,6 +219,12 @@ Use the following command to list all installed packages on your machine:
 
 ```shell
 nix-env -qaP
+```
+
+To get default hardware-configuration.nix without the filesystem mapping:
+
+```shell
+nixos-generate-config --root /mnt --no-filesystems
 ```
 
 To generate an `hostId`, see this [link](https://mynixos.com/nixpkgs/option/networking.hostId).
