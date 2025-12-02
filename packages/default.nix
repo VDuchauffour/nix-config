@@ -67,13 +67,8 @@ with pkgs; [
   lua52Packages.luarocks
   shellcheck
   shfmt
-  kubectl
-  kubectx
-  k9s
-  eksctl
-  kubeseal
-  mkcert
   awscli2
+  eksctl
 
   alejandra
 ]

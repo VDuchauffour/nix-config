@@ -67,6 +67,7 @@
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
           ./modules/user/gcp
+          ./modules/user/kubernetes-tooling
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
@@ -84,6 +85,7 @@
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
           ./modules/user/gcp
+          ./modules/user/kubernetes-tooling
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
@@ -92,6 +94,7 @@
           ./modules/system/systemd-boot
           ./modules/system/homelab.nix
         ] [
+          ./modules/user/kubernetes-tooling
         ])
       (mkNixos "sebastian" "aarch64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.nixos-hardware.nixosModules.raspberry-pi-3

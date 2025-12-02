@@ -4,8 +4,6 @@
     ./btop
     ./direnv
     ./git
-    ./helm
-    ./k9s
     ./lazygit
     ./ssh
     ./starship

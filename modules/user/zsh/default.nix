@@ -31,11 +31,6 @@ in {
       vpn-on = "wg-quick up";
       vpn-off = "wg-quick down";
 
-      k = "kubectl";
-      ks = "kubens";
-      kx = "kubectx";
-      kn = "k9s";
-
       tf = "terraform";
       tg = "terragrunt";
 
