@@ -1,10 +1,8 @@
 # Configuration files for my Nix-based devices
 
-This repository contains the configuration files for my Nix-based devices, both Darwin and NixOS.
+This repository contains the configuration files for my Nix-based devices, both Darwin and NixOS. You can customize the configuration to your liking.
 
-You can customize the configuration to your liking.
-
-## How to use the configuration
+## Usage
 
 ```python
 git clone https://github.com/VDuchauffour/nix-config.git ~/.nix-config
@@ -16,7 +14,7 @@ make switch
 ## Installation
 
 <details>
-<summary>Remote installation</summary>
+<summary>Remote</summary>
 
 Create a root password using the TTY
 
@@ -210,6 +208,12 @@ Use the following command to update the lock file:
 
 ```shell
 make update
+```
+
+If the boot isn't updated on the next boot, use the following command:
+
+```shell
+make boot
 ```
 
 Use the following command to list all installed packages on your machine:
