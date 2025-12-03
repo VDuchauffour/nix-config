@@ -1,5 +1,6 @@
 {pkgs, ...}: {
-  virtualisation.docker.enable = true;
-  # hardware.nvidia-container-toolkit.enable = true;
-  # virtualisation.docker.storageDriver = "btrfs";
+  virtualisation.docker = {
+    enable = true;
+    extraPackages = [pkgs.docker-buildx];
+  };
 }
