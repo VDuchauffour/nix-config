@@ -20,6 +20,31 @@
         ++ extraImports;
     };
   };
+
+  mkNixosBase = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
+    nixosConfigurations.${machineHostname} = nixpkgsVersion.lib.nixosSystem {
+      system = "${machineArchitecture}";
+      specialArgs = {
+        inherit inputs;
+        apple-fonts = inputs.apple-fonts;
+        vars = metaConfig;
+      };
+      modules =
+        [
+          ./hosts/nixos/${machineHostname}/configuration.nix
+          ./modules/system
+
+          inputs.agenix.nixosModules.default
+
+          (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
+          {
+            networking.hostName = machineHostname;
+            environment.systemPackages = [inputs.agenix.packages.${machineArchitecture}.default];
+          }
+        ]
+        ++ extraModules;
+    };
+  };
 in {
   mkDarwin = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
     darwinConfigurations.${machineHostname} = inputs.nix-darwin.lib.darwinSystem {
@@ -55,25 +80,22 @@ in {
     (extraModules ++ [./modules/system/nixos.nix])
     extraHmModules;
 
-  mkNixosBase = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
-    nixosConfigurations.${machineHostname} = nixpkgsVersion.lib.nixosSystem {
-      system = "${machineArchitecture}";
+  mkRaspberryPiNixos = machineHostname: metaConfig: extraModules: extraHmModules: {
+    nixosConfigurations.${machineHostname} = inputs.nixos-raspberrypi.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-        apple-fonts = inputs.apple-fonts;
+        nixos-raspberrypi = inputs.nixos-raspberrypi;
         vars = metaConfig;
       };
       modules =
         [
           ./hosts/nixos/${machineHostname}/configuration.nix
           ./modules/system
-
           inputs.agenix.nixosModules.default
 
           (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
           {
             networking.hostName = machineHostname;
-            environment.systemPackages = [inputs.agenix.packages.${machineArchitecture}.default];
           }
         ]
         ++ extraModules;

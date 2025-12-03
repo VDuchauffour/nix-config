@@ -1,13 +1,20 @@
 {
   config,
   pkgs,
+  lib,
   vars,
   ...
 }: {
   system.stateVersion = "25.05";
-  nixpkgs.hostPlatform = "aarch64-linux";
-
   networking.hostId = "36c1b69a";
+
+  system.nixos.tags = let
+    cfg = config.boot.loader.raspberryPi;
+  in [
+    "raspberry-pi-${cfg.variant}"
+    cfg.bootloader
+    config.boot.kernelPackages.kernel.version
+  ];
 
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
@@ -25,9 +32,7 @@
   boot.loader.generic-extlinux-compatible.enable = true;
 
   environment.systemPackages = with pkgs; (import ../../../packages/nixos.nix {inherit pkgs;});
-
   imports = [
     ./disko.nix
-    ./hardware.nix
   ];
 }

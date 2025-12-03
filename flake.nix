@@ -3,6 +3,7 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +45,7 @@
       userName = "k";
     };
     helpers = import ./flakeHelpers.nix {inherit inputs;};
-    inherit (helpers) mkMerge mkNixos mkNixosBase mkDarwin;
+    inherit (helpers) mkMerge mkNixos mkDarwin mkRaspberryPiNixos;
   in
     mkMerge [
       (mkDarwin "tyrell" "aarch64-darwin" metaConfig inputs.nixpkgs-unstable [
@@ -97,13 +98,12 @@
         ] [
           ./modules/user/kubernetes-tooling
         ])
-      (mkNixosBase "sebastian" "aarch64-linux" metaConfig inputs.nixpkgs-unstable [
-          inputs.nixos-hardware.nixosModules.raspberry-pi-3
+      (mkRaspberryPiNixos "sebastian" metaConfig [
+          # inputs.nixos-hardware.nixosModules.raspberry-pi-3
+          inputs.nixos-raspberrypi.nixosModules.raspberry-pi-3.base
           inputs.disko.nixosModules.disko
           inputs.home-manager-unstable.nixosModules.home-manager
-          ./modules/system/docker
           ./modules/system/locale
-          ./modules/system/storage
         ] [
         ])
     ];
