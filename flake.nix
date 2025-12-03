@@ -103,9 +103,6 @@
           ./modules/system/docker
           ./modules/system/locale
           ./modules/system/storage
-          {
-            environment.systemPackages = with pkgs; (import ./packages/nixos.nix {inherit pkgs;});
-          }
         ] [
         ])
     ];

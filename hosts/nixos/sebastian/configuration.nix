@@ -24,6 +24,8 @@
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
+  environment.systemPackages = with pkgs; (import ./packages/nixos.nix {inherit pkgs;});
+
   imports = [
     ./disko.nix
     ./hardware.nix
