@@ -154,6 +154,16 @@ nixos-install \
   --option sandbox false
 ```
 
+You can also build the config on the host machine, copying it and installing it in the remote machine
+
+```shell
+nix build .#nixosConfigurations.$NEW_HOSTNAME.config.system.build.toplevel --print-out-paths
+nix copy path/to/build --to ssh://root@$NIXOS_HOST
+
+# on the remote machine
+nixos-install --root /mnt --system
+```
+
 </details>
 
 </details>
