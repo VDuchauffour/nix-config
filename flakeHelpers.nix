@@ -72,6 +72,30 @@ in {
     };
   };
 
+  mkNixosBase = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
+    nixosConfigurations.${machineHostname} = nixpkgsVersion.lib.nixosSystem {
+      system = "${machineArchitecture}";
+      specialArgs = {
+        inherit inputs;
+        vars = metaConfig;
+      };
+      modules =
+        [
+          ./hosts/nixos/${machineHostname}/configuration.nix
+          ./modules/system
+
+          inputs.agenix.nixosModules.default
+
+          (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
+          {
+            networking.hostName = machineHostname;
+            environment.systemPackages = [inputs.agenix.packages.${machineArchitecture}.default];
+          }
+        ]
+        ++ extraModules;
+    };
+  };
+
   mkMerge = inputs.nixpkgs.lib.lists.foldl' (
     a: b: inputs.nixpkgs.lib.attrsets.recursiveUpdate a b
   ) {};

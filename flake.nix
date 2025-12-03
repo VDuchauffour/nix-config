@@ -44,7 +44,7 @@
       userName = "k";
     };
     helpers = import ./flakeHelpers.nix {inherit inputs;};
-    inherit (helpers) mkMerge mkNixos mkDarwin;
+    inherit (helpers) mkMerge mkNixos mkNixosBase mkDarwin;
   in
     mkMerge [
       (mkDarwin "tyrell" "aarch64-darwin" metaConfig inputs.nixpkgs-unstable [
@@ -96,10 +96,16 @@
         ] [
           ./modules/user/kubernetes-tooling
         ])
-      (mkNixos "sebastian" "aarch64-linux" metaConfig inputs.nixpkgs-unstable [
+      (mkNixosBase "sebastian" "aarch64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.nixos-hardware.nixosModules.raspberry-pi-3
           inputs.disko.nixosModules.disko
           inputs.home-manager-unstable.nixosModules.home-manager
+          ./modules/system/docker
+          ./modules/system/locale
+          ./modules/system/storage
+          {
+            environment.systemPackages = with pkgs; (import ./packages/nixos.nix {inherit pkgs;});
+          }
         ] [
         ])
     ];
