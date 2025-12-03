@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   virtualisation.docker = {
     enable = true;
-    extraPackages = [pkgs.docker-buildx];
+    extraPackages = with pkgs; [docker-buildx docker-compose];
   };
 }
