@@ -21,4 +21,5 @@
   programs.waybar = {
     enable = true;
   };
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-hyprland];
 }
