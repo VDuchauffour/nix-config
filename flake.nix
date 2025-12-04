@@ -76,6 +76,7 @@
       (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
           # inputs.nixos-hardware.nixosModules.dell-xps-13-9310
           inputs.home-manager-unstable.nixosModules.home-manager
+          inputs.disko.nixosModules.disko
           ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
