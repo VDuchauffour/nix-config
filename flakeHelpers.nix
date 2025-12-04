@@ -80,8 +80,9 @@ in {
     (extraModules ++ [./modules/system/nixos.nix])
     extraHmModules;
 
-  mkRaspberryPiNixos = machineHostname: metaConfig: extraModules: extraHmModules: {
-    nixosConfigurations.${machineHostname} = inputs.nixos-raspberrypi.lib.nixosSystem {
+  mkRaspberryPiNixos = machineHostname: metaConfig: extraModules: extraHmModules: let
+    nixosConfig = inputs.nixos-raspberrypi.lib.nixosSystem {
+      system = "aarch64-linux";
       specialArgs = {
         inherit inputs;
         nixos-raspberrypi = inputs.nixos-raspberrypi;
@@ -89,6 +90,11 @@ in {
       };
       modules =
         [
+          "${inputs.nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+          {
+            nixpkgs.config.allowUnsupportedSystem = true;
+          }
+
           ./hosts/nixos/${machineHostname}/configuration.nix
           ./modules/system
           inputs.agenix.nixosModules.default
@@ -100,6 +106,9 @@ in {
         ]
         ++ extraModules;
     };
+  in {
+    nixosConfigurations.${machineHostname} = nixosConfig;
+    sdImage.${machineHostname} = nixosConfig.config.system.build.sdImage;
   };
 
   mkMerge = inputs.nixpkgs.lib.lists.foldl' (

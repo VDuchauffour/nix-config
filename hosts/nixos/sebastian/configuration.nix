@@ -32,7 +32,17 @@
   boot.loader.generic-extlinux-compatible.enable = true;
 
   environment.systemPackages = with pkgs; (import ../../../packages/nixos.nix {inherit pkgs;});
-  imports = [
-    ./disko.nix
-  ];
+
+  # SD image module handles partitioning, so we don't define disko devices
+  # Just ensure the filesystem is configured correctly for the sd-image
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXOS_SD";
+    fsType = "ext4";
+    options = ["noatime"];
+  };
+  fileSystems."/boot/firmware" = {
+    device = "/dev/disk/by-label/FIRMWARE";
+    fsType = "vfat";
+    options = ["nofail" "noauto"];
+  };
 }
