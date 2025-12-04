@@ -8,7 +8,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11?shallow=true";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
     nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
     nix-darwin = {
@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05?shallow=true";
+      url = "github:nix-community/home-manager/release-25.11?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager-unstable = {
@@ -102,7 +102,7 @@
           # inputs.nixos-hardware.nixosModules.raspberry-pi-3
           inputs.nixos-raspberrypi.nixosModules.raspberry-pi-3.base
           inputs.disko.nixosModules.disko
-          inputs.home-manager-unstable.nixosModules.home-manager
+          inputs.home-manager.nixosModules.home-manager
           ./modules/system/locale
         ] [
         ])
