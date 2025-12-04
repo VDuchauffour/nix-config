@@ -13,6 +13,8 @@
 
   nix = {
     settings = {
+      max-jobs = 4;
+      cores = 4;
       experimental-features = "nix-command flakes";
       trusted-users = ["root" "${vars.userName}"];
       allowed-users = ["${vars.userName}"];

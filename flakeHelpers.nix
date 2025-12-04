@@ -31,8 +31,9 @@
       };
       modules =
         [
-          ./hosts/nixos/${machineHostname}/configuration.nix
+          ./modules/common
           ./modules/system
+          ./hosts/nixos/${machineHostname}/configuration.nix
 
           inputs.agenix.nixosModules.default
 
@@ -46,31 +47,6 @@
     };
   };
 in {
-  mkDarwin = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
-    darwinConfigurations.${machineHostname} = inputs.nix-darwin.lib.darwinSystem {
-      system = "${machineArchitecture}";
-      specialArgs = {
-        inherit inputs;
-        vars = metaConfig;
-      };
-      modules =
-        [
-          inputs.mac-app-util.darwinModules.default
-
-          ./hosts/darwin/${machineHostname}/configuration.nix
-          ./modules/system
-          ./modules/system/darwin.nix
-
-          (nixpkgsVersion.lib.attrsets.recursiveUpdate (homeManagerCfg "darwin" machineHostname metaConfig true extraHmModules) {
-            home-manager.sharedModules = [
-              inputs.mac-app-util.homeManagerModules.default
-            ];
-          })
-        ]
-        ++ extraModules;
-    };
-  };
-
   mkNixos = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules:
     mkNixosBase
     machineHostname
@@ -95,8 +71,9 @@ in {
             nixpkgs.config.allowUnsupportedSystem = true;
           }
 
-          ./hosts/nixos/${machineHostname}/configuration.nix
+          ./modules/common
           ./modules/system
+          ./hosts/nixos/${machineHostname}/configuration.nix
           inputs.agenix.nixosModules.default
 
           (homeManagerCfg "nixos" machineHostname metaConfig false extraHmModules)
@@ -109,6 +86,32 @@ in {
   in {
     nixosConfigurations.${machineHostname} = nixosConfig;
     sdImage.${machineHostname} = nixosConfig.config.system.build.sdImage;
+  };
+
+  mkDarwin = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
+    darwinConfigurations.${machineHostname} = inputs.nix-darwin.lib.darwinSystem {
+      system = "${machineArchitecture}";
+      specialArgs = {
+        inherit inputs;
+        vars = metaConfig;
+      };
+      modules =
+        [
+          inputs.mac-app-util.darwinModules.default
+
+          ./modules/common
+          ./modules/system
+          ./modules/system/darwin.nix
+          ./hosts/darwin/${machineHostname}/configuration.nix
+
+          (nixpkgsVersion.lib.attrsets.recursiveUpdate (homeManagerCfg "darwin" machineHostname metaConfig true extraHmModules) {
+            home-manager.sharedModules = [
+              inputs.mac-app-util.homeManagerModules.default
+            ];
+          })
+        ]
+        ++ extraModules;
+    };
   };
 
   mkMerge = inputs.nixpkgs.lib.lists.foldl' (
