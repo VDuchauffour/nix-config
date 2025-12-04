@@ -2,10 +2,10 @@
   description = "My unified Nix configuration";
 
   inputs = {
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master?shallow=true";
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main?shallow=true";
     disko = {
-      url = "github:nix-community/disko";
+      url = "github:nix-community/disko?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11?shallow=true";
