@@ -33,6 +33,6 @@
 
   imports = [
     ./hardware.nix
-    ./disko.nix
+    # ./disko.nix
   ];
 }
