@@ -19,7 +19,16 @@
       listen-address = ["127.0.0.1" "192.168.1.18"];
     };
   };
-  hardware.graphics.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD (for HD Graphics starting Broadwell (2014) and newer)
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      libvdpau-va-gl
+    ];
+  };
+  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";}; # Force intel-media-driver
 
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
