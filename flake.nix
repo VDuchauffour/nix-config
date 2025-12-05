@@ -74,7 +74,7 @@
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
-          # inputs.nixos-hardware.nixosModules.dell-xps-13-9310
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
           inputs.home-manager-unstable.nixosModules.home-manager
           inputs.disko.nixosModules.disko
           ./modules/system/systemd-boot
@@ -93,6 +93,7 @@
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "joi" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/homelab.nix
