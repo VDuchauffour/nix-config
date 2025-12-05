@@ -36,6 +36,8 @@
   networking.firewall.allowedTCPPorts = [47990];
   networking.firewall.allowedUDPPorts = [47998 48000];
 
+  hardware.graphics.enable = true;
+
   imports = [
     ./hardware.nix
     ./kubernetes.nix

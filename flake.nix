@@ -56,8 +56,9 @@
           ./modules/user/common-desktop.nix
         ])
       (mkNixos "wallace" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
-          inputs.home-manager-unstable.nixosModules.home-manager
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
           # inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+          inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s

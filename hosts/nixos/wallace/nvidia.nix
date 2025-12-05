@@ -3,13 +3,10 @@
   pkgs,
   ...
 }: {
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      nvidia-vaapi-driver
-    ];
-  };
+  hardware.graphics.enable = true;
+
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;

@@ -20,6 +20,7 @@
     ];
   };
 
+  hardware.graphics.enable = true;
   # hardware.ipu6 = {
   #   enable = true;
   #   platform = "ipu6ep";

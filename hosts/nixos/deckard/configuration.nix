@@ -19,6 +19,7 @@
       listen-address = ["127.0.0.1" "192.168.1.18"];
     };
   };
+  hardware.graphics.enable = true;
 
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
