@@ -11,7 +11,7 @@
       "$t4" = "apostrophe";
       "$t5" = "parenleft";
 
-      "$terminal" = "alacritty";
+      "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
       "$menu" = "vicinae toggle";
 
