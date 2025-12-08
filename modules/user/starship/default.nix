@@ -12,15 +12,16 @@
       };
       git_metrics.disabled = false;
       git_status = {
-        modified = "!\($count\)";
-        staged = "+\($count\)";
-        untracked = "?\($count\)";
-        renamed = "»\($count\)";
         ahead = "⇡\($count\)";
         diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
         behind = "⇣\($count\)";
         stashed = "📦\($count\)";
         conflicted = "🏳 \($count\)";
+        modified = "!\($count\)";
+        staged = "+\($count\)";
+        untracked = "?\($count\)";
+        deleted = "✘\($count\)";
+        renamed = "»\($count\)";
       };
       cmd_duration = {
         min_time = 2000;
