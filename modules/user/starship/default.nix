@@ -20,7 +20,7 @@
         diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
         behind = "⇣\($count\)";
         stashed = "📦\($count\)";
-        conflicted = "🏳\($count\)";
+        conflicted = "🏳 \($count\)";
       };
       cmd_duration = {
         min_time = 2000;
