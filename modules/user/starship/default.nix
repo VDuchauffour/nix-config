@@ -25,7 +25,7 @@
       };
       cmd_duration = {
         min_time = 2000;
-        format = "[ $duration]($style) ";
+        format = "[🕓 $duration]($style) ";
         style = "white";
       };
       gcloud = {
