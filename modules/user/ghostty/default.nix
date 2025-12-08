@@ -10,6 +10,13 @@
       shell-integration-features = "no-cursor";
       copy-on-select = "clipboard";
       selection-clear-on-copy = false;
+      maximize = true;
+      window-padding-balance = true;
+      window-padding-x = 0;
+      window-padding-y = 0;
+      window-padding-color = "extend";
+      window-titlebar-background = "#000000";
+      window-titlebar-foreground = "#FFFFFF";
       font-family = "JetBrainsMonoNL Nerd Font";
       font-style = "Regular";
       font-style-bold = "Bold";
