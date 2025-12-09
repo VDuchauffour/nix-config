@@ -18,6 +18,14 @@ jobs:
           printf '%s\n' "${{ secrets.NIX_PRIVATE_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -t rsa,ed25519 github.com >> ~/.ssh/known_hosts
+      - name: Backup old lockfile
+        run: |
+          cp flake.lock flake.lock.bak
+
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add flake.lock.bak
+          git commit -m "chore: backup old lockfile"
       - name: Update lockfile
         uses: DeterminateSystems/update-flake-lock@v23
         id: update

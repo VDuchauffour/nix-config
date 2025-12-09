@@ -60,8 +60,9 @@
           ./modules/user/common-desktop.nix
         ])
       (mkNixos "wallace" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
-          inputs.home-manager-unstable.nixosModules.home-manager
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
           # inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+          inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
@@ -72,14 +73,15 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
-          ./modules/user/gcp
+          ./modules/user/gcloud
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
-          # inputs.nixos-hardware.nixosModules.dell-xps-13-9310
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
           inputs.home-manager-unstable.nixosModules.home-manager
+          inputs.disko.nixosModules.disko
           ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
@@ -90,12 +92,13 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
-          ./modules/user/gcp
+          ./modules/user/gcloud
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "joi" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/homelab.nix

@@ -42,9 +42,9 @@
   "pulseaudio": {
     "scroll-step": 1,
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰖁 {icon} {format_source}",
     "format-muted": "󰖁 {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-bluetooth-muted": " 󰖁 {icon}",
     "format-source": "{volume}%",
     "format-source-muted": " ",
     "format-icons": {

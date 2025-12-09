@@ -6,6 +6,4 @@
     ./hyprpaper.nix
     ./hyprpicker.nix
   ];
-
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
 }

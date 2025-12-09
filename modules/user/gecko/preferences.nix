@@ -45,4 +45,7 @@
   "privacy.sanitize.sanitizeOnShutdown" = false;
   "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = false;
   "network.cookie.lifetimePolicy" = 0;
+
+  "media.webrtc.camera.allow-pipewire" = true;
+  "media.webrtc.capture.allow-pipewire" = true;
 }
