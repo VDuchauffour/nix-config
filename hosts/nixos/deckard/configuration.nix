@@ -20,7 +20,9 @@
     };
   };
 
+  # see https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel/tiger-lake/default.nix
   hardware.intelgpu.vaapiDriver = "intel-media-driver";
+  boot.kernelParams = lib.mkIf (config.hardware.intelgpu.driver == "i915") ["i915.enable_guc=3"];
 
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";
