@@ -13,21 +13,10 @@
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   environment.systemPackages = with pkgs; [
-    (inputs.quickshell.packages.${pkgs.system}.default.override {
-      withJemalloc = true;
-      withQtSvg = true;
-      withWayland = true;
-      withX11 = false;
-      withPipewire = true;
-      withPam = true;
-      withHyprland = true;
-      withI3 = false;
-    })
-    qt6Packages.qt5compat
+    inputs.quickshell.packages.x86_64-linux.default
     libsForQt5.qt5.qtgraphicaleffects
-    kdePackages.qtbase
-    kdePackages.qtdeclarative
   ];
+
   services.dnsmasq = {
     enable = true;
     settings = {
