@@ -11,6 +11,9 @@
       copy-on-select = "clipboard";
       selection-clear-on-copy = false;
       maximize = true;
+      window-theme = "ghostty";
+      macos-titlebar-style = "hidden";
+      window-decoration = "none";
       window-padding-balance = true;
       window-padding-x = 0;
       window-padding-y = 0;
@@ -22,6 +25,8 @@
       font-style-bold = "Bold";
       font-style-italic = "Italic";
       font-style-bold-italic = "SemiBold Italic";
+      confirm-close-surface = false;
+      command = "tmux";
     };
   };
 }
