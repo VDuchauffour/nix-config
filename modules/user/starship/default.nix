@@ -12,16 +12,17 @@
       };
       git_metrics.disabled = false;
       git_status = {
-        ahead = "⇡\($count\)";
-        diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
-        behind = "⇣\($count\)";
-        stashed = "📦";
-        conflicted = "🏳 ";
-        modified = "!\($count\)";
-        staged = "+\($count\)";
-        untracked = "?\($count\)";
-        deleted = "✘\($count\)";
-        renamed = "»\($count\)";
+        format = "([$all_status$ahead_behind]($style) )";
+        ahead = "⇡\($count\) ";
+        diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\) ";
+        behind = "⇣\($count\) ";
+        stashed = "*\($count\) ";
+        conflicted = "~\($count\) ";
+        modified = "!\($count\) ";
+        staged = "+\($count\) ";
+        untracked = "?\($count\) ";
+        deleted = "✘\($count\) ";
+        renamed = "»\($count\) ";
       };
       cmd_duration = {
         min_time = 2000;
