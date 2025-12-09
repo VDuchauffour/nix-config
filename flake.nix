@@ -48,15 +48,34 @@
     inherit (helpers) mkMerge mkNixos mkDarwin mkRaspberryPiNixos;
   in
     mkMerge [
-      (mkDarwin "tyrell" "aarch64-darwin" metaConfig inputs.nixpkgs-unstable [
-          inputs.home-manager-unstable.darwinModules.home-manager
+      (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
+          inputs.nixos-hardware.nixosModules.common-gpu-intel
+          inputs.nixos-hardware.nixosModules.common-pc-laptop
+          inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+          inputs.home-manager-unstable.nixosModules.home-manager
+          inputs.disko.nixosModules.disko
+          ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
+          # ./modules/system/solaar
+          ./modules/system/laptop
+          ./modules/system/nixos-desktop.nix
+          inputs.solaar.nixosModules.default
         ] [
           ./modules/user/common-desktop.nix
+          ./modules/user/nixos-desktop.nix
+          ./modules/user/gcloud
+          ./modules/user/kubernetes-tooling
+          ./modules/user/terraform
+          inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "wallace" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.nixos-hardware.nixosModules.common-cpu-intel
+          inputs.nixos-hardware.nixosModules.common-gpu-intel
+          inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+          inputs.nixos-hardware.nixosModules.common-pc-laptop
+          inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
           # inputs.nixos-hardware.nixosModules.common-gpu-nvidia
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
@@ -74,24 +93,12 @@
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
         ])
-      (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
-          inputs.nixos-hardware.nixosModules.common-cpu-intel
-          inputs.home-manager-unstable.nixosModules.home-manager
-          inputs.disko.nixosModules.disko
-          ./modules/system/systemd-boot
+      (mkDarwin "tyrell" "aarch64-darwin" metaConfig inputs.nixpkgs-unstable [
+          inputs.home-manager-unstable.darwinModules.home-manager
           ./modules/system/g810-led
           ./modules/system/logid-m3s
-          # ./modules/system/solaar
-          ./modules/system/laptop
-          ./modules/system/nixos-desktop.nix
-          inputs.solaar.nixosModules.default
         ] [
           ./modules/user/common-desktop.nix
-          ./modules/user/nixos-desktop.nix
-          ./modules/user/gcloud
-          ./modules/user/kubernetes-tooling
-          ./modules/user/terraform
-          inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "joi" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
           inputs.nixos-hardware.nixosModules.common-cpu-intel
