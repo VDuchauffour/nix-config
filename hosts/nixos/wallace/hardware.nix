@@ -23,7 +23,7 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/AC40-C82A";
+    device = "/dev/disk/by-uuid/8412-7BF0";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
