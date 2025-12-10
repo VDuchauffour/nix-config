@@ -59,6 +59,7 @@
           ./modules/system/g810-led
           ./modules/system/logid-m3s
           # ./modules/system/solaar
+          ./modules/system/keyboard
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
           inputs.solaar.nixosModules.default
@@ -82,6 +83,7 @@
           ./modules/system/g810-led
           ./modules/system/logid-m3s
           # ./modules/system/solaar
+          ./modules/system/keyboard
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
           inputs.solaar.nixosModules.default
