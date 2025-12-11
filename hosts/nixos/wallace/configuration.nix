@@ -20,6 +20,7 @@
     ];
   };
 
+  hardware.graphics.extraPackages = with pkgs; [libvdpau-va-gl];
   hardware.intelgpu.vaapiDriver = "intel-media-driver";
   hardware.nvidia = {
     open = true;
@@ -35,11 +36,12 @@
     WLR_NO_HARDWARE_CURSORS = "1"; # fixes blank cursor / black screens
     LIBVA_DRIVER_NAME = "nvidia";
   };
-  # hardware.ipu6 = {
-  #   enable = true;
-  #   platform = "ipu6ep";
-  # };
-  # hardware.enableRedistributableFirmware = true;
+  hardware.ipu6 = {
+    enable = true;
+    platform = "ipu6";
+  };
+  boot.extraModulePackages = with config.boot.kernelPackages; [ipu6-drivers];
+  hardware.firmware = with pkgs; [ipu6-camera-bins ivsc-firmware];
 
   # allows applications to update firmware
   services.fwupd.enable = true;
