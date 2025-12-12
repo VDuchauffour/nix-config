@@ -20,6 +20,8 @@
     ];
   };
 
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   hardware.intelgpu.vaapiDriver = "intel-media-driver";
   hardware.nvidia = {
     open = true;
