@@ -9,6 +9,7 @@
     ./mpv
     ./papers
     ./pointer-cursor
+    # ./quickshell
     ./vicinae
   ];
 }
