@@ -85,7 +85,7 @@ in {
     };
   in {
     nixosConfigurations.${machineHostname} = nixosConfig;
-    sdImage.${machineHostname} = nixosConfig.config.system.build.sdImage;
+    ${machineHostname}.sdImage = nixosConfig.config.system.build.sdImage;
   };
 
   mkDarwin = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraModules: extraHmModules: {
