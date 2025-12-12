@@ -66,7 +66,7 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
-          ./modules/user/gcloud
+          # ./modules/user/gcloud
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
@@ -90,7 +90,7 @@
         ] [
           ./modules/user/common-desktop.nix
           ./modules/user/nixos-desktop.nix
-          ./modules/user/gcloud
+          # ./modules/user/gcloud
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
           inputs.vicinae.homeManagerModules.default
