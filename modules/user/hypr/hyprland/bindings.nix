@@ -20,7 +20,8 @@
 
       bind = [
         # App shorcuts
-        "SUPER, RETURN, exec, $terminal"
+        "SUPER, RETURN, exec, $terminal -e tmux"
+        "SUPER SHIFT, RETURN, exec, $terminal"
         "SUPER, Q, killactive"
         "SUPER, F, exec, $fileManager"
         "SUPER, SPACE, exec, $menu"

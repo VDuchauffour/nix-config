@@ -26,7 +26,6 @@
       font-style-italic = "Italic";
       font-style-bold-italic = "SemiBold Italic";
       confirm-close-surface = false;
-      command = "tmux";
     };
   };
 }
