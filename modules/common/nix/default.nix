@@ -16,6 +16,7 @@
       # max-jobs = 4;
       # cores = 4;
       experimental-features = "nix-command flakes";
+      download-buffer-size = 524288000;
       trusted-users = ["root" "${vars.userName}"];
       allowed-users = ["${vars.userName}"];
       trusted-substituters = [
