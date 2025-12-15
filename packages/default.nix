@@ -51,6 +51,10 @@ with pkgs; [
   sysz
   sshs
 
+  gemini-cli-bin
+  claude-code
+  opencode
+
   # programming
   pkgconf
   llvm
