@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   lib,
@@ -11,6 +12,11 @@
   networking.hostId = "1a2b3c4d";
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
+  environment.systemPackages = with pkgs; [
+    inputs.quickshell.packages.x86_64-linux.default
+    libsForQt5.qt5.qtgraphicaleffects
+  ];
 
   services.dnsmasq = {
     enable = true;
