@@ -34,7 +34,7 @@
     "detached" = false;
   };
   networking.firewall.allowedTCPPorts = [47990];
-  networking.firewall.allowedUDPPorts = [47998 48000 51280];
+  networking.firewall.allowedUDPPorts = [47998 48000 51820];
 
   # nixpkgs.config.packageOverrides = pkgs: {
   #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
