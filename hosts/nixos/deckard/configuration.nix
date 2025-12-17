@@ -12,8 +12,11 @@
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
+  networking.networkmanager.dns = "dnsmasq";
+  # networking.networkmanager.insertNameservers = ["1.1.1.1" "1.0.0.1"];
   services.dnsmasq = {
     enable = true;
+    servers = ["1.1.1.1" "1.0.0.1" "192.168.1.254"];
     settings = {
       domain = "home.arpa";
       address = ["/home.arpa/192.168.1.18"]; # wildcard for *.home.arpa
