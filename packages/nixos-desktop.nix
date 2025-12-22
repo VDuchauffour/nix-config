@@ -26,7 +26,6 @@ with pkgs; [
   hypridle
   hyprpaper
   hyprpicker
-  chromium
   libreoffice
   rawtherapee
 ]
