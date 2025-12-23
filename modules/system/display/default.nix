@@ -22,13 +22,12 @@
     enable = true;
   };
   xdg.portal = {
-    wlr.enable = true;
+    enable = true;
     xdgOpenUsePortal = true;
-    # config.common.default = "*";
     config = {
       common.default = ["gtk"];
-      hyprland.default = ["gtk" "hyprland"];
+      hyprland.default = ["hyprland" "gtk"];
     };
-    extraPortals = [pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
   };
 }
