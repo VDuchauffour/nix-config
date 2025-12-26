@@ -17,6 +17,25 @@
 
       set-option -g status-style bg=default
 
+      # VIM mode
+      set-window-option -g mode-keys vi
+      # Setup 'v' to begin selection, just like Vim
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+
+      if-shell -b 'echo $XDG_SESSION_TYPE | grep -q x11' "\
+          bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard > /dev/null'; \
+          bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard > /dev/null'; \
+          bind-key C-p run 'xclip -out -selection clipboard | tmux load-buffer - ; tmux paste-buffer'"
+
+      if-shell -b 'echo $XDG_SESSION_TYPE | grep -q wayland' "\
+          bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel 'wl-copy'; \
+          bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'wl-copy'; \
+          bind-key C-p run 'wl-paste --no-newline | tmux load-buffer - ; tmux paste-buffer'" "\
+          \
+          bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel 'cat - >/dev/clipboard'; \
+          bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'cat - >/dev/clipboard'; \
+          bind-key C-p run 'cat /dev/clipboard | tmux load-buffer - ; tmux paste-buffer'"
+
       # notifications
       set -g monitor-activity off
       setw -g monitor-activity off
