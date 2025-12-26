@@ -5,5 +5,6 @@
 in {
   home.packages = [
     gdk
+    pkgs.google-cloud-sql-proxy
   ];
 }
