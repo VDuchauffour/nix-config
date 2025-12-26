@@ -49,5 +49,6 @@
 
   imports = [
     ./hardware.nix
+    # ./webcam.nix
   ];
 }
