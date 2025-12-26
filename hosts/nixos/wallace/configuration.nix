@@ -38,14 +38,13 @@
     LIBVA_DRIVER_NAME = "nvidia";
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
-  # hardware.ipu6 = {
-  #   enable = true;
-  #   platform = "ipu6ep";
-  # };
+
   # hardware.enableRedistributableFirmware = true;
 
   # allows applications to update firmware
   services.fwupd.enable = true;
+
+  boot.kernelParams = ["i915.enable_psr=0"];
 
   imports = [
     ./hardware.nix
