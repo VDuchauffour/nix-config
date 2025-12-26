@@ -49,4 +49,6 @@
   "media.webrtc.camera.allow-pipewire" = true;
   "media.webrtc.capture.allow-pipewire" = true;
   "media.navigator.mediadatadecoder_vpx_enabled" = true;
+  "media.cubeb.backend" = "pipewire";
+  "media.cubeb.sandbox" = false;
 }
