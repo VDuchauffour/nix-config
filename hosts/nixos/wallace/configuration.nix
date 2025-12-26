@@ -48,6 +48,7 @@
 
   imports = [
     ./hardware.nix
+    ../dnsmasq.nix
     # ./webcam.nix
   ];
 }
