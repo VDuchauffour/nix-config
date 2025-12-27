@@ -13,6 +13,9 @@
         ruff.disabled = false;
         uv.disabled = false;
       };
+      keybinds = {
+        "input_newline" = "shift+return,ctrl+return,alt+return,ctrl+j";
+      };
     };
   };
 }
