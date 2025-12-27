@@ -53,7 +53,6 @@ with pkgs; [
 
   gemini-cli-bin
   claude-code
-  opencode
 
   # programming
   pkgconf

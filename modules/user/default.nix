@@ -5,6 +5,7 @@
     ./direnv
     ./git
     ./lazygit
+    ./opencode
     ./ssh
     ./starship
     ./tmux
