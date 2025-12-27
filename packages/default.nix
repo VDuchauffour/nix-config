@@ -64,6 +64,7 @@ with pkgs; [
   poetry
   pkgs.python3
   uv
+  pyright
   pnpm
   lua-language-server
   stylua
