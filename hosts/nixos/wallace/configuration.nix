@@ -44,7 +44,10 @@
   # allows applications to update firmware
   services.fwupd.enable = true;
 
-  boot.kernelParams = ["i915.enable_psr=0"];
+  boot.kernelParams = [
+    "i915.enable_psr=0"
+    "quiet"
+  ];
 
   imports = [
     ./hardware.nix
