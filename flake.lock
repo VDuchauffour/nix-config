@@ -418,22 +418,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-nixos": {
-      "locked": {
-        "lastModified": 1766902085,
-        "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "c0b0e0fddf73fd517c3471e546c0df87a42d53f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1766902085,
@@ -586,7 +570,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_7",
-        "nixpkgs-nixos": "nixpkgs-nixos",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "secrets": "secrets",
         "solaar": "solaar",

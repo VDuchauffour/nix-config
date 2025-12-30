@@ -2,37 +2,36 @@
   description = "My unified Nix configuration";
 
   inputs = {
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master?shallow=true";
-    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main?shallow=true";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     disko = {
-      url = "github:nix-community/disko?shallow=true";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11?shallow=true";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
-    nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master?shallow=true";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11?shallow=true";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager-unstable = {
-      url = "github:nix-community/home-manager/master?shallow=true";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     agenix = {
-      url = "github:ryantm/agenix?shallow=true";
+      url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
       url = "git+ssh://git@github.com/VDuchauffour/nix-private.git";
       flake = false;
     };
-    mac-app-util.url = "github:hraban/mac-app-util?shallow=true";
-    apple-fonts.url = "github:Lyndeno/apple-fonts.nix?shallow=true";
+    mac-app-util.url = "github:hraban/mac-app-util";
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
