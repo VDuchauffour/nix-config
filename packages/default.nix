@@ -51,8 +51,9 @@ with pkgs; [
   sysz
   sshs
 
-  gemini-cli-bin
+  gemini-cli
   claude-code
+  claude-monitor
 
   # programming
   pkgconf
