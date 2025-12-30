@@ -1,4 +1,9 @@
 {
+  # Performance: lazy-load tabs to prevent startup freeze
+  "browser.sessionstore.restore_on_demand" = true;
+  "browser.sessionstore.restore_pinned_tabs_on_demand" = true;
+  "dom.max_script_run_time" = 30;
+
   "webgl.disabled" = false;
   "extensions.pocket.enabled" = false;
   "extensions.screenshots.disabled" = false;
