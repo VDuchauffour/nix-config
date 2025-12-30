@@ -5,7 +5,7 @@
   vars,
   ...
 }: {
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
   networking.hostId = "36c1b69a";
 
   system.nixos.tags = let
