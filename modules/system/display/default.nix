@@ -14,6 +14,7 @@
       session_log = ".ly-session.log";
     };
   };
+  xdg.autostart.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -26,8 +27,27 @@
     xdgOpenUsePortal = true;
     config = {
       common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
+      hyprland = {
+        default = ["hyprland" "gtk"];
+        "org.freedesktop.impl.portal.ScreenCast" = ["hyprland"];
+        "org.freedesktop.impl.portal.Screenshot" = ["hyprland"];
+        "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
+        "org.freedesktop.impl.portal.OpenURI" = ["gtk"];
+      };
     };
-    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
+    extraPortals = [pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
   };
+
+  # Workaround: explicitly define xdg-desktop-portal-gtk service
+  # The auto-generated service shows as "bad" due to NixOS bug
+  # systemd.user.services.xdg-desktop-portal-gtk = {
+  #   description = "Portal service (GTK/GNOME implementation)";
+  #   partOf = ["graphical-session.target"];
+  #   after = ["graphical-session.target"];
+  #   serviceConfig = {
+  #     Type = "dbus";
+  #     BusName = "org.freedesktop.impl.portal.desktop.gtk";
+  #     ExecStart = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
+  #   };
+  # };
 }

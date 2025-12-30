@@ -5,6 +5,9 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    # Propagate environment variables to systemd user services
+    # Required for xdg-desktop-portal-gtk to work properly
+    systemd.variables = ["--all"];
     settings = {
       debug = {
         disable_logs = false;
