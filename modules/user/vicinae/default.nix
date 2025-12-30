@@ -1,18 +1,49 @@
 {pkgs, ...}: {
   services.vicinae = {
     enable = true;
-    autoStart = true;
+    systemd = {
+      enable = true;
+      autoStart = true;
+      environment = {
+        USE_LAYER_SHELL = 1;
+      };
+    };
     settings = {
-      faviconService = "twenty";
-      font.size = 11;
-      popToRootOnClose = false;
-      rootSearch.searchFiles = false;
-      theme.name = "vicinae-dark";
-      window = {
+      close_on_focus_loss = true;
+      consider_preedit = true;
+      pop_to_root_on_close = true;
+      favicon_service = "twenty";
+      search_files_in_root = true;
+      font = {
+        normal = {
+          size = 12;
+          normal = "Maple Nerd Font";
+        };
+      };
+      theme = {
+        light = {
+          name = "vicinae-light";
+          icon_theme = "default";
+        };
+        dark = {
+          name = "vicinae-dark";
+          icon_theme = "default";
+        };
+      };
+      launcher_window = {
         csd = true;
         opacity = 0.95;
         rounding = 10;
       };
     };
+    # extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+    #   agenda
+    #   bluetooth
+    #   nix
+    #   player-pilot
+    #   power-profile
+    #   ssh
+    #   vscode-recents
+    # ];
   };
 }
