@@ -56,6 +56,13 @@
     polkitPolicyOwners = ["k"];
   };
 
+  # boot.extraModprobeConfig = ''
+  # options i2c-i801 disable_features=0x10
+  # '';
+  # boot.blacklistedKernelModules = [ "i2c_i801" ];
+  # Or force i801_smbus to load first
+  # boot.kernelModules = [ "i801_smbus" ];
+
   boot.kernelParams = [
     "i915.enable_psr=0"
     "quiet"
