@@ -32,7 +32,7 @@
         "org.freedesktop.impl.portal.ScreenCast" = ["hyprland"];
         "org.freedesktop.impl.portal.Screenshot" = ["hyprland"];
         "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
-        "org.freedesktop.impl.portal.OpenURI" = ["gtk"];
+        "org.freedesktop.impl.portal.OpenURI" = ["hyprland"];
       };
     };
     extraPortals = [pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
