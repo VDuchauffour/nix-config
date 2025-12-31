@@ -14,6 +14,8 @@
       session_log = ".ly-session.log";
     };
   };
+  security.pam.services.ly.fprintAuth = false;
+
   xdg.autostart.enable = true;
   programs.hyprland = {
     enable = true;
