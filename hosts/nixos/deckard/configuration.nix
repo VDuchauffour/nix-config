@@ -27,6 +27,12 @@
     ];
   };
 
+  # Fingerprint reader support
+  services.fprintd.enable = true;
+  services.fprintd.tod.enable = true;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
+  security.pam.services.sudo.fprintAuth = true;
+
   imports = [
     ./hardware.nix
     ../dnsmasq.nix
