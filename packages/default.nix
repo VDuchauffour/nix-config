@@ -53,7 +53,7 @@ with pkgs; [
 
   gemini-cli
   claude-code
-  claude-monitor
+  # claude-monitor
 
   # programming
   pkgconf
