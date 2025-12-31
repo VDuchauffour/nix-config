@@ -3,6 +3,9 @@
     enable = true;
     settings = {
       theme = "github";
+      plugin = [
+        "oh-my-opencode"
+      ];
       mcp = {
       };
       permission = {
