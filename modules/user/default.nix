@@ -2,6 +2,7 @@
   imports = [
     ./bottom
     ./btop
+    ./bun
     ./direnv
     ./git
     ./lazygit
