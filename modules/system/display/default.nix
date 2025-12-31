@@ -15,6 +15,7 @@
     };
   };
   security.pam.services.ly.fprintAuth = false;
+  security.pam.services.hyprlock.fprintAuth = false;
 
   xdg.autostart.enable = true;
   programs.hyprland = {
