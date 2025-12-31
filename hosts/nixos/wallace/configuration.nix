@@ -44,6 +44,10 @@
   # allows applications to update firmware
   services.fwupd.enable = true;
 
+  # Fingerprint reader support
+  services.fprintd.enable = true;
+  security.pam.services.sudo.fprintAuth = true;
+
   boot.kernelParams = [
     "i915.enable_psr=0"
     "quiet"
