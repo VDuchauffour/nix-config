@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   services.vicinae = {
     enable = true;
     systemd = {
@@ -35,15 +39,22 @@
         opacity = 0.95;
         rounding = 10;
       };
+      providers = {
+        ssh.preferences = {terminal = "ghostty";};
+        vscode-recents.preferences = {
+          title = "Visual Studio Code";
+          value = "Code";
+        };
+      };
     };
-    # extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-    #   agenda
-    #   bluetooth
-    #   nix
-    #   player-pilot
-    #   power-profile
-    #   ssh
-    #   vscode-recents
-    # ];
+    extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+      agenda
+      bluetooth
+      # nix # TODO add token in private repo
+      player-pilot
+      power-profile
+      ssh
+      vscode-recents
+    ];
   };
 }
