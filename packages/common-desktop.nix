@@ -4,8 +4,8 @@ with pkgs; [
   alacritty
   neovide
   vscode
-  code-cursor
   bitwarden-desktop
   qbittorrent
   dbeaver-bin
+  google-chrome
 ]
