@@ -27,19 +27,22 @@
     open = true;
     nvidiaSettings = true;
     prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
   };
   environment.variables = {
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1"; # fixes blank cursor / black screens
-    LIBVA_DRIVER_NAME = "nvidia";
+    # GBM_BACKEND = "nvidia-drm";
+    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    # WLR_NO_HARDWARE_CURSORS = "1"; # fixes blank cursor / black screens
+    # LIBVA_DRIVER_NAME = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1";
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
 
-  # hardware.enableRedistributableFirmware = true;
+  hardware.enableRedistributableFirmware = true;
 
   # allows applications to update firmware
   services.fwupd.enable = true;
