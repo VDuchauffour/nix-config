@@ -5,6 +5,7 @@ with pkgs; [
   nerd-fonts.symbols-only
   zsh-syntax-highlighting
   zsh-autosuggestions
+  inxi
   xdg-utils
   direnv
   stow
