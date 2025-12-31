@@ -50,11 +50,13 @@
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
       agenda
       bluetooth
-      # nix # TODO add token in private repo
+      nix
       player-pilot
       power-profile
+      process-manager
       ssh
       vscode-recents
+      wifi-commander
     ];
   };
 }
