@@ -36,6 +36,7 @@
   imports = [
     ./hardware.nix
     ../dnsmasq.nix
+    ../xpad.nix
     # ./disko.nix
   ];
 }
