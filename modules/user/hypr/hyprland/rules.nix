@@ -13,9 +13,17 @@
         "size 1200 400, class:^(.protonvpn-app-wrapped)$"
       ];
       layerrule = [
-        "blur,vicinae"
-        "ignorealpha 0, vicinae"
-        "noanim, vicinae"
+        {
+          "name" = "vicinae-rule";
+          "blur" = "on";
+          "ignore_alpha" = 0;
+          "match:namespace" = "vicinae";
+        }
+        {
+          "name" = "vicinae-disable-animation-rule";
+          "no_anim" = "on";
+          "match:namespace" = "vicinae";
+        }
       ];
     };
   };
