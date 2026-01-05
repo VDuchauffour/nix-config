@@ -27,6 +27,13 @@
     default_area = "navbar";
     private_browsing = true;
   };
+  # floccus
+  "floccus@handmadeideas.org" = {
+    install_url = "https://addons.mozilla.org/firefox/downloads/latest/floccus/latest.xpi";
+    installation_mode = "force_installed";
+    default_area = "navbar";
+    private_browsing = true;
+  };
   # xBrowserSync
   "{019b606a-6f61-4d01-af2a-cea528f606da}" = {
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/xbs/latest.xpi";
