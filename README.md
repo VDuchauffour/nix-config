@@ -239,7 +239,7 @@ nixos-generate-config --root /mnt --no-filesystems
 
 To generate an `hostId`, see this [link](https://mynixos.com/nixpkgs/option/networking.hostId).
 
-To use `fprint`, run `sudo fprintd-enroll <username>`.
+To use `fprint`, run `sudo fprintd-enroll <username> --finger <finger>`.
 
 ## Acknowledgments
 
