@@ -31,9 +31,9 @@ in {
   ];
 
   programs.zsh = {
-    initContent = lib.mkAfter ''
-      eval "$(${my-helmfile}/bin/helmfile completion zsh)"
-    '';
+    # initContent = lib.mkAfter ''
+    #   eval "$(${my-helmfile}/bin/helmfile completion zsh)"
+    # '';
     shellAliases = {
       k = "kubectl";
       ks = "kubens";
