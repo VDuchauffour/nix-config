@@ -16,4 +16,5 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.helm" },
+  { import = "astrocommunity.pack.terraform" },
 }
