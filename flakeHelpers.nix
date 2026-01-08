@@ -114,6 +114,25 @@ in {
     };
   };
 
+  mkStandalone = machineHostname: machineArchitecture: metaConfig: nixpkgsVersion: extraHmModules: {
+    homeConfigurations."${metaConfig.userName}@${machineHostname}" = inputs.home-manager-unstable.lib.homeManagerConfiguration {
+      pkgs = nixpkgsVersion.legacyPackages.${machineArchitecture};
+      extraSpecialArgs = {
+        inherit inputs;
+        vars = metaConfig;
+      };
+      modules =
+        [
+          ./home/${metaConfig.userName}
+          ./hosts/standalone/${machineHostname}/home.nix
+          ./modules/user
+
+          inputs.agenix.homeManagerModules.default
+        ]
+        ++ extraHmModules;
+    };
+  };
+
   mkMerge = inputs.nixpkgs.lib.lists.foldl' (
     a: b: inputs.nixpkgs.lib.attrsets.recursiveUpdate a b
   ) {};
