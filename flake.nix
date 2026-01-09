@@ -112,6 +112,7 @@
           ./modules/system/homelab.nix
         ] [
           ./modules/user/kubernetes-tooling
+          ./modules/user/terraform
         ])
       (mkRaspberryPiNixos "sebastian" metaConfig [
           # inputs.nixos-hardware.nixosModules.raspberry-pi-3
