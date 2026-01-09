@@ -56,7 +56,6 @@ with pkgs; [
   claude-code
   # claude-monitor
 
-  # programming
   pkgconf
   llvm
   gcc
@@ -73,6 +72,7 @@ with pkgs; [
   lua52Packages.luarocks
   shellcheck
   shfmt
+  cloud-init
 
   alejandra
 ]
