@@ -5,12 +5,29 @@
 }: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = [
-        "float,class:^(pavucontrol)$,title:^(.*)$"
-        "float,class:^(galculator)$,title:^(.*)$"
-        "noblur,class:^()$,title:^()"
-        "bordersize 2, floating:1" # only show borders on floating windows
-        "size 1200 400, class:^(.protonvpn-app-wrapped)$"
+      windowrule = [
+        {
+          "name" = "floating-pavucontrol-rule";
+          "match:class" = "org.pulseaudio.pavucontrol";
+          "float" = "on";
+        }
+        {
+          "name" = "floating-gnome-calculator-rule";
+          "match:class" = "org.gnome.Calculator";
+          "float" = "on";
+        }
+        {
+          "name" = "floating-protonvpn-rule";
+          "match:class" = "protonvpn-app";
+          "float" = "on";
+        }
+        # {
+        #   "name" = "sizing-protonvpn-rule";
+        #   "match:class" = "protonvpn-app";
+        #   "size" = "1200 400";
+        # }
+        # "noblur,class:^()$,title:^()"
+        # "bordersize 2, floating:1" # only show borders on floating windows
       ];
       layerrule = [
         {
