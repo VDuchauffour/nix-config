@@ -15,7 +15,7 @@ with pkgs; [
   code-nautilus
   viewnior
   gnome-disk-utility
-  galculator
+  gnome-calculator
   audacious
   audacious-plugins
   mpv
