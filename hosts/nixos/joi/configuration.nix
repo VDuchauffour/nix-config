@@ -51,6 +51,12 @@
   };
   environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";}; # Force intel-media-driver
 
+  services.frp = {
+    enable = true;
+    role = "client";
+    settings = builtins.fromTOML (builtins.readFile ./frpc.toml);
+  };
+
   imports = [
     ./hardware.nix
     ./kubernetes.nix
