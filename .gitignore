@@ -10,4 +10,3 @@ result-*
 *.null-ls*.nix
 
 dots/astronvim/lazy-lock.json
-hosts/nixos/joi/frpc.toml
