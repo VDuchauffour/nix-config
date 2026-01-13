@@ -48,7 +48,7 @@
       userName = "k";
     };
     helpers = import ./flakeHelpers.nix {inherit inputs;};
-    inherit (helpers) mkMerge mkNixos mkDarwin mkRaspberryPiNixos;
+    inherit (helpers) mkMerge mkNixos mkDarwin mkRaspberryPiNixos mkStandalone;
   in
     mkMerge [
       (mkNixos "deckard" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [
