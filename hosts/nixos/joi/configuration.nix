@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   vars,
   ...
@@ -37,9 +36,6 @@
   networking.firewall.allowedTCPPorts = [47990];
   networking.firewall.allowedUDPPorts = [47998 48000 51820];
 
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
-  # };
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -51,13 +47,9 @@
   };
   environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";}; # Force intel-media-driver
 
-  services.frp = {
-    enable = true;
-    role = "client";
-    settings = builtins.fromTOML (builtins.readFile ./frpc.toml);
-  };
-
   imports = [
+    ../dnsmasq.nix
+    ../frpc.nix
     ./hardware.nix
     ./kubernetes.nix
     ./samba.nix
