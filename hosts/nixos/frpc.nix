@@ -39,6 +39,14 @@
           hostHeaderRewrite = "status.home.arpa";
         }
         {
+          name = "dozzle";
+          type = "http";
+          localIP = "192.168.1.18";
+          localPort = 80;
+          customDomains = ["dozzle.{{ .Envs.FRP_DOMAIN }}"];
+          hostHeaderRewrite = "dozzle.home.arpa";
+        }
+        {
           name = "jellyfin";
           type = "http";
           localIP = "192.168.1.18";
