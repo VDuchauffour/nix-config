@@ -25,9 +25,11 @@
         "https://nix-community.cachix.org"
         "https://nixos-raspberrypi.cachix.org"
       ];
+      extra-substituters = [
+        "https://vicinae.cachix.org"
+      ];
       extra-trusted-substituters = [
         "https://nixos-raspberrypi.cachix.org"
-        "https://vicinae.cachix.org"
       ];
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="

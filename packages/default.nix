@@ -72,6 +72,8 @@ with pkgs; [
   lua52Packages.luarocks
   shellcheck
   shfmt
+
+  scaleway-cli
   cloud-init
 
   alejandra

@@ -34,8 +34,8 @@
   security.pam.services.sudo.fprintAuth = true;
 
   imports = [
-    ./hardware.nix
     ../dnsmasq.nix
+    ./hardware.nix
     ../xpad.nix
     # ./disko.nix
   ];
