@@ -15,7 +15,7 @@
 
     Section "Device"
         Identifier "Device0"
-        Driver "intel"   # or "amdgpu" / "nvidia"
+        Driver "intel"
     EndSection
 
     Section "Screen"

@@ -27,33 +27,15 @@
   };
   services.openssh.enable = true;
 
-  environment.systemPackages = [pkgs.steam];
-  services.sunshine.settings = {
-    "name" = "Steam Big Picture";
-    "cmd" = "steam -tenfoot -fullscreen";
-    "detached" = false;
-  };
-  networking.firewall.allowedTCPPorts = [47990];
-  networking.firewall.allowedUDPPorts = [47998 48000 51820];
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-compute-runtime
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD (for HD Graphics starting Broadwell (2014) and newer)
-      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      libvdpau-va-gl
-    ];
-  };
-  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";}; # Force intel-media-driver
-
   imports = [
     ../dnsmasq.nix
     ../frpc.nix
+    ./graphics.nix
     ./hardware.nix
     ./kubernetes.nix
     ./samba.nix
     ./smartd-devices.nix
+    ./sunshine.nix
     ./ups.nix
     ./virtual-display.nix
     ./zfs.nix
