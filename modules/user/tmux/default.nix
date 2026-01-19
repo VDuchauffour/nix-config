@@ -69,23 +69,6 @@
       set -g message-style fg='#f8f8f2',bg=default,bold
 
       set -sg escape-time 0
-
-      # keybindings
-      # bind -n M-w confirm-before -p "kill-pane #P? (y/n)" kill-pane
-      # bind -n M-t new-window
-      # bind -n M-W confirm-before -p "kill-window #W? (y/n)" kill-window
-      # bind -n M-H previous-window
-      # bind -n M-L next-window
-      # bind -n M-D split-window -h
-      # bind -n M-d split-window -v
-      # bind -n M-h select-pane -L
-      # bind -n M-l select-pane -R
-      # bind -n M-k select-pane -U
-      # bind -n M-j select-pane -D
-      # bind -n M-C-h resize-pane -L 5
-      # bind -n M-C-j resize-pane -D 5
-      # bind -n M-C-k resize-pane -U 5
-      # bind -n M-C-l resize-pane -R 5
     '';
   };
 }
