@@ -62,7 +62,7 @@ with pkgs; [
   rustup
   cargo
   pre-commit
-  poetry
+  # poetry
   pkgs.python3
   uv
   pyright
