@@ -1,12 +1,14 @@
 {pkgs, ...}:
 with pkgs; [
-  # cli tools
   nvd
+
+  # cli tools
   nerd-fonts.symbols-only
   zsh-syntax-highlighting
   zsh-autosuggestions
   inxi
   xdg-utils
+  gettext
   direnv
   stow
   gnumake
