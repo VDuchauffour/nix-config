@@ -69,6 +69,10 @@
       set -g message-style fg='#f8f8f2',bg=default,bold
 
       set -sg escape-time 0
+
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
     '';
   };
 }
