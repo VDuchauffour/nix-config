@@ -14,7 +14,7 @@ in {
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "direnv" "uv" "docker" "kubectl"];
+      plugins = ["git" "direnv" "uv" "docker" "kubectl" "helm"];
       theme = "robbyrussell";
     };
 
