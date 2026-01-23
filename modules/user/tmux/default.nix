@@ -11,6 +11,7 @@
       pkgs.tmuxPlugins.better-mouse-mode
     ];
     extraConfig = ''
+      set -g set-clipboard on
       set -g pane-base-index 1
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
