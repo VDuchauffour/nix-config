@@ -45,6 +45,8 @@ in {
       PATH = "${XDG_BIN_HOME}:$PATH";
       GTK_THEME = "WhiteSur-Dark";
 
+      TERM = "xterm-256color";
+
       GOPATH = "$HOME/.go";
     };
 
