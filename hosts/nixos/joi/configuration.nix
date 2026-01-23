@@ -22,6 +22,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEhWwl9v5H/L422LWcyHsgtFfsyCL/v29lMRQuRgnWgF deckard-joi"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOzPLxiLl8HM9Oa8o00IAyp8pKQMWEFUmfk3aOzyCpQn wallace-joi"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKSNlbZcFTZXv0PPAFdIO7zD0GdOIGxLY9z1Q7UYxfBO luv-joi"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAD7sVA3owAZ3+FLv56+PkNa0FoJogZwHuUAftY3G93O joi-github"
     ];
   };
