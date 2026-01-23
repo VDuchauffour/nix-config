@@ -70,14 +70,14 @@
           customDomains = ["qbittorrent.{{ .Envs.FRP_DOMAIN }}"];
           hostHeaderRewrite = "qbittorrent.home.arpa";
         }
-        # {
-        #   name = "immich";
-        #   type = "http";
-        #   localIP = "192.168.1.18";
-        #   localPort = 80;
-        #   customDomains = ["immich.{{ .Envs.FRP_DOMAIN }}"];
-        #   hostHeaderRewrite = "immich.home.arpa";
-        # }
+        {
+          name = "kan";
+          type = "http";
+          localIP = "192.168.1.18";
+          localPort = 80;
+          customDomains = ["kan.{{ .Envs.FRP_DOMAIN }}"];
+          hostHeaderRewrite = "kan.home.arpa";
+        }
         {
           name = "stirling-pdf";
           type = "http";
