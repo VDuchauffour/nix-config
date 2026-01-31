@@ -24,6 +24,7 @@ in {
     kubectl
     kubectx
     kubeseal
+    kubectl-cnpg
     mkcert
     my-kubernetes-helm
     my-helmfile
