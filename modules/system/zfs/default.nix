@@ -6,7 +6,7 @@
       hourly = 0;
       daily = 7;
       weekly = 1;
-      monthly = 0;
+      monthly = 1;
     };
     autoScrub = {
       enable = true;
