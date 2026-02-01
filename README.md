@@ -241,6 +241,8 @@ To generate an `hostId`, see this [link](https://mynixos.com/nixpkgs/option/netw
 
 To use `fprint`, run `sudo fprintd-enroll <username> --finger <finger>`.
 
+To enable snapshot for ZFS datasets, run `zfs set com.sun:auto-snapshot=true <dataset-name>`.
+
 ## Acknowledgments
 
 - The tree structure and module definitions are inspired by [notthebee's nix-config](https://github.com/notthebee/nix-config/)
