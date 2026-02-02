@@ -11,6 +11,8 @@
       pkgs.tmuxPlugins.better-mouse-mode
     ];
     extraConfig = ''
+      set -g allow-rename on
+      set -g automatic-rename on
       set -g set-clipboard on
       set -g pane-base-index 1
       set-window-option -g pane-base-index 1
@@ -58,12 +60,10 @@
       set -g status-right-length 50
       set -g status-left-length 20
 
-      setw -g window-status-current-style fg='#f8f8f2',bg=default,bold
-      setw -g window-status-current-format ' #I#[fg=fg]:#[fg=colour255]#W#[fg=fg]#F '
-
       setw -g window-status-style fg='#f8f8f2',bg=default
-      setw -g window-status-format '#I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F'
-
+      setw -g window-status-current-style fg='#f8f8f2',bg=default,bold
+      setw -g window-status-format '#I:#{?pane_title,#{pane_title},#{pane_current_command}}'
+      setw -g window-status-current-format '#I:#{?pane_title,#{pane_title},#{pane_current_command}}'
       setw -g window-status-bell-style fg='#f8f8f2',bg=default,bold
 
       # messages
