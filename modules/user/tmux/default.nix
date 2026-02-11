@@ -60,6 +60,9 @@
       set -g status-right-length 50
       set -g status-left-length 20
 
+      set-option -g automatic-rename on
+      set-option -g automatic-rename-format '#{?#{==:#{pane_current_command},nvim},nvim #{b:pane_current_path},#{b:pane_current_command}}'
+
       setw -g window-status-style fg='#f8f8f2',bg=default
       setw -g window-status-current-style fg='#f8f8f2',bg=default,bold
       setw -g window-status-format ' #I:#{?pane_title,#{=25:pane_title}#{?#{>:#{len:pane_title},25},…,},#{pane_current_command}} '
