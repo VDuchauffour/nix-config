@@ -11,15 +11,6 @@
       pkgs.tmuxPlugins.better-mouse-mode
     ];
     extraConfig = ''
-      set -g allow-rename on
-      set -g automatic-rename on
-      set -g set-clipboard on
-      set -g pane-base-index 1
-      set-window-option -g pane-base-index 1
-      set-option -g renumber-windows on
-
-      set-option -g status-style bg=default
-
       # VIM mode
       set-window-option -g mode-keys vi
       # Setup 'v' to begin selection, just like Vim
@@ -39,6 +30,14 @@
           bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'cat - >/dev/clipboard'; \
           bind-key C-p run 'cat /dev/clipboard | tmux load-buffer - ; tmux paste-buffer'"
 
+      # general
+      set -g set-clipboard on
+      set-option -g status-style bg=default
+      set -sg escape-time 0
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
+
       # notifications
       set -g monitor-activity off
       setw -g monitor-activity off
@@ -46,10 +45,6 @@
       set -g visual-silence off
       set -g visual-bell off
       set -g bell-action none
-
-      # panes
-      set -g pane-border-style fg='#44475a',bg=default
-      set -g pane-active-border-style fg='#bd93f9',bg=default
 
       # status Bar
       set -g status-position bottom
@@ -60,23 +55,29 @@
       set -g status-right-length 50
       set -g status-left-length 20
 
+      # panes
+      set -g pane-base-index 1
+      set -g pane-border-style fg='#44475a',bg=default
+      set -g pane-active-border-style fg='#bd93f9',bg=default
+
+      # window
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
+
+      set -g allow-rename on
       set-option -g automatic-rename on
       set-option -g automatic-rename-format '#{?#{==:#{pane_current_command},nvim},nvim #{b:pane_current_path},#{b:pane_current_command}}'
 
       setw -g window-status-style fg='#f8f8f2',bg=default
       setw -g window-status-current-style fg='#f8f8f2',bg=default,bold
-      setw -g window-status-format ' #I:#{?pane_title,#{=25:pane_title}#{?#{>:#{len:pane_title},25},…,},#{pane_current_command}} '
-      setw -g window-status-current-format ' #I:#{?pane_title,#{=25:pane_title}#{?#{>:#{len:pane_title},25},…,},#{pane_current_command}} '
+
+      setw -g window-status-format ' #I:#{=25:window_name} '
+      setw -g window-status-current-format ' #I:#{=25:window_name} '
+
       setw -g window-status-bell-style fg='#f8f8f2',bg=default,bold
 
       # messages
       set -g message-style fg='#f8f8f2',bg=default,bold
-
-      set -sg escape-time 0
-
-      set -g allow-passthrough on
-      set -ga update-environment TERM
-      set -ga update-environment TERM_PROGRAM
     '';
   };
 }
