@@ -9,6 +9,8 @@
       cursor-style-blink = true;
       shell-integration-features = "no-cursor,ssh-env,ssh-terminfo";
       copy-on-select = "clipboard";
+      clipboard-read = "allow";
+      clipboard-write = "allow";
       selection-clear-on-copy = false;
       maximize = true;
       window-theme = "ghostty";
