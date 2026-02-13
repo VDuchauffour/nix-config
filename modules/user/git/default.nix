@@ -18,11 +18,11 @@
       fetch = {
         prune = true;
       };
-      credential = {
-        "https://github.com" = {
-          helper = "!/usr/bin/gh auth git-credential";
-        };
-      };
+      # credential = {
+      #   "https://github.com" = {
+      #     helper = "!/usr/bin/gh auth git-credential";
+      #   };
+      # };
       advice = {
         addIgnoredFile = false;
         mergeConflict = false;
