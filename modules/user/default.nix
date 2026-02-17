@@ -9,6 +9,7 @@
     ./opencode
     ./ssh
     ./starship
+    ./television
     ./tmux
     ./yazi
     ./zsh
