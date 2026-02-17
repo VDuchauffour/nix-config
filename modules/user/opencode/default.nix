@@ -5,6 +5,8 @@
       theme = "github";
       plugin = [
         "oh-my-opencode"
+        "@slkiser/opencode-quota"
+        "@simonwjackson/opencode-direnv"
       ];
       mcp = {
       };
