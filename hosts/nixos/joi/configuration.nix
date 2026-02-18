@@ -33,6 +33,7 @@
     ./graphics.nix
     ./hardware.nix
     ./kubernetes.nix
+    ./pangolin-newt.nix
     ./samba.nix
     ./smartd-devices.nix
     ./sunshine.nix
