@@ -21,11 +21,11 @@
     upsd = {
       listen = [
         {
-          address = "127.0.0.1";
+          address = "0.0.0.0";
           port = 3493;
         }
         {
-          address = "::1";
+          address = "::";
           port = 3493;
         }
       ];
