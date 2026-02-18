@@ -30,7 +30,6 @@
 
   imports = [
     ../dnsmasq.nix
-    ./frpc.nix
     ./graphics.nix
     ./hardware.nix
     ./kubernetes.nix
