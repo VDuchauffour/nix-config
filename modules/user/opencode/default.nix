@@ -1,6 +1,7 @@
 {
   programs.opencode = {
     enable = true;
+    enableMcpIntegration = true;
     settings = {
       theme = "github";
       plugin = [
@@ -12,8 +13,8 @@
       mcp = {
         browsermcp = {
           enabled = true;
-          command = "npx";
-          args = ["@browsermcp/mcp@latest"];
+          type = "local";
+          command = ["npx" "-y" "@browsermcp/mcp@latest"];
         };
       };
       permission = {
