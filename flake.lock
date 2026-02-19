@@ -677,11 +677,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1771502448,
-        "narHash": "sha256-4ZM/j9QIbdnrjPHLzf0e/ax0Ge3gTI4/jt6hj89uu/M=",
+        "lastModified": 1771507920,
+        "narHash": "sha256-caDIoEMWt0bUNuzxDXBXtbpwkHJsBw2ocojud2+CjNA=",
         "ref": "refs/heads/main",
-        "rev": "f585342ed7c6ed446f3d34ea54306cbf8beabd89",
-        "revCount": 15,
+        "rev": "78cd74ba3ffdc7b41b008bb493713f19fc6fc55c",
+        "revCount": 16,
         "type": "git",
         "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
       },
