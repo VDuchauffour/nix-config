@@ -10,6 +10,11 @@
         "opencode-scheduler"
       ];
       mcp = {
+        browsermcp = {
+          enabled = true;
+          command = "npx";
+          args = ["@browsermcp/mcp@latest"];
+        };
       };
       permission = {
         edit = "allow";
