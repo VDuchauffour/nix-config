@@ -580,11 +580,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1771437053,
-        "narHash": "sha256-O5le9ZKN6TxcpATSrjA0zlfN/xtv6vEdpWslTUpj1SQ=",
+        "lastModified": 1771462334,
+        "narHash": "sha256-iZYHa4iUV2eXltw9YSaPdhfotgeJ26s6vYzJg3omZoY=",
         "ref": "refs/heads/main",
-        "rev": "c1ea1ff45797fdaef954f930f0b75549d09647f0",
-        "revCount": 9,
+        "rev": "a37ba596bdb32fe5e6efe38316e17ddda97e198d",
+        "revCount": 12,
         "type": "git",
         "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
       },
