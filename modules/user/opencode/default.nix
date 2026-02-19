@@ -7,6 +7,7 @@
         "oh-my-opencode"
         "@slkiser/opencode-quota"
         "@simonwjackson/opencode-direnv"
+        "opencode-scheduler"
       ];
       mcp = {
       };
