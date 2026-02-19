@@ -9,6 +9,7 @@
         "@slkiser/opencode-quota"
         "@simonwjackson/opencode-direnv"
         "opencode-scheduler"
+        "opencode-wakatime"
       ];
       mcp = {
         nixos = {
