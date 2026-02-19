@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  imports = [./ssh ./zsh];
+  imports = [./agenix ./ssh ./zsh];
 
   environment.systemPackages = with pkgs; (import ../../packages {inherit pkgs;});
 

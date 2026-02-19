@@ -7,6 +7,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostId = "94e6e4ea";
+  networking.firewall.allowedTCPPorts = [18789]; # openclaw gateway
 
   age.identityPaths = [
     "/root/.ssh/agenix"

@@ -41,6 +41,10 @@
       url = "github:vicinaehq/extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-openclaw = {
+      url = "github:openclaw/nix-openclaw";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {self, ...} @ inputs: let
@@ -110,9 +114,13 @@
           inputs.home-manager-unstable.nixosModules.home-manager
           ./modules/system/systemd-boot
           ./modules/system/homelab.nix
+          ./modules/system/agenix
+          {nixpkgs.overlays = [inputs.nix-openclaw.overlays.default];}
         ] [
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
+          inputs.nix-openclaw.homeManagerModules.openclaw
+          ./modules/user/openclaw
         ])
       (mkRaspberryPiNixos "sebastian" metaConfig [
           # inputs.nixos-hardware.nixosModules.raspberry-pi-3
