@@ -43,21 +43,6 @@
               path: /
               interval: 30
               timeout: 5
-      openclaw:
-        name: OpenClaw
-        protocol: http
-        full-domain: openclaw.$DOMAIN
-        targets:
-          - hostname: localhost
-            port: 18789
-            method: http
-            healthcheck:
-              hostname: localhost
-              port: 18789
-              enabled: true
-              path: /
-              interval: 30
-              timeout: 5
     EOF
   '';
 in {
