@@ -31,7 +31,7 @@
   "floccus@handmadeideas.org" = {
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/floccus/latest.xpi";
     installation_mode = "force_installed";
-    default_area = "navbar";
+    default_area = "menupanel";
     private_browsing = true;
   };
   # xBrowserSync
@@ -94,7 +94,7 @@
   "passbolt@passbolt.com" = {
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/passbolt/latest.xpi";
     installation_mode = "force_installed";
-    default_area = "navbar";
+    default_area = "menupanel";
     private_browsing = true;
   };
   # Proton Pass
