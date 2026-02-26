@@ -46,6 +46,7 @@
         "udiskie &"
         "exec \"avizo-service\" &"
         "vicinae server"
+        "${pkgs.wayland-pipewire-idle-inhibit}/bin/wayland-pipewire-idle-inhibit"
       ];
 
       env = [
