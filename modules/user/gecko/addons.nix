@@ -31,7 +31,7 @@
   "floccus@handmadeideas.org" = {
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/floccus/latest.xpi";
     installation_mode = "force_installed";
-    default_area = "navbar";
+    default_area = "menupanel";
     private_browsing = true;
   };
   # xBrowserSync
@@ -88,6 +88,20 @@
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepa/latest.xpi";
     installation_mode = "force_installed";
     default_area = "menupanel";
+    private_browsing = true;
+  };
+  # Passbolt
+  "passbolt@passbolt.com" = {
+    install_url = "https://addons.mozilla.org/firefox/downloads/latest/passbolt/latest.xpi";
+    installation_mode = "force_installed";
+    default_area = "menupanel";
+    private_browsing = true;
+  };
+  # Proton Pass
+  "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+    install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+    installation_mode = "force_installed";
+    default_area = "navbar";
     private_browsing = true;
   };
 }

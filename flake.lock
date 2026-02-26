@@ -661,11 +661,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772139277,
-        "narHash": "sha256-ys6zyY5tiyR0lJZU/xG5eO3SNmbZ/KTx2NXpNFOXYv0=",
+        "lastModified": 1772141024,
+        "narHash": "sha256-Mv00X0C/HK0+VyicCcgKGwEWl7SocUv7cqp/5z7wloc=",
         "owner": "VDuchauffour",
         "repo": "openchamber",
-        "rev": "7f58c1b92ba3f542c8b252458df84c0c18655c47",
+        "rev": "db34de37a587283231e7686d308b1dbd172fa4c9",
         "type": "github"
       },
       "original": {
