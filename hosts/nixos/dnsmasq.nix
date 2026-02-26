@@ -10,7 +10,6 @@
         "/home.arpa/192.168.1.18" # wildcard for *.home.arpa
         "/opencode.home.arpa/192.168.1.18"
         "/openchamber.home.arpa/192.168.1.18"
-        "/openclaw.home.arpa/192.168.1.18"
         "/sunshine.home.arpa/192.168.1.18"
       ];
       listen-address = ["127.0.0.1" "192.168.1.18"];
