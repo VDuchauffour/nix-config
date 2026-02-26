@@ -67,8 +67,7 @@ in {
       RestartSec = 5;
     };
     script = ''
-      export PATH="${homeDir}/.cache/.bun/bin:${homeDir}/.bun/bin:${homeDir}/.npm-global/bin:${homeDir}/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
-      exec openchamber --port ${toString openchamberPort}
+      exec ${pkgs.openchamber}/bin/openchamber --port ${toString openchamberPort}
     '';
     environment = {
       HOME = homeDir;

@@ -45,6 +45,10 @@
       url = "github:openclaw/nix-openclaw";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    openchamber = {
+      url = "github:VDuchauffour/openchamber/feat/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {self, ...} @ inputs: let
@@ -115,7 +119,14 @@
           ./modules/system/systemd-boot
           ./modules/system/homelab.nix
           ./modules/system/agenix
-          {nixpkgs.overlays = [inputs.nix-openclaw.overlays.default];}
+          {
+            nixpkgs.overlays = [
+              inputs.nix-openclaw.overlays.default
+              (final: prev: {
+                openchamber = inputs.openchamber.packages.${final.system}.default;
+              })
+            ];
+          }
         ] [
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
