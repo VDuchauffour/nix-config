@@ -32,6 +32,21 @@
         #   command = ["docker" "run" "-i" "--rm" "hashicorp/terraform-mcp-server"];
         #   enabled = true;
         # };
+        n8n = {
+          type = "local";
+          command = ["sh" "-c" "export N8N_API_KEY=$(cat /run/agenix/n8n-api-key) && export N8N_API_URL=https://n8n.$(cat /run/agenix/publicDomainName) && exec npx n8n-mcp"];
+          enabled = true;
+          environment = {
+            MCP_MODE = "stdio";
+            LOG_LEVEL = "error";
+            DISABLE_CONSOLE_OUTPUT = "true";
+          };
+        };
+        github = {
+          type = "local";
+          command = ["sh" "-c" "export GITHUB_PERSONAL_ACCESS_TOKEN=$(cat /run/agenix/gh-api-key) && exec docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server"];
+          enabled = true;
+        };
         # # PostgreSQL schema inspection and queries
         # # Set POSTGRES_URL in your environment (e.g. postgresql://user:pass@postgres.home.arpa:5432/dbname)
         # postgres = {
