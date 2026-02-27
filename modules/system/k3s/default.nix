@@ -15,9 +15,11 @@ in {
     # 2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
     # 2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
   ];
-  services.k3s.enable = true;
-  services.k3s.role = "server";
-  # TODO see --disable servicelb --localstorage --disable traefik
+  services.k3s = {
+    enable = true;
+    role = "server";
+    disable = ["traefik"];
+  };
 
   system.activationScripts.k3sKubeconfig = {
     deps = ["etc"];
