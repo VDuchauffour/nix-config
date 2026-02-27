@@ -12,7 +12,7 @@
     if pkgs.stdenv.isDarwin
     then "/Users/${vars.userName}"
     else "/home/${vars.userName}";
-  home.stateVersion = "26.05";
+  home.stateVersion = "25.11";
 
   home.file = {
     ".config/nvim" = {
