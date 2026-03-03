@@ -10,7 +10,7 @@
     fsType = "zfs";
   };
   fileSystems."/mnt/tank/share" = {
-    device = "tank";
+    device = "tank/share";
     fsType = "zfs";
   };
   fileSystems."/mnt/tank/media" = {
