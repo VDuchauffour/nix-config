@@ -77,6 +77,7 @@ with pkgs; [
 
   scaleway-cli
   cloud-init
+  pangolin-cli
 
   alejandra
 ]
