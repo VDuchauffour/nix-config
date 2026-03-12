@@ -5,6 +5,7 @@
     ./bun
     ./direnv
     ./git
+    ./github
     ./lazygit
     ./opencode
     ./ssh

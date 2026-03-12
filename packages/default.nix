@@ -20,8 +20,8 @@ with pkgs; [
   aria2
   git
   delta
-  gh
   bat
+  diffnav
   dust
   duf
   doggo
