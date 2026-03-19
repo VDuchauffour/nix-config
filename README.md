@@ -243,6 +243,8 @@ To use `fprint`, run `sudo fprintd-enroll <username> --finger <finger>`.
 
 To enable snapshot for ZFS datasets, run `zfs set com.sun:auto-snapshot=true <dataset-name>`.
 
+For example: `sudo zfs set com.sun:auto-snapshot:frequent=true tank/media` will specify `frequent=true` to tank/media dataset.
+
 ## Acknowledgments
 
 - The tree structure and module definitions are inspired by [notthebee's nix-config](https://github.com/notthebee/nix-config/)
