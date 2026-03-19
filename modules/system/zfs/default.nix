@@ -3,7 +3,7 @@
     autoSnapshot = {
       enable = true;
       frequent = 0;
-      hourly = 0;
+      hourly = 4;
       daily = 7;
       weekly = 1;
       monthly = 1;
