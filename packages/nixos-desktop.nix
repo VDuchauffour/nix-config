@@ -28,4 +28,6 @@ with pkgs; [
   hyprpicker
   libreoffice
   rawtherapee
+  rapidraw
+  picard
 ]
