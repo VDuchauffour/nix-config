@@ -5,6 +5,7 @@
     settings = {
       theme = "github";
       plugin = [
+        "opencode-claude-auth"
         "oh-my-opencode"
         "@slkiser/opencode-quota"
         "@simonwjackson/opencode-direnv"
