@@ -13,20 +13,6 @@
     default_area = "navbar";
     private_browsing = true;
   };
-  # 2FAS Two Factor Authentication
-  "admin@2fas.com" = {
-    install_url = "https://addons.mozilla.org/firefox/downloads/latest/2fas-two-factor-authentication/latest.xpi";
-    installation_mode = "force_installed";
-    default_area = "navbar";
-    private_browsing = true;
-  };
-  # Bitwarden
-  "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-    install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-    installation_mode = "force_installed";
-    default_area = "navbar";
-    private_browsing = true;
-  };
   # floccus
   "floccus@handmadeideas.org" = {
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/floccus/latest.xpi";
