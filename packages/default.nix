@@ -43,6 +43,7 @@ with pkgs; [
   yt-dlp
   ghostscript
   imagemagick
+  dnsutils
 
   # tui tools
   neovim
