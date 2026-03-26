@@ -77,6 +77,7 @@ with pkgs; [
   shfmt
 
   scaleway-cli
+  s3cmd
   cloud-init
   pangolin-cli
 
