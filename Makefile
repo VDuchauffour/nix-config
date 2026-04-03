@@ -3,7 +3,7 @@ UNAME_S	:= $(shell uname -s)
 UNAME_M	:= $(shell uname -m)
 
 ifeq ($(UNAME_S),Linux)
-	TOOL := sudo nixos-rebuild
+	TOOL := sudo SSH_AUTH_SOCK=$(SSH_AUTH_SOCK) nixos-rebuild
 endif
 ifeq ($(UNAME_S),Darwin)
 	TOOL := darwin-rebuild

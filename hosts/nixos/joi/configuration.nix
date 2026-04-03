@@ -8,10 +8,7 @@
 
   networking.hostId = "94e6e4ea";
 
-  age.identityPaths = [
-    "/root/.ssh/agenix"
-    # "/etc/ssh/ssh_host_ed25519_key"  # if secrets are also encrypted to host key
-  ];
+  age.identityPaths = ["/home/${vars.userName}/.ssh/agenix"];
 
   users.users."${vars.userName}" = {
     home = "/home/${vars.userName}";

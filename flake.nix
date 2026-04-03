@@ -62,6 +62,7 @@
           inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
           inputs.home-manager-unstable.nixosModules.home-manager
           inputs.disko.nixosModules.disko
+          ./modules/system/agenix
           ./modules/system/systemd-boot
           ./modules/system/g810-led
           ./modules/system/logid-m3s
