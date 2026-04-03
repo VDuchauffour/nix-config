@@ -1,10 +1,12 @@
-{
+{lib, ...}: {
   programs.git = {
     enable = true;
     settings = {
       user = {
         name = "Vincent Duchauffour";
-        email = "vincent.duchauffour@proton.me";
+      };
+      include = {
+        path = "~/.config/git/credentials";
       };
       init = {
         defaultBranch = "main";
@@ -70,4 +72,14 @@
       };
     };
   };
+
+  home.activation.gitEmailFromSecret = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    secret="/run/agenix/emailAddress"
+    target="$HOME/.config/git/credentials"
+    if [ -f "$secret" ]; then
+      email=$(cat "$secret")
+      mkdir -p "$(dirname "$target")"
+      printf '[user]\n\temail = %s\n' "$email" > "$target"
+    fi
+  '';
 }

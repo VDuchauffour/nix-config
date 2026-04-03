@@ -602,11 +602,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1772200240,
-        "narHash": "sha256-TNzcxyWFicTyJds1rCSAQnHZQhR1GLDqEdf/yNK86I0=",
+        "lastModified": 1775207572,
+        "narHash": "sha256-ApHz/Rg0LfMDdnzQPhhA0DcZaM547VpIsj0Dp3lBV6E=",
         "ref": "refs/heads/main",
-        "rev": "cb94d4476ef9409402960196d717f4f0a6826dc5",
-        "revCount": 18,
+        "rev": "8b22fa6dfb7088e5e83e48c316d8b89d047c0e22",
+        "revCount": 20,
         "type": "git",
         "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
       },

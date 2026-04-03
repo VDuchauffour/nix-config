@@ -1,9 +1,17 @@
-{inputs, ...}: {
+{
+  inputs,
+  vars,
+  ...
+}: {
   age = {
     secrets = {
+      emailAddress = {
+        file = "${inputs.secrets}/secrets/email-address.age";
+        owner = "${vars.userName}";
+      };
       publicDomainName = {
         file = "${inputs.secrets}/secrets/public-domain-name.age";
-        owner = "k";
+        owner = "${vars.userName}";
       };
       sambaPassword.file = "${inputs.secrets}/secrets/sambaPassword.age";
       upsPassword.file = "${inputs.secrets}/secrets/upsPassword.age";
