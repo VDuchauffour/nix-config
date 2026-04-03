@@ -10,6 +10,8 @@
 
   networking.hostId = "1a2b3c4d";
 
+  age.identityPaths = ["/home/${vars.userName}/.ssh/agenix"];
+
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   # see https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel/tiger-lake/default.nix
@@ -36,6 +38,7 @@
   imports = [
     ../dnsmasq.nix
     ./hardware.nix
+    ./cifs.nix
     ../xpad.nix
     # ./disko.nix
   ];
