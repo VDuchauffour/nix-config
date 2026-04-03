@@ -9,7 +9,7 @@ with pkgs; [
   gscreenshot
 
   # apps
-  protonvpn-gui
+  proton-vpn
   nautilus
   nautilus-open-any-terminal
   code-nautilus
