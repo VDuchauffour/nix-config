@@ -558,27 +558,6 @@
         "url": "https://devimages-cdn.apple.com/design/resources/download/NY.dmg"
       }
     },
-    "openchamber": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772144728,
-        "narHash": "sha256-nqzdVnaJbrOrlrIaJ15ppcTs7Ep25Gpx24W+aLL/UYM=",
-        "owner": "VDuchauffour",
-        "repo": "openchamber",
-        "rev": "45c86be2a24f08b86111a3730e45797a39956f24",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VDuchauffour",
-        "ref": "feat/nix-flake",
-        "repo": "openchamber",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -592,7 +571,6 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_7",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "openchamber": "openchamber",
         "secrets": "secrets",
         "solaar": "solaar",
         "vicinae": "vicinae",

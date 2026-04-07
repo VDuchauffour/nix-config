@@ -30,7 +30,7 @@
     ./graphics.nix
     ./hardware.nix
     ./kubernetes.nix
-    ./opencode.nix
+    # ./opencode.nix
     ./pangolin-newt.nix
     ./samba.nix
     ./smartd-devices.nix
