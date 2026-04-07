@@ -8,7 +8,7 @@
       wallpaper = [
         {
           "monitor" = "";
-          "path" = "$HOME/.nix-config/assets/wallpapers/ocean_sky.jpg";
+          "path" = "${../../../assets/wallpapers/ocean_sky.jpg}";
         }
       ];
     };
