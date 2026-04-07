@@ -6,8 +6,7 @@
       theme = "github";
       plugin = [
         "opencode-claude-auth"
-        "oh-my-opencode"
-        "@slkiser/opencode-quota"
+        "oh-my-openagent"
         "@simonwjackson/opencode-direnv"
         "opencode-scheduler"
         "opencode-wakatime"
@@ -33,11 +32,11 @@
         #   command = ["docker" "run" "-i" "--rm" "hashicorp/terraform-mcp-server"];
         #   enabled = true;
         # };
-        github = {
-          type = "local";
-          command = ["sh" "-c" "export GITHUB_PERSONAL_ACCESS_TOKEN=$(cat /run/agenix/gh-api-key) && exec docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server"];
-          enabled = true;
-        };
+        # github = {
+        #   type = "local";
+        #   command = ["sh" "-c" "export GITHUB_PERSONAL_ACCESS_TOKEN=$(cat /run/agenix/gh-api-key) && exec docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server"];
+        #   enabled = true;
+        # };
         # # PostgreSQL schema inspection and queries
         # # Set POSTGRES_URL in your environment (e.g. postgresql://user:pass@postgres.home.arpa:5432/dbname)
         # postgres = {
