@@ -39,8 +39,7 @@
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "hyprpaper"
         "hypridle"
-        "hyprpm reload"
-        "waybar &"
+
         "nm-applet &"
         "blueman-applet &"
         "udiskie &"
