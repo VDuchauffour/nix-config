@@ -7,6 +7,7 @@ with pkgs; [
   avizo # for playerctl, lightctl and volumectl
   wl-clipboard
   gscreenshot
+  exiftool
 
   # apps
   proton-vpn
