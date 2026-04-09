@@ -3,7 +3,20 @@
     enable = true;
     enableMcpIntegration = true;
     settings = {
-      theme = "github";
+      tui = {
+        theme = "github";
+        keybinds = {
+          "input_newline" = "shift+return,ctrl+return,alt+return,ctrl+j";
+        };
+      };
+      permission = {
+        edit = "allow";
+        bash = "allow";
+      };
+      formatter = {
+        ruff.disabled = false;
+        uv.disabled = false;
+      };
       plugin = [
         "opencode-claude-auth"
         "oh-my-openagent"
@@ -74,17 +87,6 @@
         #     GRAFANA_URL = "https://grafana.home.arpa";
         #   };
         # };
-      };
-      permission = {
-        edit = "allow";
-        bash = "allow";
-      };
-      formatter = {
-        ruff.disabled = false;
-        uv.disabled = false;
-      };
-      keybinds = {
-        "input_newline" = "shift+return,ctrl+return,alt+return,ctrl+j";
       };
     };
   };
