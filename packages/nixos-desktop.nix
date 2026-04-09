@@ -31,4 +31,5 @@ with pkgs; [
   rawtherapee
   rapidraw
   picard
+  gelly
 ]
