@@ -38,6 +38,7 @@
         "force group" = "users";
         "create mask" = "0644";
         "directory mask" = "0775";
+        "force directory mode" = "0020";
       };
     };
   };
