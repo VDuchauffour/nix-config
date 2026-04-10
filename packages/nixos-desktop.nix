@@ -32,4 +32,5 @@ with pkgs; [
   rapidraw
   picard
   gelly
+  rquickshare
 ]
