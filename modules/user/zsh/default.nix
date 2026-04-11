@@ -35,14 +35,12 @@ in {
     };
 
     sessionVariables = let
-      XDG_BIN_HOME = "$HOME/.local/bin";
       EDITOR = "nvim";
     in {
       EDITOR = EDITOR;
       VISUAL = EDITOR;
 
-      XDG_BIN_HOME = XDG_BIN_HOME;
-      PATH = "${XDG_BIN_HOME}:$PATH";
+      XDG_BIN_HOME = "$HOME/.local/bin";
       GTK_THEME = "WhiteSur-Dark";
 
       TERM = "xterm-256color";
@@ -51,6 +49,8 @@ in {
     };
 
     initContent = ''
+      export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/usr/local/bin:$PATH"
+
       eval "$(starship init zsh)"
 
       # Load personal secrets
