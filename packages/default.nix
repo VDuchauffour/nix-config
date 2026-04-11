@@ -79,7 +79,7 @@ with pkgs; [
   scaleway-cli
   s3cmd
   cloud-init
-  pangolin-cli
+  # pangolin-cli
 
   alejandra
 ]
