@@ -20,6 +20,7 @@
       plugin = [
         "opencode-claude-auth"
         "oh-my-openagent"
+        "@guard22/opencode-tps-meter"
         "@simonwjackson/opencode-direnv"
         "opencode-scheduler"
         "opencode-wakatime"
