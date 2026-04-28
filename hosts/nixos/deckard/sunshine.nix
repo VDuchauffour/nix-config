@@ -1,13 +1,14 @@
-{pkgs, ...}: {
+{
+  vars,
+  pkgs,
+  ...
+}: {
   services.sunshine = {
     settings = {
       sunshine_name = "deckard";
 
       # VAAPI encoder (Intel Tiger Lake hardware encoding)
       encoder = "vaapi";
-
-      # KMS capture — direct kernel framebuffer access, lowest latency (~1-2ms vs ~5-10ms for X11)
-      capture = "kms";
 
       # High bitrate for text clarity on WiFi 7 LAN
       max_bitrate = 50000;
@@ -28,9 +29,21 @@
     applications = {
       apps = [
         {
-          name = "Steam Big Picture";
-          cmd = "${pkgs.steam}/bin/steam steam://open/bigpicture";
+          name = "Desktop";
           auto-detach = "true";
+        }
+        {
+          name = "Steam Big Picture";
+          auto-detach = "true";
+          detached = [
+            "sudo -u ${vars.userName} setsid steam steam://open/bigpicture"
+          ];
+          prep-cmd = [
+            {
+              "do" = "";
+              "undo" = "sudo -u ${vars.userName} setsid steam steam://close/bigpicture";
+            }
+          ];
         }
       ];
     };

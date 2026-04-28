@@ -1,4 +1,5 @@
 {
+  # exposed to https://localhost:47990
   services.sunshine = {
     enable = true;
     openFirewall = true;
