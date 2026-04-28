@@ -7,6 +7,11 @@
     settings = {
       windowrule = [
         {
+          "name" = "floating-pwvucontrol-rule";
+          "match:class" = "com.saivert.pwvucontrol";
+          "float" = "on";
+        }
+        {
           "name" = "floating-pavucontrol-rule";
           "match:class" = "org.pulseaudio.pavucontrol";
           "float" = "on";
