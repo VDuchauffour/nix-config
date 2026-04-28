@@ -117,13 +117,5 @@
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
         ])
-      (mkRaspberryPiNixos "sebastian" metaConfig [
-          # inputs.nixos-hardware.nixosModules.raspberry-pi-3
-          inputs.nixos-raspberrypi.nixosModules.raspberry-pi-3.base
-          inputs.disko.nixosModules.disko
-          inputs.home-manager.nixosModules.home-manager
-          ./modules/system/locale
-        ] [
-        ])
     ];
 }
