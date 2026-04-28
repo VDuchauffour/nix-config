@@ -66,6 +66,7 @@
           ./modules/system/keyboard
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
+          ./modules/system/sunshine
           inputs.solaar.nixosModules.default
         ] [
           ./modules/user/common-desktop.nix

@@ -1,14 +1,15 @@
 {
+  # exposed to https://localhost:47990
   services.sunshine = {
     enable = true;
-    # Sunshine Web UI ➜ http://<server-ip>:47990
     openFirewall = true;
     autoStart = true;
+    capSysAdmin = true;
   };
 
   # Required for encoding
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 }
