@@ -39,6 +39,7 @@
     ../dnsmasq.nix
     ./hardware.nix
     ./cifs.nix
+    ./sunshine.nix
     ../xpad.nix
     # ./disko.nix
   ];
