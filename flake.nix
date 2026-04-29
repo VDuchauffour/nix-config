@@ -67,6 +67,8 @@
           ./modules/system/laptop
           ./modules/system/nixos-desktop.nix
           ./modules/system/sunshine
+          ./modules/system/gog
+          ./modules/system/steam
           inputs.solaar.nixosModules.default
         ] [
           ./modules/user/common-desktop.nix
@@ -74,6 +76,7 @@
           # ./modules/user/gcloud
           ./modules/user/kubernetes-tooling
           ./modules/user/terraform
+          ./modules/user/gog
           inputs.vicinae.homeManagerModules.default
         ])
       (mkNixos "wallace" "x86_64-linux" metaConfig inputs.nixpkgs-unstable [

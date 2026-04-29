@@ -3,7 +3,6 @@
     ./display
     ./fonts
     ./nautilus
-    ./steam
   ];
 
   environment.systemPackages = with pkgs;
