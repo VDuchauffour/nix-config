@@ -45,6 +45,19 @@
             }
           ];
         }
+        {
+          name = "Heroic";
+          auto-detach = "true";
+          detached = [
+            "sudo -u ${vars.userName} setsid heroic"
+          ];
+          prep-cmd = [
+            {
+              "do" = "";
+              "undo" = "sudo -u ${vars.userName} pkill -x heroic";
+            }
+          ];
+        }
       ];
     };
   };
