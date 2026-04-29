@@ -3,6 +3,7 @@
     ./dunst
     ./eog
     ./font-config
+    ./gog
     ./gsimplecal
     ./gtk
     ./hypr
