@@ -13,7 +13,12 @@
         "/sunshine.home.arpa/192.168.1.18"
       ];
       listen-address = ["127.0.0.1" "192.168.1.18"];
-      server = ["1.1.1.1" "1.0.0.1" "/bytel.fr/192.168.1.254"];
+      server = [
+        "/internal/100.96.128.1" # Pangolin alias resolution via tunnel
+        "1.1.1.1"
+        "1.0.0.1"
+        "/bytel.fr/192.168.1.254"
+      ];
     };
   };
   systemd.services.dnsmasq = {
