@@ -6,6 +6,9 @@
   services.sunshine = {
     settings = {
       sunshine_name = "deckard";
+      lan_encryption_mode = 0;
+      key_rightalt_to_key_win = "enabled";
+      system_tray = "disabled";
 
       # VAAPI encoder (Intel Tiger Lake hardware encoding)
       encoder = "vaapi";
@@ -19,12 +22,6 @@
 
       # Minimal FEC — WiFi 7 is reliable, 20% default is overkill
       fec_percentage = 5;
-
-      # No encryption on LAN
-      lan_encryption_mode = 0;
-
-      # Hide system tray icon
-      system_tray = "disabled";
     };
     applications = {
       apps = [
