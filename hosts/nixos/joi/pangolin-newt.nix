@@ -18,7 +18,6 @@
           site = "diligent-colorado-chipmunk";
           destination = "localhost";
           tcp-ports = "22";
-          roles = ["DevOps"];
           alias = "joi.internal";
         };
       };
