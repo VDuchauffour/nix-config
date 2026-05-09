@@ -1,3 +1,3 @@
 {
-  imports = [./firefox.nix ./librewolf.nix];
+  imports = [./firefox.nix ./librewolf.nix ./zen.nix];
 }
