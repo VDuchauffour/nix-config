@@ -8,6 +8,7 @@
       domain = "home.arpa";
       address = [
         "/home.arpa/192.168.1.18" # wildcard for *.home.arpa
+        "/proxmox.local/192.168.1.100"
         "/opencode.home.arpa/192.168.1.18"
         "/openchamber.home.arpa/192.168.1.18"
         "/sunshine.home.arpa/192.168.1.18"
