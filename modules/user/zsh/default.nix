@@ -49,7 +49,7 @@ in {
     };
 
     initContent = ''
-      export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.npm-global/bin:/usr/local/bin:$PATH"
+      export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/usr/local/bin:$PATH"
 
       eval "$(starship init zsh)"
 
