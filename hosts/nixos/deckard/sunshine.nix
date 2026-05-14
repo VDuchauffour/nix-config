@@ -10,6 +10,11 @@
       key_rightalt_to_key_win = "enabled";
       system_tray = "disabled";
 
+      # KMS capture avoids the wlroots-capture deadlock that freezes Hyprland
+      # when a Moonlight client disconnects.
+      # See: https://github.com/LizardByte/Sunshine/issues/3854
+      capture = "kms";
+
       # VAAPI encoder (Intel Tiger Lake hardware encoding)
       encoder = "vaapi";
 
