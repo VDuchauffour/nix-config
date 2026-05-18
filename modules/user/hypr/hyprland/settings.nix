@@ -22,7 +22,7 @@
         gaps_out = 20;
         border_size = 2;
 
-        layout = "dwindle";
+        # layout = "dwindle";
 
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
