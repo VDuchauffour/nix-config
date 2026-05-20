@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./display
     ./fonts
@@ -6,6 +10,6 @@
   ];
 
   environment.systemPackages = with pkgs;
-    (import ../../packages/common-desktop.nix {inherit pkgs;})
-    ++ (import ../../packages/nixos-desktop.nix {inherit pkgs;});
+    (import "${inputs.private}/packages/common-desktop.nix" {inherit pkgs;})
+    ++ (import "${inputs.private}/packages/nixos-desktop.nix" {inherit pkgs;});
 }

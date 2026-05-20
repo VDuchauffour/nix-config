@@ -1,5 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs;
-    (import ../../packages/common-desktop.nix {inherit pkgs;})
-    ++ (import ../../packages/darwin.nix {inherit pkgs;});
+    (import "${inputs.private}/packages/common-desktop.nix" {inherit pkgs;})
+    ++ (import "${inputs.private}/packages/darwin.nix" {inherit pkgs;});
 }

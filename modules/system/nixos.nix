@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./audio
     ./bluetooth
@@ -13,5 +17,5 @@
     ./uv
   ];
 
-  environment.systemPackages = with pkgs; (import ../../packages/nixos.nix {inherit pkgs;});
+  environment.systemPackages = with pkgs; (import "${inputs.private}/packages/nixos.nix" {inherit pkgs;});
 }

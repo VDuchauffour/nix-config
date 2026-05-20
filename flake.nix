@@ -26,7 +26,7 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    secrets = {
+    private = {
       url = "git+ssh://git@github.com/VDuchauffour/nix-private.git";
       flake = false;
     };

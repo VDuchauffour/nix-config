@@ -3,6 +3,7 @@
   pkgs,
   lib,
   vars,
+  inputs,
   ...
 }: {
   system.stateVersion = "26.05";
@@ -31,7 +32,7 @@
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  environment.systemPackages = with pkgs; (import ../../../packages/nixos.nix {inherit pkgs;});
+  environment.systemPackages = with pkgs; (import "${inputs.private}/packages/nixos.nix" {inherit pkgs;});
 
   # SD image module handles partitioning, so we don't define disko devices
   # Just ensure the filesystem is configured correctly for the sd-image

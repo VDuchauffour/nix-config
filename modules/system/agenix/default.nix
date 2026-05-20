@@ -6,22 +6,22 @@
   age = {
     secrets = {
       emailAddress = {
-        file = "${inputs.secrets}/secrets/email-address.age";
+        file = "${inputs.private}/secrets/email-address.age";
         owner = "${vars.userName}";
       };
       publicDomainName = {
-        file = "${inputs.secrets}/secrets/public-domain-name.age";
+        file = "${inputs.private}/secrets/public-domain-name.age";
         owner = "${vars.userName}";
       };
-      sambaPassword.file = "${inputs.secrets}/secrets/sambaPassword.age";
-      upsPassword.file = "${inputs.secrets}/secrets/upsPassword.age";
+      sambaPassword.file = "${inputs.private}/secrets/sambaPassword.age";
+      upsPassword.file = "${inputs.private}/secrets/upsPassword.age";
 
       n8n-api-key = {
-        file = "${inputs.secrets}/secrets/n8n-api-key.age";
+        file = "${inputs.private}/secrets/n8n-api-key.age";
         owner = "k";
       };
       gh-api-key = {
-        file = "${inputs.secrets}/secrets/gh-api-key.age";
+        file = "${inputs.private}/secrets/gh-api-key.age";
         owner = "k";
       };
     };

@@ -574,6 +574,22 @@
         "url": "https://devimages-cdn.apple.com/design/resources/download/NY.dmg"
       }
     },
+    "private": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779317100,
+        "narHash": "sha256-3wZB6PI008u6FWV/h/1CgPRCPir4kjrWEsWrJXZDcCM=",
+        "ref": "refs/heads/main",
+        "rev": "9612ba94284dcd7b2aed7edc66291de2054c5ccc",
+        "revCount": 25,
+        "type": "git",
+        "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -587,27 +603,11 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_7",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "secrets": "secrets",
+        "private": "private",
         "solaar": "solaar",
         "vicinae": "vicinae",
         "vicinae-extensions": "vicinae-extensions",
         "zen-browser": "zen-browser"
-      }
-    },
-    "secrets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1777466204,
-        "narHash": "sha256-aSzu/kLKhDueCmhHc0vZVOSoj6j3hBWD3VSLGB9YTL4=",
-        "ref": "refs/heads/main",
-        "rev": "f980bb5c7abce16a0a4743bf72a567f7dd0eb500",
-        "revCount": 24,
-        "type": "git",
-        "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
       }
     },
     "sf-arabic": {
