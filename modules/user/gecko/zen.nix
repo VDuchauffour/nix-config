@@ -35,10 +35,14 @@
       SearchBar = "unified";
       ShowHomeButton = true;
 
-      profiles.default.search = {
-        force = true;
-        default = "DuckDuckGo";
-        privateDefault = "DuckDuckGo";
+      profiles.default = {
+        # userChrome = ''
+        # '';
+        search = {
+          force = true;
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
+        };
       };
 
       SearchEngines = import ./search-engines.nix;
