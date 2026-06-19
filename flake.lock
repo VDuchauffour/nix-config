@@ -642,11 +642,11 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1780776473,
-        "narHash": "sha256-wplm2j09he4IZhi4RWKThaNZoB0/L+oJLC4guuVajTA=",
+        "lastModified": 1781713941,
+        "narHash": "sha256-YTYI4TJav1vpPCCYj+KLO3zG3kXd+jy6ZLxvlX09Ss4=",
         "ref": "refs/heads/main",
-        "rev": "2d99e28da760c94f0d57632dae1e1dbd486b1ea6",
-        "revCount": 27,
+        "rev": "2f96d4ab218ad730c06ec6e4b690554084e1aaa8",
+        "revCount": 28,
         "type": "git",
         "url": "ssh://git@github.com/VDuchauffour/nix-private.git"
       },
