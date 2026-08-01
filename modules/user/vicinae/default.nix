@@ -49,7 +49,6 @@
     };
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
       agenda
-      bluetooth
       nix
       player-pilot
       power-profile
